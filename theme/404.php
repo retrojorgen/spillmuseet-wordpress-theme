@@ -1,43 +1,36 @@
 <?php get_header(); ?>
 
-			<div id="content">
+					<article id="post-not-found" class="main-article">
 
-				<div id="inner-content" class="wrap clearfix">
+						<header class="article-header">
 
-					<div id="main" class="eightcol first clearfix" role="main">
+							<h1>Denne siden eksisterer ikke, men likevel er du på den. Merkelige greier.</h1>
 
-						<article id="post-not-found" class="hentry clearfix">
+						</header>
 
-							<header class="article-header">
+						<section class="entry-content">
 
-								<h1><?php _e( 'Epic 404 - Article Not Found', 'bonestheme' ); ?></h1>
+							<h2>Kanskje du skulle prøve å søke etter noe annet innhold?</h2>
+							<p><?php get_search_form(); ?></p>
 
-							</header>
+						</section>
 
-							<section class="entry-content">
+						<section class="search">
 
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'bonestheme' ); ?></p>
+								
 
-							</section>
+						</section>
 
-							<section class="search">
+						<footer class="article-footer">
 
-									<p><?php get_search_form(); ?></p>
+								<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
 
-							</section>
+						</footer>
 
-							<footer class="article-footer">
-
-									<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
-
-							</footer>
-
-						</article>
-
-					</div>
-
-				</div>
+					</article>
 
 			</div>
+
+		</div>
 
 <?php get_footer(); ?>

@@ -40,24 +40,32 @@
 	</head>
 
 	<body <?php body_class(); ?>>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=256092084433955";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 
-		<div id="container">
+    <header class="main-header" role="banner">
+    <a href="index.html">
+      <div class="logo-image"></div>
+    </a>
+      <div class="link-sprite-container">
+        <div class="link-sprite"></div>
+      </div>
+    </header>
 
-			<header class="header" role="banner">
-
-				<div id="inner-header" class="wrap clearfix">
-
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
-
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
-
-
-					<nav role="navigation">
-						<?php bones_main_nav(); ?>
-					</nav>
-
-				</div>
-
-			</header>
+<div class="articles-container">
+	<section class="articles">
+		<nav class="main-navigation" role="navigation">
+			<a href="index.html" class="tiny-logo">
+    		</a>
+			<?php bones_main_nav(); ?>
+		</nav>
+		<div class="follow">
+			Få med deg alt <span class="red">Følg oss</span>
+			<div class="fb-like" data-href="https://www.facebook.com/Spillmuseet" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+		</div>

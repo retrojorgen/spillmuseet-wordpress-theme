@@ -1,0 +1,987 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,400italic);
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@-webkit-keyframes playing {
+  /* line 25, ../scss/sass/screen.scss */
+  from {
+    background-position: 0px;
+  }
+
+  /* line 28, ../scss/sass/screen.scss */
+  to {
+    background-position: -300px;
+  }
+}
+
+@-moz-keyframes playing {
+  /* line 25, ../scss/sass/screen.scss */
+  from {
+    background-position: 0px;
+  }
+
+  /* line 28, ../scss/sass/screen.scss */
+  to {
+    background-position: -300px;
+  }
+}
+
+@-ms-keyframes playing {
+  /* line 25, ../scss/sass/screen.scss */
+  from {
+    background-position: 0px;
+  }
+
+  /* line 28, ../scss/sass/screen.scss */
+  to {
+    background-position: -300px;
+  }
+}
+
+@keyframes playing {
+  /* line 25, ../scss/sass/screen.scss */
+  from {
+    background-position: 0px;
+  }
+
+  /* line 28, ../scss/sass/screen.scss */
+  to {
+    background-position: -300px;
+  }
+}
+
+@-webkit-keyframes goombaAnimation {
+  /* line 34, ../scss/sass/screen.scss */
+  from {
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  /* line 42, ../scss/sass/screen.scss */
+  to {
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+  }
+}
+
+@-moz-keyframes goombaAnimation {
+  /* line 34, ../scss/sass/screen.scss */
+  from {
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  /* line 42, ../scss/sass/screen.scss */
+  to {
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+  }
+}
+
+@-ms-keyframes goombaAnimation {
+  /* line 34, ../scss/sass/screen.scss */
+  from {
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  /* line 42, ../scss/sass/screen.scss */
+  to {
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+  }
+}
+
+@keyframes goombaAnimation {
+  /* line 34, ../scss/sass/screen.scss */
+  from {
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  /* line 42, ../scss/sass/screen.scss */
+  to {
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+  }
+}
+
+@-webkit-keyframes jumping {
+  /* line 53, ../scss/sass/screen.scss */
+  0% {
+    left: -5%;
+    top: 80px;
+  }
+
+  /* line 57, ../scss/sass/screen.scss */
+  30%,90% {
+    top: 100px;
+  }
+
+  /* line 60, ../scss/sass/screen.scss */
+  60% {
+    top: 80px;
+  }
+
+  /* line 63, ../scss/sass/screen.scss */
+  100% {
+    top: 100px;
+    left: 110%;
+  }
+}
+
+@-moz-keyframes jumping {
+  /* line 53, ../scss/sass/screen.scss */
+  0% {
+    left: -5%;
+    top: 80px;
+  }
+
+  /* line 57, ../scss/sass/screen.scss */
+  30%,90% {
+    top: 100px;
+  }
+
+  /* line 60, ../scss/sass/screen.scss */
+  60% {
+    top: 80px;
+  }
+
+  /* line 63, ../scss/sass/screen.scss */
+  100% {
+    top: 100px;
+    left: 110%;
+  }
+}
+
+@-ms-keyframes jumping {
+  /* line 53, ../scss/sass/screen.scss */
+  0% {
+    left: -5%;
+    top: 80px;
+  }
+
+  /* line 57, ../scss/sass/screen.scss */
+  30%,90% {
+    top: 100px;
+  }
+
+  /* line 60, ../scss/sass/screen.scss */
+  60% {
+    top: 80px;
+  }
+
+  /* line 63, ../scss/sass/screen.scss */
+  100% {
+    top: 100px;
+    left: 110%;
+  }
+}
+
+@keyframes jumping {
+  /* line 53, ../scss/sass/screen.scss */
+  0% {
+    left: -5%;
+    top: 80px;
+  }
+
+  /* line 57, ../scss/sass/screen.scss */
+  30%,90% {
+    top: 100px;
+  }
+
+  /* line 60, ../scss/sass/screen.scss */
+  60% {
+    top: 80px;
+  }
+
+  /* line 63, ../scss/sass/screen.scss */
+  100% {
+    top: 100px;
+    left: 110%;
+  }
+}
+
+/* line 70, ../scss/sass/screen.scss */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto Slab";
+  background-color: black;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 83, ../scss/sass/screen.scss */
+div, li, ul, span, img, h1, h2, h3 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 87, ../scss/sass/screen.scss */
+a {
+  font-family: "Roboto Slab";
+}
+
+/* line 91, ../scss/sass/screen.scss */
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url(../img/top-header.jpg);
+  background-position: center top;
+  background-attachment: fixed;
+  height: 190px;
+  overflow: hidden;
+}
+@media only screen and (min-width: 1025px) {
+  /* line 91, ../scss/sass/screen.scss */
+  .main-header {
+    -webkit-transition: background-position 200ms linear;
+    -moz-transition: background-position 200ms linear;
+    -o-transition: background-position 200ms linear;
+    transition: background-position 200ms linear;
+  }
+}
+/* line 107, ../scss/sass/screen.scss */
+.main-header.tiny {
+  background-position: auto -50px;
+}
+@media only screen and (min-width: 1025px) {
+  /* line 107, ../scss/sass/screen.scss */
+  .main-header.tiny {
+    -webkit-transition: background-position 200ms linear;
+    -moz-transition: background-position 200ms linear;
+    -o-transition: background-position 200ms linear;
+    transition: background-position 200ms linear;
+  }
+}
+/* line 116, ../scss/sass/screen.scss */
+.main-header .link-sprite-container {
+  position: fixed;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: jumping 10s infinite linear;
+  -moz-animation: jumping 10s infinite linear;
+  -ms-animation: jumping 10s infinite linear;
+  -o-animation: jumping 10s infinite linear;
+  animation: jumping 10s infinite linear;
+}
+@media only screen and (min-width: 1025px) {
+  /* line 116, ../scss/sass/screen.scss */
+  .main-header .link-sprite-container {
+    -webkit-animation: jumping 15s infinite linear;
+    -moz-animation: jumping 15s infinite linear;
+    -ms-animation: jumping 15s infinite linear;
+    -o-animation: jumping 15s infinite linear;
+    animation: jumping 15s infinite linear;
+  }
+}
+/* line 126, ../scss/sass/screen.scss */
+.main-header .link-sprite-container .link-sprite {
+  width: 50px;
+  height: 50px;
+  background: url(../img/link-sprite.png);
+  -webkit-animation: playing 0.2s infinite steps(6);
+  -moz-animation: playing 0.2s infinite steps(6);
+  -ms-animation: playing 0.2s infinite steps(6);
+  -o-animation: playing 0.2s infinite steps(6);
+  animation: playing 0.2s infinite steps(6);
+}
+@media only screen and (min-width: 1025px) {
+  /* line 126, ../scss/sass/screen.scss */
+  .main-header .link-sprite-container .link-sprite {
+    -webkit-animation: playing 0.5s infinite steps(6);
+    -moz-animation: playing 0.5s infinite steps(6);
+    -ms-animation: playing 0.5s infinite steps(6);
+    -o-animation: playing 0.5s infinite steps(6);
+    animation: playing 0.5s infinite steps(6);
+  }
+}
+/* line 137, ../scss/sass/screen.scss */
+.main-header .logo-image {
+  width: 200px;
+  height: 163px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: -100px;
+  z-index: 300;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 30px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 30px 2px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 30px 2px;
+  background-image: url(../img/spillmuseet_bart_inverse_new.svg);
+  background-size: 200px auto;
+  background-repeat: no-repeat;
+  background-background-position: 0 0;
+  background--webkit-transition: background-position 200ms linear, height 200ms linear;
+  background--moz-transition: background-position 200ms linear, height 200ms linear;
+  background--o-transition: background-position 200ms linear, height 200ms linear;
+  background-transition: background-position 200ms linear, height 200ms linear;
+}
+
+/* line 157, ../scss/sass/screen.scss */
+.articles-container {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  background-color: black;
+}
+/* line 163, ../scss/sass/screen.scss */
+.articles-container .articles {
+  position: relative;
+  z-index: 1002;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 190px auto 0 auto;
+  background-color: black;
+}
+@media only screen and (min-width: 602px) {
+  /* line 163, ../scss/sass/screen.scss */
+  .articles-container .articles {
+    width: 980px;
+  }
+}
+/* line 174, ../scss/sass/screen.scss */
+.articles-container .articles .archive-title {
+  position: absolute;
+  padding-left: 10px;
+  top: 33px;
+  width: 100%;
+  display: block;
+  font-size: 24px;
+  text-align: center;
+}
+/* line 183, ../scss/sass/screen.scss */
+.articles-container .articles .archive-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  bottom: 0;
+}
+/* line 194, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation {
+  position: absolute;
+  width: 980px;
+  left: 50%;
+  margin-left: -490px;
+  padding: 0;
+  height: 46px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 206, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation .tiny-logo {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  display: none;
+  background-image: url(../img/spillmuseet-horizontal.svg);
+  background-size: 178px 58px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 46px;
+}
+@media only screen and (min-width: 1025px) {
+  /* line 206, ../scss/sass/screen.scss */
+  .articles-container .articles .main-navigation .tiny-logo {
+    -webkit-transition: background-position 100ms linear;
+    -moz-transition: background-position 100ms linear;
+    -o-transition: background-position 100ms linear;
+    transition: background-position 100ms linear;
+  }
+}
+/* line 224, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation.tiny {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  margin-top: -46px;
+  margin-left: 0;
+  z-index: 500;
+  height: 46px;
+  background-color: black;
+}
+@media only screen and (min-width: 1025px) {
+  /* line 236, ../scss/sass/screen.scss */
+  .articles-container .articles .main-navigation.tiny .tiny-logo {
+    -webkit-transition: background-position 100ms linear;
+    -moz-transition: background-position 100ms linear;
+    -o-transition: background-position 100ms linear;
+    transition: background-position 100ms linear;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  /* line 242, ../scss/sass/screen.scss */
+  .articles-container .articles .main-navigation.tiny ul {
+    -webkit-transition: margin-left 100ms linear;
+    -moz-transition: margin-left 100ms linear;
+    -o-transition: margin-left 100ms linear;
+    transition: margin-left 100ms linear;
+  }
+}
+/* line 249, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation ul {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+@media only screen and (min-width: 1025px) {
+  /* line 249, ../scss/sass/screen.scss */
+  .articles-container .articles .main-navigation ul {
+    -webkit-transition: margin-left 100ms linear;
+    -moz-transition: margin-left 100ms linear;
+    -o-transition: margin-left 100ms linear;
+    transition: margin-left 100ms linear;
+  }
+}
+/* line 258, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation ul li {
+  position: relative;
+  display: inline-block;
+}
+/* line 262, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation ul li .sub-menu {
+  display: none;
+}
+/* line 267, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation ul li.current-menu-item a {
+  background-color: #e31515;
+}
+/* line 272, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation ul li:hover {
+  background-color: #e31515;
+}
+/* line 274, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation ul li:hover .sub-menu {
+  background-color: red;
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  z-index: 500;
+  left: 0;
+  top: 46px;
+}
+/* line 284, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation ul li:hover .sub-menu li {
+  width: 100%;
+  display: block;
+}
+/* line 297, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation ul li a {
+  color: white;
+  font-family: "Roboto Slab";
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 13px 15px 9px 15px;
+  display: block;
+}
+/* line 307, ../scss/sass/screen.scss */
+.articles-container .articles .main-navigation ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* line 315, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list {
+  list-style: none;
+  padding: 50px 0 0 0;
+  margin: 0;
+}
+/* line 320, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  vertical-align: top;
+}
+@media only screen and (min-width: 602px) {
+  /* line 320, ../scss/sass/screen.scss */
+  .articles-container .articles .articles-list .article-container {
+    width: 50%;
+    display: inline-block;
+  }
+}
+/* line 332, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container:nth-child(3), .articles-container .articles .articles-list .article-container:nth-child(4), .articles-container .articles .articles-list .article-container:nth-child(5) {
+  width: 33.3%;
+}
+/* line 335, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container:nth-child(3) .article .main-image-container, .articles-container .articles .articles-list .article-container:nth-child(4) .article .main-image-container, .articles-container .articles .articles-list .article-container:nth-child(5) .article .main-image-container {
+  height: 160px;
+}
+/* line 341, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article {
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* line 346, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .wp-caption-text {
+  display: none;
+}
+/* line 349, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article img {
+  display: none;
+}
+/* line 352, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article h1 {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0 20px 0 20px;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+/* line 358, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article h1 a {
+  color: white;
+}
+/* line 362, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .byline {
+  font-size: 14px;
+}
+/* line 365, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article h2 {
+  font-family: "Roboto";
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 20px 0 20px;
+  margin-top: 10px;
+  font-weight: normal;
+}
+/* line 374, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article p {
+  font-family: "Roboto";
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 20px 0 20px;
+  margin-top: 10px;
+}
+/* line 380, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article p a {
+  font-size: 14px;
+}
+/* line 385, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .tags {
+  font-size: 11px;
+}
+/* line 387, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .tags a {
+  font-size: 11px;
+}
+/* line 392, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .category {
+  position: absolute;
+  top: 0;
+  font-family: "Roboto";
+  font-size: 14px;
+  z-index: 100;
+  padding: 5px 10px 5px 10px;
+  text-transform: uppercase;
+  color: white;
+  margin-top: -18px;
+  margin-left: 8px;
+  background-color: #E31515;
+}
+/* line 405, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .category ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+/* line 410, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .category ul li a {
+  color: white;
+}
+/* line 416, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .category:after {
+  position: absolute;
+  content: "";
+  background-size: 20px 10px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 10px;
+  bottom: -10px;
+  left: -5px;
+}
+/* line 428, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .category.anmeldelse {
+  background-color: #E31515;
+}
+/* line 430, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .category.anmeldelse:after {
+  background-image: url(../img/grey-flip.svg);
+}
+/* line 434, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .category.toppliste {
+  background-color: #E31515;
+}
+/* line 436, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .category.toppliste:after {
+  background-image: url(../img/grey-flip.svg);
+}
+/* line 443, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .comments {
+  position: absolute;
+  width: 50%;
+  top: -22px;
+  color: #d0d3d0;
+  font-family: "Roboto";
+  right: 0;
+  text-align: right;
+  border-bottom: 1px solid rgba(208, 211, 208, 0.5);
+  z-index: 100;
+}
+/* line 456, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .main-image-container {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+/* line 463, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .main-image-container img {
+  max-width: 100%;
+  position: relative;
+  display: block;
+}
+/* line 469, ../scss/sass/screen.scss */
+.articles-container .articles .articles-list .article-container .article .main-image-container:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 60px 20px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 0 60px 20px inset;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 0 60px 20px inset;
+}
+@media only screen and (min-width: 1025px) {
+  /* line 469, ../scss/sass/screen.scss */
+  .articles-container .articles .articles-list .article-container .article .main-image-container:after {
+    -webkit-transition: box-shadow 200ms linear;
+    -moz-transition: box-shadow 200ms linear;
+    -o-transition: box-shadow 200ms linear;
+    transition: box-shadow 200ms linear;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  /* line 483, ../scss/sass/screen.scss */
+  .articles-container .articles .articles-list .article-container .article .main-image-container:hover:after {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 60px 0px inset;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 60px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 60px 0px inset;
+    -webkit-transition: box-shadow 200ms linear;
+    -moz-transition: box-shadow 200ms linear;
+    -o-transition: box-shadow 200ms linear;
+    transition: box-shadow 200ms linear;
+  }
+}
+
+/* line 495, ../scss/sass/screen.scss */
+.main-article {
+  padding: 10px 0 100px 0;
+  position: relative;
+}
+/* line 498, ../scss/sass/screen.scss */
+.main-article h1 {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Roboto Slab";
+  font-size: 40px;
+  padding: 20px 20px 0px 20px;
+  margin: 0;
+  font-weight: normal;
+}
+/* line 507, ../scss/sass/screen.scss */
+.main-article h2 {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "Roboto Slab";
+  font-size: 30px;
+  font-weight: normal;
+  padding: 0 20px 0 20px;
+}
+/* line 514, ../scss/sass/screen.scss */
+.main-article .fb-like {
+  position: absolute;
+  top: 350px;
+  margin-left: 10px;
+}
+/* line 519, ../scss/sass/screen.scss */
+.main-article .wp-caption {
+  max-width: 400px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* line 522, ../scss/sass/screen.scss */
+.main-article .wp-caption a {
+  width: 100%;
+}
+/* line 527, ../scss/sass/screen.scss */
+.main-article .wp-caption .wp-caption-text {
+  padding: 10px 10px 10px 10px;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1;
+}
+/* line 533, ../scss/sass/screen.scss */
+.main-article .wp-caption img {
+  max-width: 100%;
+  min-width: 300px;
+  padding: 0;
+  margin: 0;
+}
+/* line 539, ../scss/sass/screen.scss */
+.main-article .wp-caption.alignleft {
+  float: left;
+  margin: 10px 10px 10px -1px;
+}
+/* line 543, ../scss/sass/screen.scss */
+.main-article .wp-caption.alignright {
+  float: right;
+  margin: 10px -1px 10px 10px;
+}
+/* line 548, ../scss/sass/screen.scss */
+.main-article .wp-caption.aligncenter, .main-article .wp-caption.alignnone {
+  margin: 10px auto;
+  text-align: center;
+  max-width: 100%;
+}
+/* line 553, ../scss/sass/screen.scss */
+.main-article .wp-caption.alignnone {
+  text-align: left;
+}
+/* line 559, ../scss/sass/screen.scss */
+.main-article h2 + .wp-caption,
+.main-article .byline + .wp-caption,
+.main-article h1 + .wp-caption {
+  max-height: 600px;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0;
+  margin: 0;
+}
+/* line 573, ../scss/sass/screen.scss */
+.main-article h2 + .wp-caption img,
+.main-article .byline + .wp-caption img,
+.main-article h1 + .wp-caption img {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+/* line 582, ../scss/sass/screen.scss */
+.main-article img {
+  max-width: 100%;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  margin: 10px;
+}
+/* line 589, ../scss/sass/screen.scss */
+.main-article p {
+  padding: 0 100px 20px 100px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: normal;
+  font-family: "Roboto";
+  line-height: 1.5em;
+}
+/* line 596, ../scss/sass/screen.scss */
+.main-article p.byline {
+  font-size: 14px;
+  padding: 0 20px 20px 20px;
+}
+/* line 603, ../scss/sass/screen.scss */
+.main-article ol,
+.main-article ul {
+  padding: 0 100px 20px 100px;
+  color: rgba(255, 255, 255, 0.6);
+}
+/* line 608, ../scss/sass/screen.scss */
+.main-article blockquote {
+  padding: 0 100px 20px 100px;
+}
+/* line 610, ../scss/sass/screen.scss */
+.main-article blockquote p {
+  padding: 0;
+  max-width: 50%;
+  color: #e31515;
+  font-size: 20px;
+  font-family: "Roboto Slab";
+  font-style: italic;
+  word-wrap: break-word;
+}
+/* line 618, ../scss/sass/screen.scss */
+.main-article blockquote p:before {
+  content: '"';
+  font-size: 30px;
+}
+/* line 622, ../scss/sass/screen.scss */
+.main-article blockquote p:after {
+  content: '"';
+  font-size: 30px;
+}
+/* line 628, ../scss/sass/screen.scss */
+.main-article iframe {
+  width: 100%;
+  min-height: 500px;
+}
+
+/* line 635, ../scss/sass/screen.scss */
+a {
+  color: #E31515;
+  text-decoration: none;
+}
+
+/* line 640, ../scss/sass/screen.scss */
+.gallery {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+/* line 644, ../scss/sass/screen.scss */
+.gallery .gallery-item {
+  width: 13%;
+  height: 100px;
+  display: inline-block;
+  float: left;
+  margin: 6px;
+  overflow: hidden;
+}
+/* line 651, ../scss/sass/screen.scss */
+.gallery .gallery-item .gallery-icon {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+/* line 655, ../scss/sass/screen.scss */
+.gallery .gallery-item .gallery-icon img {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  border: 0;
+}
+/* line 662, ../scss/sass/screen.scss */
+.gallery .gallery-item .gallery-icon .wp-caption-text {
+  display: none;
+}
+/* line 666, ../scss/sass/screen.scss */
+.gallery .gallery-item.selected {
+  border: 2px solid #e31515;
+  margin: 4px;
+}
+/* line 671, ../scss/sass/screen.scss */
+.gallery .full-image {
+  width: 100%;
+  display: block;
+  padding: 0;
+  border: 0;
+}
+/* line 676, ../scss/sass/screen.scss */
+.gallery .full-image .gallery-item {
+  width: 100%;
+  display: block;
+  height: auto;
+  padding: 0;
+  border: 0;
+}
+/* line 683, ../scss/sass/screen.scss */
+.gallery .full-image .gallery-item.selected {
+  margin: 0;
+  border: 0;
+}
+/* line 688, ../scss/sass/screen.scss */
+.gallery .full-image .gallery-item .wp-caption-text {
+  display: block;
+  padding: 10px 10px 10px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+/* line 700, ../scss/sass/screen.scss */
+.follow {
+  text-align: center;
+  margin-top: 53px;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  font-style: italic;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* line 710, ../scss/sass/screen.scss */
+.follow .red {
+  color: #e31515;
+}
+/* line 713, ../scss/sass/screen.scss */
+.follow .fb-like {
+  padding-left: 10px;
+  display: inline-block;
+}
