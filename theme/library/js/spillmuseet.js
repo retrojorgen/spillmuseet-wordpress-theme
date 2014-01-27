@@ -60,4 +60,15 @@
 
   $('.wp-caption').attr('style', '');
 
+  var element = $('.main-article h2')[0];
+  var fromTop = $(element).offset().top;
+  var height = $(element).height();
+
+  if($('.fb-like').length) {
+    console.log(fromTop, height, 20);
+    $('.fb-like').css({
+      'top': fromTop + height + 20 + 'px'
+    });
+  }
+
 })(jQuery);

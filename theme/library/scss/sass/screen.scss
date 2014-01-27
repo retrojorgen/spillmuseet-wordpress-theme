@@ -511,6 +511,14 @@ a {
     font-weight: normal;
     padding: 0 20px 0 20px;
   }
+
+  h3 {
+    font-size: 24px;
+    text-align: center;
+    font-family: $regularFont;
+    color: $red;
+  }
+
   .fb-like {
     position: absolute;
     top: 350px;
