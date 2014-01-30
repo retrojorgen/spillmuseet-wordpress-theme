@@ -4,12 +4,10 @@
   var headerAdjust = function (event) {
 
       $('.main-header').css({
-        'background-position-y': window.scrollY * -1.5 + 'px',
+        'background-position-y': window.scrollY * -0.5 + 'px',
 
       });
-      $('.logo-image').css({
-        'margin-top': window.scrollY * -0.5 + 'px'
-      })
+
       if(!headerToggle && window.scrollY >= 255) {
         $('.main-navigation')
         .addClass('tiny')

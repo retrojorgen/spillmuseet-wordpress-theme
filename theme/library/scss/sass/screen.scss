@@ -334,6 +334,9 @@ a {
           .article {
             .main-image-container {
               height: 160px;
+              img {
+                max-width: 100%;
+              }
             }
           }
         }
@@ -461,7 +464,6 @@ a {
             border-bottom: 1px solid rgba(255,255,255,0.5);
 
             img {
-              max-width: 100%;
               position: relative;
               display: block;
             }
@@ -649,9 +651,114 @@ a {
   border-top: 1px solid rgba(255,255,255,0.1);
   text-align: center;
 
+  .close-gallery-button {
+    display: none;
+  }
+
+  &.fullscreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    .close-gallery-button {
+      display: block;
+      position: absolute;
+      font-family: $thinFont;
+      right: 20px;
+      bottom: 20px;
+      width: 80px;
+      height: 80px;
+
+      border-radius: 50%;
+      z-index: 1006;
+      border: 1px solid white;
+      background: transparent;
+      cursor:pointer;
+      padding: 10px;
+      overflow:hidden;
+      @include transition(all 300ms ease);
+
+      &:before {
+        content: "";
+        position: absolute;
+        background-color: black;
+        width: 0%;
+        height: 0%;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        @include transition(all 300ms ease);
+      }
+      &:after {
+        content: "x";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        color: white;
+        font-size: 32px;
+        margin-top: -25px;
+        margin-left: -10px;
+        @include transition(all 300ms ease);
+      }
+
+      &:hover {
+        &:after {
+          color: black;
+          @include transition(all 300ms ease);  
+        }
+        &:before {
+          content: "";
+          top: 10%;
+          left: 10%;
+          width: 80%;
+          height: 80%;
+          background-color: rgba(255,255,255,0.5);
+          @include transition(all 300ms ease);
+        }
+      }
+    }
+
+    .gallery-item {
+      width: 100px;
+      height: 50px;
+      z-index: 1003;
+      position: relative;
+      float: none;
+    }
+    .full-image {
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 100%;
+      border-top: 180px solid transparent;
+      top: 0;
+      .gallery-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        border: 0;
+        .gallery-icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          img {
+            max-height: 100%;
+          }
+        }
+      }
+    }
+  }
+
   .gallery-item {
     width: 13%;
-    height: 100px;
+    height: 50px;
     display: inline-block;
     float: left;
     margin: 6px;
@@ -666,42 +773,31 @@ a {
         max-width: 100%;
         border: 0;
 
-      }
-      .wp-caption-text {
-        display: none;
-      }
+      }      
     }
+
+    .wp-caption-text {
+        display: none;
+    }
+
     &.selected {
       border: 2px solid $red;
       margin: 4px;
     }
   }
   .full-image {
-    width: 100%;
-    display: block;
-    padding: 0;
-    border: 0;
-    .gallery-item {
+    display: none;
+    .wp-caption-text {
+      position: absolute;
       width: 100%;
+      bottom: 0;
+      z-index: 1002;
       display: block;
-      height: auto;
-      padding: 0;
-      border: 0;
-
-      &.selected {
-        margin: 0;
-        border: 0;
-      }
-
-      .wp-caption-text {
-        display: block;
-        padding: 10px 10px 10px 10px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        margin: 0 0 20px 0;
-        text-align: left;
-      }
+      padding: 10px 10px 10px 10px;
+      background-color: rgba(0,0,0,0.5);
+      margin: 0 0 0 0;
+      text-align: left;
     }
-
   }
 }
 
@@ -723,4 +819,19 @@ a {
     display: inline-block;
   }
   border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.fullscreen-overlay {
+  position: fixed;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+
+  &.active {
+    display: block;
+  }
 }
