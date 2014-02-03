@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+					<div class="article fb-like" data-href="<?php the_permalink() ?>" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class('main-article'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
@@ -14,7 +14,7 @@
 							</header>
 
 							<section class="entry-content clearfix" itemprop="articleBody">
-							<div class="fb-like" data-href="<?php the_permalink() ?>" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+							
 								<?php the_content(); ?>
 							</section>
 

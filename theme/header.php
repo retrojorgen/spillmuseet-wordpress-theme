@@ -50,7 +50,7 @@
 	}(document, 'script', 'facebook-jssdk'));</script>
 
     <header class="main-header" role="banner">
-    <a href="index.html">
+    <a href="<?php echo home_url(); ?>">
       <div class="logo-image"></div>
     </a>
       <div class="link-sprite-container">
@@ -61,8 +61,6 @@
 <div class="articles-container">
 	<section class="articles">
 		<nav class="main-navigation" role="navigation">
-			<a href="index.html" class="tiny-logo">
-    		</a>
 			<?php bones_main_nav(); ?>
 		</nav>
 		<div class="follow">

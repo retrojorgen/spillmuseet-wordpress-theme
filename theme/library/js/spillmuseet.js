@@ -57,15 +57,16 @@
   });
 
   $('.wp-caption').attr('style', '');
-
-  var element = $('.main-article h2')[0];
-  var fromTop = $(element).offset().top;
+  var articlesOffset = $('.articles').offset().top;
+  var element = $('.main-article h2')[0] || $('.main-article h1')[0];
+  var fromTop = $(element).offset().top - articlesOffset;
   var height = $(element).height();
 
-  if($('.fb-like').length) {
-    console.log(fromTop, height, 20);
-    $('.fb-like').css({
-      'top': fromTop + height + 20 + 'px'
+
+  if($('.article.fb-like').length) {
+    console.log(fromTop, height, 60);
+    $('.article.fb-like').css({
+      'top': fromTop + height + 80 + 'px'
     });
   }
 

@@ -2,7 +2,11 @@
 	$.fn.retroGallery = function () {
 		var that = this,
 			fullImageContainer,
-			closeButton;
+			closeButton,
+			leftButton,
+			rightButton,
+			currentItem,
+			clickStart = false;
 
 			init = function() {
 				$('.gallery-item img').attr('height', '').attr('width', '');
@@ -10,8 +14,11 @@
 				$('.gallery br').remove();
 				fullImageContainer = $('<div>').addClass('full-image');
 				closeButton = $('<button>').addClass('close-gallery-button').on('click', closeGallery);
+				rightButton = $('<button>').addClass('right-gallery-image-button').on('click', getRightImage);
+				leftButton = $('<button>').addClass('left-gallery-image-button').on('click', getLeftImage);
 
-				$(that).append(fullImageContainer).append(closeButton);
+				$(that).append(fullImageContainer).append(closeButton).append(rightButton).append(leftButton);
+				currentItem = $($('.gallery-item')[0]);
 				setFullImage($.clone($('.gallery-item')[0]));
 			},
 
@@ -27,18 +34,51 @@
 					.append(element);
 			},
 
-			changeFullImage = function(event) {
+			getRightImage = function() {
+
+				var nextItem = currentItem.next('.gallery-item');
+				if(nextItem) {
+					if(nextItem.hasClass('gallery-item')) {
+						changeFullImage(nextItem);
+					}
+				} else {
+				}
+
+			},
+
+			getLeftImage = function() {
+
+				var prevItem = currentItem.prev('.gallery-item');
+				if(prevItem) {
+						if(prevItem.hasClass('gallery-item')) {
+							changeFullImage(prevItem);
+						}
+				} else {
+				}
+
+			},
+
+			imageCLickController = function(event) {
 				event.preventDefault();
 				event.stopPropagation();
 
-				var targetImage = $(event.target).closest('.gallery-item');
+				clickStart = true;
 
+				var target = $(event.target).closest('.gallery-item');
+
+				changeFullImage(target);
+			},
+
+			changeFullImage = function(galleryItem) {
+
+				currentItem = galleryItem;
+				
 				checkIfFullscreen();
 
 				$('.gallery-item').removeClass('selected');
-				targetImage.addClass('selected');
+				galleryItem.addClass('selected');
 
-				setFullImage($.clone(targetImage[0]));
+				setFullImage($.clone(galleryItem[0]));
 			},
 
 			closeGallery = function(event) {
@@ -46,20 +86,29 @@
 					event.preventDefault();
 					event.stopPropagation();
 				}
-					$(that).removeClass('fullscreen');
-					$('.fullscreen-overlay').removeClass('active');
+
+				$(that).removeClass('fullscreen');
+				$('.fullscreen-overlay').removeClass('active');
+				clickStart = false;
 			}
 
 			bindEvents = function() {
 				$(that).children('.gallery-item')
-					.on('click', changeFullImage);
+					.on('click', imageCLickController);
 
 				$('.close-gallery-button').on('click', closeGallery);
 				console.log('hoisss');
 				$(window).on('keydown', function(event) {
-					console.log('hoi');
-					if(event.keyCode === 27) {
-						closeGallery();
+					if(clickStart) {
+						if(event.keyCode === 27) {
+							closeGallery();
+						}
+						if(event.keyCode === 37) {
+							getLeftImage();
+						}
+						if(event.keyCode === 39) {
+							getRightImage();
+						}
 					}
 				});
 			},

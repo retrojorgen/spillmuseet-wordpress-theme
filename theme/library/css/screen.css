@@ -741,11 +741,19 @@ a {
 }
 
 /* line 497, ../scss/sass/screen.scss */
+.article.fb-like {
+  position: absolute;
+  top: 350px;
+  margin-left: 10px;
+  z-index: 4000;
+}
+
+/* line 503, ../scss/sass/screen.scss */
 .main-article {
   padding: 10px 0 100px 0;
   position: relative;
 }
-/* line 500, ../scss/sass/screen.scss */
+/* line 506, ../scss/sass/screen.scss */
 .main-article h1 {
   color: rgba(255, 255, 255, 0.8);
   font-family: "Roboto Slab";
@@ -754,7 +762,7 @@ a {
   margin: 0;
   font-weight: normal;
 }
-/* line 509, ../scss/sass/screen.scss */
+/* line 515, ../scss/sass/screen.scss */
 .main-article h2 {
   color: rgba(255, 255, 255, 0.4);
   font-family: "Roboto Slab";
@@ -762,18 +770,12 @@ a {
   font-weight: normal;
   padding: 0 20px 0 20px;
 }
-/* line 517, ../scss/sass/screen.scss */
+/* line 523, ../scss/sass/screen.scss */
 .main-article h3 {
   font-size: 24px;
   text-align: center;
   font-family: "Roboto Slab";
   color: #e31515;
-}
-/* line 524, ../scss/sass/screen.scss */
-.main-article .fb-like {
-  position: absolute;
-  top: 350px;
-  margin-left: 10px;
 }
 /* line 529, ../scss/sass/screen.scss */
 .main-article .wp-caption {
@@ -914,10 +916,6 @@ a {
   text-align: center;
 }
 /* line 654, ../scss/sass/screen.scss */
-.gallery .close-gallery-button {
-  display: none;
-}
-/* line 658, ../scss/sass/screen.scss */
 .gallery.fullscreen {
   position: fixed;
   width: 100%;
@@ -926,7 +924,7 @@ a {
   top: 0;
   left: 0;
 }
-/* line 665, ../scss/sass/screen.scss */
+/* line 661, ../scss/sass/screen.scss */
 .gallery.fullscreen .close-gallery-button {
   display: block;
   position: absolute;
@@ -947,7 +945,7 @@ a {
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-/* line 683, ../scss/sass/screen.scss */
+/* line 679, ../scss/sass/screen.scss */
 .gallery.fullscreen .close-gallery-button:before {
   content: "";
   position: absolute;
@@ -962,7 +960,7 @@ a {
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-/* line 694, ../scss/sass/screen.scss */
+/* line 690, ../scss/sass/screen.scss */
 .gallery.fullscreen .close-gallery-button:after {
   content: "x";
   position: absolute;
@@ -977,36 +975,105 @@ a {
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-/* line 707, ../scss/sass/screen.scss */
-.gallery.fullscreen .close-gallery-button:hover:after {
-  color: black;
-  -webkit-transition: all 300ms ease;
-  -moz-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
-  transition: all 300ms ease;
-}
-/* line 711, ../scss/sass/screen.scss */
+/* line 705, ../scss/sass/screen.scss */
 .gallery.fullscreen .close-gallery-button:hover:before {
   content: "";
   top: 10%;
   left: 10%;
   width: 80%;
   height: 80%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #e31515;
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-/* line 723, ../scss/sass/screen.scss */
+/* line 717, ../scss/sass/screen.scss */
+.gallery.fullscreen .left-gallery-image-button,
+.gallery.fullscreen .right-gallery-image-button {
+  display: block;
+  position: absolute;
+  font-family: "Roboto";
+  width: 80px;
+  height: 80px;
+  font-size: 28px;
+  top: 50%;
+  margin-top: -40px;
+  z-index: 1006;
+  border: 1px solid white;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  overflow: hidden;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+  color: white;
+}
+/* line 734, ../scss/sass/screen.scss */
+.gallery.fullscreen .left-gallery-image-button:before,
+.gallery.fullscreen .right-gallery-image-button:before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 0%;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+/* line 745, ../scss/sass/screen.scss */
+.gallery.fullscreen .left-gallery-image-button:hover:before,
+.gallery.fullscreen .right-gallery-image-button:hover:before {
+  content: "";
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: #e31515;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+/* line 755, ../scss/sass/screen.scss */
+.gallery.fullscreen .left-gallery-image-button:after,
+.gallery.fullscreen .right-gallery-image-button:after {
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  margin-left: -6px;
+  z-index: 1007;
+}
+/* line 764, ../scss/sass/screen.scss */
+.gallery.fullscreen .left-gallery-image-button {
+  left: 20px;
+}
+/* line 766, ../scss/sass/screen.scss */
+.gallery.fullscreen .left-gallery-image-button:after {
+  content: "<";
+}
+/* line 771, ../scss/sass/screen.scss */
+.gallery.fullscreen .right-gallery-image-button {
+  right: 20px;
+}
+/* line 773, ../scss/sass/screen.scss */
+.gallery.fullscreen .right-gallery-image-button:after {
+  content: ">";
+}
+/* line 778, ../scss/sass/screen.scss */
 .gallery.fullscreen .gallery-item {
-  width: 100px;
-  height: 50px;
+  width: 70px;
+  height: 37px;
   z-index: 1003;
   position: relative;
   float: none;
 }
-/* line 730, ../scss/sass/screen.scss */
+/* line 785, ../scss/sass/screen.scss */
 .gallery.fullscreen .full-image {
   position: absolute;
   display: block;
@@ -1015,7 +1082,7 @@ a {
   border-top: 180px solid transparent;
   top: 0;
 }
-/* line 737, ../scss/sass/screen.scss */
+/* line 792, ../scss/sass/screen.scss */
 .gallery.fullscreen .full-image .gallery-item {
   position: absolute;
   top: 0;
@@ -1025,7 +1092,7 @@ a {
   margin: 0;
   border: 0;
 }
-/* line 745, ../scss/sass/screen.scss */
+/* line 800, ../scss/sass/screen.scss */
 .gallery.fullscreen .full-image .gallery-item .gallery-icon {
   position: absolute;
   top: 0;
@@ -1033,11 +1100,11 @@ a {
   width: 100%;
   height: 100%;
 }
-/* line 751, ../scss/sass/screen.scss */
+/* line 806, ../scss/sass/screen.scss */
 .gallery.fullscreen .full-image .gallery-item .gallery-icon img {
   max-height: 100%;
 }
-/* line 759, ../scss/sass/screen.scss */
+/* line 814, ../scss/sass/screen.scss */
 .gallery .gallery-item {
   width: 13%;
   height: 50px;
@@ -1046,33 +1113,33 @@ a {
   margin: 6px;
   overflow: hidden;
 }
-/* line 766, ../scss/sass/screen.scss */
+/* line 821, ../scss/sass/screen.scss */
 .gallery .gallery-item .gallery-icon {
   border: 0;
   padding: 0;
   margin: 0;
 }
-/* line 770, ../scss/sass/screen.scss */
+/* line 825, ../scss/sass/screen.scss */
 .gallery .gallery-item .gallery-icon img {
   padding: 0;
   margin: 0;
   max-width: 100%;
   border: 0;
 }
-/* line 779, ../scss/sass/screen.scss */
+/* line 834, ../scss/sass/screen.scss */
 .gallery .gallery-item .wp-caption-text {
   display: none;
 }
-/* line 783, ../scss/sass/screen.scss */
+/* line 838, ../scss/sass/screen.scss */
 .gallery .gallery-item.selected {
   border: 2px solid #e31515;
   margin: 4px;
 }
-/* line 788, ../scss/sass/screen.scss */
+/* line 843, ../scss/sass/screen.scss */
 .gallery .full-image {
   display: none;
 }
-/* line 790, ../scss/sass/screen.scss */
+/* line 845, ../scss/sass/screen.scss */
 .gallery .full-image .wp-caption-text {
   position: absolute;
   width: 100%;
@@ -1085,7 +1152,7 @@ a {
   text-align: left;
 }
 
-/* line 804, ../scss/sass/screen.scss */
+/* line 859, ../scss/sass/screen.scss */
 .follow {
   text-align: center;
   margin-top: 53px;
@@ -1098,17 +1165,17 @@ a {
   vertical-align: middle;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* line 814, ../scss/sass/screen.scss */
+/* line 869, ../scss/sass/screen.scss */
 .follow .red {
   color: #e31515;
 }
-/* line 817, ../scss/sass/screen.scss */
+/* line 872, ../scss/sass/screen.scss */
 .follow .fb-like {
   padding-left: 10px;
   display: inline-block;
 }
 
-/* line 824, ../scss/sass/screen.scss */
+/* line 879, ../scss/sass/screen.scss */
 .fullscreen-overlay {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.8);
@@ -1119,7 +1186,7 @@ a {
   top: 0;
   left: 0;
 }
-/* line 834, ../scss/sass/screen.scss */
+/* line 889, ../scss/sass/screen.scss */
 .fullscreen-overlay.active {
   display: block;
 }

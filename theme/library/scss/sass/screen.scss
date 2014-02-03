@@ -494,6 +494,12 @@ a {
     }
   }
 }
+.article.fb-like {
+  position: absolute;
+  top: 350px;
+  margin-left: 10px;
+  z-index: 4000;
+}
 .main-article {
   padding: 10px 0 100px 0;
   position: relative;
@@ -519,12 +525,6 @@ a {
     text-align: center;
     font-family: $regularFont;
     color: $red;
-  }
-
-  .fb-like {
-    position: absolute;
-    top: 350px;
-    margin-left: 10px;
   }
   .wp-caption {
     max-width: 400px;
@@ -651,10 +651,6 @@ a {
   border-top: 1px solid rgba(255,255,255,0.1);
   text-align: center;
 
-  .close-gallery-button {
-    display: none;
-  }
-
   &.fullscreen {
     position: fixed;
     width: 100%;
@@ -705,8 +701,6 @@ a {
 
       &:hover {
         &:after {
-          color: black;
-          @include transition(all 300ms ease);  
         }
         &:before {
           content: "";
@@ -714,15 +708,76 @@ a {
           left: 10%;
           width: 80%;
           height: 80%;
-          background-color: rgba(255,255,255,0.5);
+          background-color: $red;
           @include transition(all 300ms ease);
         }
       }
     }
+    .left-gallery-image-button,
+    .right-gallery-image-button {
+      display: block;
+      position: absolute;
+      font-family: $thinFont;
+      width: 80px;
+      height: 80px;
+      font-size: 28px;
+      top: 50%;
+      margin-top: -40px;
+      z-index: 1006;
+      border: 1px solid white;
+      background: transparent;
+      cursor:pointer;
+      padding: 10px;
+      overflow:hidden;
+      @include transition(all 300ms ease);
+      color: white;
+      &:before {
+        content: "";
+        position: absolute;
+        background-color: black;
+        width: 0%;
+        height: 0%;
+        left: 50%;
+        top: 50%;
+        @include transition(all 300ms ease);
+      }
+      &:hover {
+        &:before {
+          content: "";
+          top: 10%;
+          left: 10%;
+          width: 80%;
+          height: 80%;
+          background-color: $red;
+          @include transition(all 300ms ease);
+        }
+      }
+      &:after {
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        margin-left: -6px;
+        z-index: 1007;
+      }
+    }
+
+    .left-gallery-image-button {
+      left: 20px;
+      &:after {
+        content: "<";
+      }
+    }
+
+    .right-gallery-image-button {
+      right: 20px;
+      &:after {
+        content: ">";
+      }
+    }
 
     .gallery-item {
-      width: 100px;
-      height: 50px;
+      width: 70px;
+      height: 37px;
       z-index: 1003;
       position: relative;
       float: none;
