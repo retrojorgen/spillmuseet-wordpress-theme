@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1008px" height="144.918px" viewBox="0 0 1008 144.918" enable-background="new 0 0 1008 144.918" xml:space="preserve">
+	 width="158px" height="144.918px" viewBox="0 0 158 144.918" enable-background="new 0 0 158 144.918" xml:space="preserve">
 <g id="Layer_4">
 </g>
 <rect x="1494.572" y="296.479" width="214.833" height="65.666"/>
@@ -241,29 +241,8 @@
 <text transform="matrix(1 0 0 1 85.1455 385.7861)" fill="#FFFFFF" font-family="'RedOctober'" font-size="128.3483">  </text>
 <text transform="matrix(1 0 0 1 85.1455 385.7861)" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" font-family="'RedOctober'" font-size="128.3483">  </text>
 <g>
-	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M421.307,123.915V21.236h50.312l9.37,11.425l8.599-11.294h49.672
-		v102.55h-22.847V46.138h-18.097l-6.289,6.675v71.104h-22.975V52.812l-6.545-6.675h-18.227v77.779L421.307,123.915L421.307,123.915z
-		"/>
-	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M573.014,123.915h-22.975V21.236h22.975v77.65l34.013-10.396
-		V21.234H630v102.681h-22.974v-10.396L573.014,123.915z"/>
-	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M724.077,123.915h-81.886v-22.848h59.168V83.613h-59.168V21.234
-		h81.886v22.977h-58.912v16.812h58.912V123.915L724.077,123.915z"/>
-	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M734.729,123.915V21.365h85.991l-10.651,63.917h-52.366v15.785
-		h57.5v22.848H734.729z M757.703,62.308h32.087l2.952-17.969h-35.039V62.308z"/>
-	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M828.037,123.915V21.365h85.993l-10.653,63.917h-52.366v15.785
-		h57.5v22.848H828.037z M851.011,62.308h32.087l2.952-17.969h-35.039V62.308z"/>
-	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M1003.873,44.211h-28.236v79.704h-25.799V44.211h-28.106V21.234
-		h82.143L1003.873,44.211L1003.873,44.211z"/>
-</g>
-<g>
-	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M106.131,123.786H24.245v-22.847h59.168V83.484H24.245V21.108
-		h81.886v22.975H47.219v16.813h58.912V123.786L106.131,123.786z"/>
-	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M198.797,91.314h-59.041v32.472h-22.974V21.107h82.015V91.314z
-		 M175.822,44.082h-36.064V68.34h36.064V44.082z"/>
-	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M207.78,123.915V21.236h22.977v102.679H207.78L207.78,123.915z"/>
-	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M319.058,86.309v37.606h-74.312V21.236h22.974v79.704h28.494
-		V86.309H319.058z"/>
-	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M403.511,86.309v37.606h-74.313V21.236h22.976v79.704h28.494
-		V86.309H403.511z"/>
+	<rect x="17" y="27.918" fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" width="116" height="10.5"/>
+	<rect x="17" y="58.918" fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" width="116" height="13.541"/>
+	<rect x="17" y="95.786" fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" width="116" height="10.5"/>
 </g>
 </svg>

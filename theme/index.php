@@ -12,19 +12,12 @@
 							</a>
 
 							<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-							<p class="byline vcard"><?php
-								printf( __( 'Publisert <time class="updated" datetime="%1$s" pubdate>%2$s</time> av <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), bones_get_the_author_posts_link());
-							?></p>
 
 						</header>
 
 						<section class="entry-content clearfix">
-							<?php the_content(); ?>
+							<?php the_excerpt(); ?><p><a href="<?php the_permalink() ?>">Les mer..</a>
 						</section>
-
-						<footer class="article-footer">
-							<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '' ); ?></p>
-						</footer>
 
 						<?php // comments_template(); // uncomment if you want to use them ?>
 

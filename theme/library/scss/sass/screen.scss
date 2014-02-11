@@ -10,7 +10,9 @@
 
 
 $otherThanPhone: "only screen and (min-width : 602px)";
-$otherThanPhoneAndIpad: "only screen and (min-width : 1025px)";
+$ipadPortrait: "only screen and (min-width : 603px) and (orientation: portrait)";
+$ipadLandscape: "only screen and (min-width : 603px) and (orientation: landscape)";
+$desktop: "only screen and (min-width : 1025px)";
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto:100,400,400italic);
@@ -51,7 +53,7 @@ $red : #E31515;
 
 @include keying(jumping) {
   0% {
-    left: -5%;
+    left: 0;
     top: 80px;
   }
   30%,90% {
@@ -62,7 +64,7 @@ $red : #E31515;
   }
   100% {
     top: 100px;
-    left: 110%;
+    left: 100%;
   }
 }
 
@@ -80,7 +82,7 @@ body {
   font-style: normal;
 }
 
-div, li, ul, span, img,h1,h2,h3 {
+div, li, ul, span, img,h1,h2,h3,p,a {
   @include box-sizing(border-box);
 }
 
@@ -89,68 +91,72 @@ a {
 }
 
 .main-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: {
-    image: url(../img/top-header.jpg);
-    position: center top;
-    attachment: fixed;
-  }
-  height: 190px;
-  overflow: hidden;
-  @media #{$otherThanPhoneAndIpad} {
-    @include transition(background-position 200ms linear);
-  }
-
-  &.tiny {
+  display: none;
+  @media #{$otherThanPhone} {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: {
-      position: auto -50px;
+      image: url(../img/top-header.jpg);
+      position: center top;
+      attachment: fixed;
     }
-    @media #{$otherThanPhoneAndIpad} {
+    height: 190px;
+    overflow: hidden;
+    @media #{$desktop} {
       @include transition(background-position 200ms linear);
     }
-  }
 
-  .link-sprite-container {
-    position: fixed;
-    top: 10px;
-    width: 50px;
-    height: 50px;
-    
-    @include animation(jumping 10s infinite linear);
-    @media #{$otherThanPhoneAndIpad} {
-      @include animation(jumping 15s infinite linear);  
-    }
-    .link-sprite {
-      width: 50px;
-      height: 50px;
-      background: url(../img/link-sprite.png);
-      @include animation(playing 0.2s infinite steps(6));
-      @media #{$otherThanPhoneAndIpad} {
-        @include animation(playing 0.5s infinite steps(6));
+    &.tiny {
+      background: {
+        position: auto -50px;
+      }
+      @media #{$desktop} {
+        @include transition(background-position 200ms linear);
       }
     }
-  }
 
-  .logo-image {
-    width: 200px;
-    height: 163px;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    margin-left: -100px;
-    z-index: 300;
-    @include box-sizing(border-box);
-    @include box-shadow(rgba(0,0,0,0.3) 0 0 30px 2px);
+    .link-sprite-container {
+      position: absolute;
+      top: 10px;
+      width: 50px;
+      height: 50px;
+      
+      @include animation(jumping 10s infinite linear);
+      @media #{$desktop} {
+        @include animation(jumping 15s infinite linear);  
+      }
+      .link-sprite {
+        width: 50px;
+        height: 50px;
+        background: url(../img/link-sprite.png);
+        @include animation(playing 0.2s infinite steps(6));
+        @media #{$desktop} {
+          @include animation(playing 0.5s infinite steps(6));
+        }
+      }
+    }
 
-    background: {
-      image: url(../img/spillmuseet_bart_inverse_new.svg);
-      size: 200px auto;
-      repeat: no-repeat;
-      background-position: 0 0;
-      @include transition(background-position 200ms linear, height 200ms linear);
+    .logo-image {
+      width: 200px;
+      height: 163px;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      margin-left: -100px;
+      z-index: 300;
+      @include box-sizing(border-box);
+      @include box-shadow(rgba(0,0,0,0.3) 0 0 30px 2px);
+
+      background: {
+        image: url(../img/spillmuseet_bart_inverse_new.svg);
+        size: 200px auto;
+        repeat: no-repeat;
+        background-position: 0 0;
+        @include transition(background-position 200ms linear, height 200ms linear);
+      }
     }
   }
 }
@@ -159,17 +165,32 @@ a {
   position: relative;
   z-index: 1000;
   background-color: rgba(0,0,0,1);
+  overflow-x: hidden;
+
+  @media #{$otherThanPhone} {
+      margin: 190px 0 0 0;
+    }
 
   .articles {
     position: relative;
     z-index: 1002;
     border: 1px solid rgba(255,255,255,0.1);
+    
+    background-color: rgba(0,0,0,1);
 
     @media #{$otherThanPhone} {
+      margin: 0 auto 0 auto;  
+    }
+    @media #{$ipadPortrait} {
+
+    }
+    @media #{$ipadLandscape} {
       width: 980px;
     }
-    margin: 190px auto 0 auto;
-    background-color: rgba(0,0,0,1);
+    @media #{$desktop} {
+      width: 980px;
+    }
+
 
     .archive-title {
       position: absolute;
@@ -191,121 +212,181 @@ a {
       }
     }
 
-    .main-navigation {
-      position: absolute;
-      width: 980px;
-      left: 50%;
-      margin-left: -490px;
-      padding: 0;
-      height: 46px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      text-align: center;
+    .mobile-topbar {
+      background-color: $red;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 50001;
+      width: 100%;
 
-      @include box-sizing(border-box);
-
-      .tiny-logo {
-        position: absolute;
-        left: 0;
-        top: -1px;
+      @media #{$otherThanPhone} {
         display: none;
-        background: {
-          image: url(../img/spillmuseet-horizontal.svg);
-          size: 178px 58px;
-          position:  0 0;
-          repeat: no-repeat;
-        }
-        width: 50px;
-        height: 46px;
-        @media #{$otherThanPhoneAndIpad} {
-          @include transition(background-position 100ms linear);
-        }
       }
 
-      &.tiny {
-        position: fixed;
-        left:0;
-        width: 100%;
-        top: 0;
-        margin-top: -46px;
-        margin-left: 0;
-        z-index: 500;
-        height: 46px;
-        background-color: rgba(0,0,0,1);
+      .mobile-menu-toggle {
+        display: inline-block;
+        height: 30px;
+        width: 40px;
+        background-image: url(../img/menu-button.svg);
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
 
-        
-        .tiny-logo {
-          @media #{$otherThanPhoneAndIpad} {
-            @include transition(background-position 100ms linear);
-          }
-          
-        }
-        ul {
-          @media #{$otherThanPhoneAndIpad} {
-            @include transition(margin-left 100ms linear);
-          }
-        }
+      .logo {
+        display: inline-block;
+        position: absolute;
+        width: 213px;
+        left: 50%;
+        margin-left: -106px;
+        height: 30px;
+        background-image: url(../img/spillmuseet-horizontal.svg);
+        background-size: 213px;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .main-navigation {
+      position: fixed;
+      z-index: 5000;
+      background-color: $red;
+      width: 100%;
+      opacity: 0;
+      margin-top: -10px;
+      display: none;
+      @include transition(all 100ms linear);
+
+      &.active {
+        display: block;
+        opacity: 1;
+        margin-top: 0;
+        @include transition(all 100ms linear);
       }
 
       ul {
-        display: inline-block;
+        list-style: none;
         padding: 0;
         margin: 0;
-        list-style: none;
-        @media #{$otherThanPhoneAndIpad} {
-          @include transition(margin-left 100ms linear);
+        li {
+          padding: 10px;
+          margin: 0;
+          display: block;
+          color: white;
+          a {
+            color: white;
+          }
         }
 
-        li {
-          position: relative;
-          display: inline-block;
+      }
 
-          .sub-menu {
-            display: none;
+      @media #{$otherThanPhone} {
+        display: block;
+        opacity: 1;
+        margin-top: 0;
+        background-color: transparent;
+        position: absolute;
+        width: 100%;
+        padding: 0;
+        height: 46px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        text-align: center;
+
+        .mobile-topbar {
+          display: none;
+        }
+
+        &.tiny {
+          position: fixed;
+          left:0;
+          width: 100%;
+          top: 0;
+          margin-top: -46px;
+          margin-left: 0;
+          z-index: 500;
+          height: 46px;
+          background-color: rgba(0,0,0,1);
+
+          
+          .tiny-logo {
+            @media #{$desktop} {
+              @include transition(background-position 100ms linear);
+            }
+            
           }
-
-          &.current-menu-item {
-            a {
-              background-color: $red;
+          ul {
+            @media #{$desktop} {
+              @include transition(margin-left 100ms linear);
             }
           }
+        }
 
-          &:hover {
-            background-color: $red;
+        ul {
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          @media #{$desktop} {
+            @include transition(margin-left 100ms linear);
+          }
+
+          li {
+            position: relative;
+            display: inline-block;
+            padding: 0;
+
             .sub-menu {
-              background-color: red;
-              position: absolute;
-              list-style: none;
-              padding: 0;
-              margin: 0;
-              display: block;
-              z-index: 500;
-              left: 0;
-              top: 46px;
-              li {
-                width: 100%;
+              display: none;
+            }
+
+            &.current-menu-item {
+              a {
+                background-color: $red;
+              }
+            }
+
+            &:hover {
+              background-color: $red;
+              .sub-menu {
+                background-color: red;
+                position: absolute;
+                list-style: none;
+                padding: 0;
+                margin: 0;
                 display: block;
-                a {
+                z-index: 500;
+                left: 0;
+                top: 46px;
+                li {
+                  width: 100%;
+                  display: block;
+                  text-align: left;
+                  a {
+                  }
                 }
               }
             }
-          }
-
-          &:hover {
-             
-          }
-
-          a {
-            color: white;
-            font-family: $regularFont;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 400;
-            text-transform: uppercase;
-            padding: 13px 15px 9px 15px;
-            display: block;
 
             &:hover {
-              background-color: rgba(0,0,0,0.2);
+               
+            }
+
+            a {
+              color: white;
+              font-family: $regularFont;
+              text-decoration: none;
+              font-size: 18px;
+              font-weight: 400;
+              text-transform: uppercase;
+              padding: 13px 15px 9px 15px;
+              display: block;
+
+              &:hover {
+                background-color: rgba(0,0,0,0.2);
+              }
             }
           }
         }
@@ -314,28 +395,81 @@ a {
 
     .articles-list {
       list-style: none;
-      padding: 50px 0 0 0;
+      padding: 10px 0 0 0;
+      @media #{$otherThanPhone} {
+        padding: 50px 0 0 0;
+      }
       margin: 0;
 
       .article-container {
         @include box-sizing(border-box);
-        padding: 10px;
         vertical-align: top;
 
         @media #{$otherThanPhone} {
+          padding: 10px;
           width: 50%;
           display: inline-block;
         }
 
+        &:nth-child(2),
         &:nth-child(3),
-        &:nth-child(4),
-        &:nth-child(5) {
-          width: 33.3%;
+        &:nth-child(5),
+        &:nth-child(6),
+        &:nth-child(8),
+        &:nth-child(9) {
+          width: 50%;
+          display: inline-block;
           .article {
             .main-image-container {
-              height: 160px;
+              height: 80px;
               img {
                 max-width: 100%;
+              }
+            }
+          }
+        }
+
+        &:nth-child(2),
+        &:nth-child(5),
+        &:nth-child(8) {
+          padding-right: 5px;
+        }
+
+        @media #{$otherThanPhone} {
+
+          &:nth-child(2),
+          &:nth-child(5),
+          &:nth-child(8) {
+            padding: 10px;
+          }
+
+          &:nth-child(2),
+          &:nth-child(6),
+          &:nth-child(9) {
+            width: 50%;
+            .article {
+              .main-image-container {
+                height: 250px;
+                img {
+                  max-width: 100%;
+                }
+              }
+            }
+          }
+
+          &:nth-child(3),
+          &:nth-child(4),
+          &:nth-child(5),
+          &:nth-child(8),
+          &:nth-child(9),
+          &:nth-child(10) {
+            width: 33.3%;
+            .article {
+              .main-image-container {
+                height: 160px;
+                img {
+                  max-width: 100%;
+                }
               }
             }
           }
@@ -355,8 +489,12 @@ a {
           h1 {
             color: rgba(255,255,255,0.8);
             padding: 0 20px 0 20px;
-            font-size: 20px;
+            font-size: 15px;
             margin-bottom: 0;
+
+            @media #{$otherThanPhone} {
+              font-size: 20px;
+            }
 
             a {
               color: white;
@@ -367,21 +505,32 @@ a {
           }
           h2 {
             font-family: $thinFont;
-            font-size: 16px;
+            font-size: 12px;
             color: rgba(255,255,255,0.6);
             padding: 0 20px 0 20px;
             margin-top: 10px;
             font-weight: normal;
+
+            @media #{$otherThanPhone} {
+              font-size: 16px;
+            }
           }
 
           p {
             font-family: $thinFont;
-            font-size: 16px;
+            font-size: 12px;
             color: rgba(255,255,255,0.6);
             padding: 0 20px 0 20px;
             margin-top: 10px;
             a {
-              font-size: 14px;
+              font-size: 10px;
+            }
+
+            @media #{$otherThanPhone} {
+              font-size: 16px;
+              a {
+                font-size: 14px;
+              }
             }
           }
 
@@ -393,17 +542,24 @@ a {
           }
 
           .category {
-            position: absolute;
-            top: 0;
-            font-family: $thinFont;
-            font-size: 14px;
-            z-index: 100;
-            padding: 5px 10px 5px 10px;
-            text-transform: uppercase;
-            color: white;
-            margin-top: -18px;
-            margin-left: 8px;
-            background-color: #E31515;
+            display: none;
+
+            @media #{$otherThanPhone} {
+              position: absolute;
+              top: 0;
+              font-family: $thinFont;
+              font-size: 10px;
+              z-index: 100;
+              padding: 5px 10px 5px 10px;
+              text-transform: uppercase;
+              color: white;
+              margin-top: -8px;
+              
+              background-color: #E31515;
+              font-size: 14px;
+              margin-left: 8px;
+              margin-top: -18px;
+            }
 
             ul {
               padding: 0;
@@ -457,7 +613,7 @@ a {
           }
 
           .main-image-container {
-            height: 200px;
+            height: 250px;
             position: relative;
             overflow: hidden;
             @include box-sizing(border-box);
@@ -475,12 +631,16 @@ a {
               left: 0;
               width: 100%;
               height: 100%;
-              @include box-shadow(rgba(0,0,0,0.6) 0 0 60px 20px inset);
-              @media #{$otherThanPhoneAndIpad} {
+
+              @media #{$otherThanPhone} {
+                @include box-shadow(rgba(0,0,0,0.6) 0 0 60px 20px inset);
+              }
+
+              @media #{$desktop} {
                 @include transition(box-shadow 200ms linear);
               }
             }
-            @media #{$otherThanPhoneAndIpad} {
+            @media #{$desktop} {
               &:hover {
                 &:after {
                   @include box-shadow(rgba(0,0,0,0.1) 0 0 60px 0px inset);
@@ -510,21 +670,37 @@ a {
     padding: 20px 20px 0px 20px;
     margin: 0;
     font-weight: normal;
-
+    @media #{$otherThanPhone} {
+      font-size: 40px;
+    }
   }
   h2 {
     color: rgba(255,255,255,0.4);
     font-family: $regularFont;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: normal;
     padding: 0 20px 0 20px;
+    @media #{$otherThanPhone} {
+      font-size: 30px;
+    }
   }
 
-  h3 {
-    font-size: 24px;
-    text-align: center;
+  h3,h4 {
+    font-size: 18px;
+    text-align: left;
     font-family: $regularFont;
     color: $red;
+    padding: 0 100px 0 100px;
+    @media #{$otherThanPhone} {
+      font-size: 28px;
+    }
+    
+  }
+  img {
+    &.aligncenter {
+      margin: 0;
+      padding: 0;
+    }
   }
   .wp-caption {
     max-width: 400px;
@@ -548,17 +724,25 @@ a {
     }
     &.alignleft {
       float: left;
-      margin: 10px 10px 10px -1px;
+      margin: 10px 10px 10px 20px;
+      @media #{$otherThanPhone} {
+        margin: 10px 10px 10px 100px;
+      }
+
     }
     &.alignright {
       float: right;
-      margin: 10px -1px 10px 10px;
+      margin: 10px 20px 10px 10px;
+      @media #{$otherThanPhone} {
+        margin: 10px 100px 10px 10px;
+      }
     }
     &.aligncenter,
     &.alignnone {
-      margin: 10px auto;
+      margin: 0 auto;
       text-align: center;
       max-width: 100%;
+      padding: 0;
     }
     &.alignnone {
       text-align: left;
@@ -591,14 +775,21 @@ a {
 
   img {
     max-width: 100%;
-    padding: 5px;
+    padding: 0;
     border: 1px solid rgba(255,255,255,0.4);
-    margin: 10px;
+    margin: 0;
+  }
+
+  p:first-of-type {
+    padding-top: 10px;
+    @media #{$otherThanPhone} {
+      padding-top: 40px;
+    }
   }
 
   p {
-    padding: 0 100px 20px 100px;
-    font-size: 18px;
+    padding: 0 20px 20px 20px;
+    font-size: 16px;
     color: rgba(255,255,255,0.6);
     font-weight: normal;
     font-family: $thinFont;
@@ -607,16 +798,27 @@ a {
       font-size: 14px;
       padding: 0 20px 20px 20px;
     }
+    @media #{$otherThanPhone} {
+      padding: 0 100px 20px 100px;
+      font-size: 18px;
+    }
   }
 
   ol,
   ul {
-    padding: 0 100px 20px 100px;
     color: rgba(255,255,255,0.6);
+    padding: 0 20px 20px 20px;
+    @media #{$otherThanPhone} {
+      padding: 0 100px 20px 100px;
+    }
+    
   }
 
   blockquote {
-    padding: 0 100px 20px 100px;
+    padding: 0 20px 20px 20px;
+    @media #{$otherThanPhone} {
+      padding: 0 100px 20px 100px;
+    }
     p {
       padding: 0;
       max-width: 50%;
@@ -858,7 +1060,6 @@ a {
 
 .follow {
   text-align: center;
-  margin-top: 53px;
   font-size: 20px;
   text-transform: uppercase;
   padding: 10px;
@@ -866,6 +1067,10 @@ a {
   width: 100%;
   font-style: italic;
   vertical-align: middle;
+  @media #{$otherThanPhone} {
+    margin-top: 53px;
+  }
+
   .red {
     color: $red;
   }
@@ -874,6 +1079,23 @@ a {
     display: inline-block;
   }
   border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.page-numbers {
+  padding: 0 30px 0 30px;
+  li {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    a,span {
+      padding: 10px;
+      display: inline-block;
+    }
+    a {
+      background: $red;
+      color: white;
+    }
+  }
 }
 
 .fullscreen-overlay {

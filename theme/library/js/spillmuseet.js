@@ -1,4 +1,16 @@
+
+
 (function($) {
+
+  console.log('fjert');
+
+  
+
+
+  $('.mobile-menu-toggle').on('touchstart', function () {
+    event.stopPropagation();
+    $('.main-navigation').toggleClass('active');
+  });
   var headerToggle = false;
 
   var headerAdjust = function (event) {
