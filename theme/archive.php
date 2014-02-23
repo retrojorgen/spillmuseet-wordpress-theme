@@ -52,7 +52,7 @@
 										</header>
 
 										<section class="entry-content clearfix">
-											<?php the_content(); ?>
+											<?php the_excerpt(); ?><p><a href="<?php the_permalink() ?>">Les mer..</a>
 										</section>
 
 										<footer class="article-footer">
@@ -91,10 +91,7 @@
 									</article>
 
 							<?php endif; ?>
-
-
-				</div>
-
-			</div>
+							</section>
+					<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

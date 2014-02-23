@@ -213,6 +213,7 @@ function bones_theme_support() {
 			'footer-links' => __( 'Footer Links', 'bonestheme' ) // secondary nav in footer
 		)
 	);
+	add_theme_support('html5', array('search-form'));
 } /* end bones theme support */
 
 

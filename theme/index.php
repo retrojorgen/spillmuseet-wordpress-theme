@@ -7,7 +7,8 @@
 						<header class="article-header">
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 								<div class="main-image-container">
-						 			<?php echo get_the_post_thumbnail( $post_id, 'medium', $attr ); ?> 
+						 			<?php echo get_the_post_thumbnail( $post_id, 'medium', $attr ); ?>
+						 			 
 								</div>
 							</a>
 
@@ -48,10 +49,8 @@
 			<?php endif; ?>
 			
 		</ul>
-			<?php get_footer(); ?>
-				<?php //get_sidebar(); ?>
-				
-	</div>
-</div>
+	</section>
+		<?php get_sidebar(); ?>
+		<?php get_footer(); ?>
 
 

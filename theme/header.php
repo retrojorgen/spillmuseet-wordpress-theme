@@ -16,7 +16,7 @@
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
@@ -49,25 +49,33 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 
+<div class="mobile-topbar">
+		<button class="mobile-menu-toggle"></button>
+		<div class="logo"></div>
+</div>
+<div class="articles-container">
+
     <header class="main-header" role="banner">
     <a href="<?php echo home_url(); ?>">
       <div class="logo-image"></div>
+    </a>
+	<a href="http://www.spillmuseet.no/retrospillmessen/">
+      <div class="logo-retrospillmessen"></div>
     </a>
       <div class="link-sprite-container">
         <div class="link-sprite"></div>
       </div>
     </header>
-
-<div class="articles-container">
-	<section class="articles">
-		<div class="mobile-topbar">
-			<button class="mobile-menu-toggle"></button>
-			<div class="logo"></div>
-		</div>
-		<nav class="main-navigation" role="navigation">
-			<?php bones_main_nav(); ?>
-		</nav>
+	<nav class="main-navigation" role="navigation">
+		<?php bones_main_nav(); ?>
 		<div class="follow">
-			Få med deg alt <span class="red">Følg oss</span>
+			<span class="follow-text">Følg oss</span>
 			<div class="fb-like" data-href="https://www.facebook.com/Spillmuseet" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 		</div>
+		<?php get_search_form(); ?>
+	</nav>
+	
+	
+	<section class="articles">
+		
+

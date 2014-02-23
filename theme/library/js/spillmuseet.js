@@ -2,11 +2,6 @@
 
 (function($) {
 
-  console.log('fjert');
-
-  
-
-
   $('.mobile-menu-toggle').on('touchstart', function () {
     event.stopPropagation();
     $('.main-navigation').toggleClass('active');
@@ -15,12 +10,8 @@
 
   var headerAdjust = function (event) {
 
-      $('.main-header').css({
-        'background-position-y': window.scrollY * -0.5 + 'px',
 
-      });
-
-      if(!headerToggle && window.scrollY >= 255) {
+      if(!headerToggle && window.scrollY >= 120) {
         $('.main-navigation')
         .addClass('tiny')
         .animate({
@@ -30,7 +21,7 @@
         headerToggle = true;
 
       }
-      if(headerToggle && window.scrollY < 255) {
+      if(headerToggle && window.scrollY < 120) {
         $('.main-navigation')
         .removeClass('tiny')
         .css('margin-top', 'auto');
@@ -40,12 +31,12 @@
 
     adjustMenu = function (event) {
 
-      if(!headerToggle && window.scrollY >= 255) {
+      if(!headerToggle && window.scrollY >= 120) {
         $('.main-navigation')
         .addClass('tiny');
         headerToggle = true;
       }
-      if(headerToggle && window.scrollY < 255) {
+      if(headerToggle && window.scrollY < 120) {
         $('.main-navigation').removeClass('tiny');
         headerToggle = false;
       }

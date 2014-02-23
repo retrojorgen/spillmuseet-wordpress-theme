@@ -1,37 +1,31 @@
 <?php get_header(); ?>
 
-			<div id="content">
+			<ul class="articles-list search-list" role="main">
+						<h1 class="archive-title"><span><?php _e( 'Søkeresultater for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
-				<div id="inner-content" class="wrap clearfix">
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?><li class="article-container">
+					<article id="post-<?php the_ID(); ?>" <?php post_class( 'article' ); ?> role="article">
+			            <div class="category"><?php echo get_the_category_list($post_id, ', '); ?></div>
+						<header class="article-header">
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+								<div class="main-image-container">
+						 			<?php echo get_the_post_thumbnail( $post_id, 'medium', $attr ); ?>
+						 			 
+								</div>
+							</a>
 
-					<div id="main" class="eightcol first clearfix" role="main">
-						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+							<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						</header>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+						<section class="entry-content clearfix">
+							<?php the_excerpt(); ?><p><a href="<?php the_permalink() ?>">Les mer..</a>
+						</section>
 
-								<header class="article-header">
+						<?php // comments_template(); // uncomment if you want to use them ?>
 
-									<h3 class="search-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link(), get_the_category_list(', ') );
-									?></p>
-
-								</header>
-
-								<section class="entry-content">
-										<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'bonestheme' ) . '</span>' ); ?>
-
-								</section>
-
-								<footer class="article-footer">
-
-								</footer>
-
-							</article>
-
-						<?php endwhile; ?>
+					</article>
+				</li><?php endwhile; ?>
 
 								<?php if (function_exists('bones_page_navi')) { ?>
 										<?php bones_page_navi(); ?>
@@ -48,24 +42,22 @@
 
 									<article id="post-not-found" class="hentry clearfix">
 										<header class="article-header">
-											<h1><?php _e( 'Sorry, No Results.', 'bonestheme' ); ?></h1>
+											<h1><?php _e( 'Beklager.. ingen resultater.', 'bonestheme' ); ?></h1>
 										</header>
 										<section class="entry-content">
-											<p><?php _e( 'Try your search again.', 'bonestheme' ); ?></p>
+											<p><?php _e( 'Prøv å søke igjen.', 'bonestheme' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the search.php template.', 'bonestheme' ); ?></p>
+												<p><?php _e( '', 'bonestheme' ); ?></p>
 										</footer>
 									</article>
 
 							<?php endif; ?>
 
-						</div>
+			</ul>
+		</section>
+		<?php get_sidebar(); ?>
+		<?php get_footer(); ?>
+	</div>
 
-							<?php get_sidebar(); ?>
 
-					</div>
-
-			</div>
-
-<?php get_footer(); ?>
