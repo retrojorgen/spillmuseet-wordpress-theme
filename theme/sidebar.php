@@ -22,8 +22,11 @@
 						  'post_type' => 'post',
 						  'post_status' => 'publish',
 						  'posts_per_page' => 10, // how much post you want to display
-						  'ignore_sticky_posts'=> 1
+						  'ignore_sticky_posts'=> 1,
+						  'year' => date('Y'),
+						  'w' => date('W')
 						);
+
 						$my_query = null;
 						$my_query = new WP_Query($args);
 						if( $my_query->have_posts() ) { ?>

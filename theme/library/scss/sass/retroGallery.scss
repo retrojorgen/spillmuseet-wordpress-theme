@@ -1,0 +1,248 @@
+@import "compass";
+@import "animation";
+@import "_base";
+
+
+$otherThanPhone: "only screen and (min-width : 602px)";
+$ipadPortrait: "only screen and (min-width : 815px)";
+$ipadLandscape: "only screen and (min-width : 1000px)";
+$desktop: "only screen and (min-width : 1025px)";
+$megaDesktop: "only screen and (min-width : 1312px)";
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,400italic);
+
+
+
+$regularFont : 'Roboto Slab';
+$thinFont : 'Roboto';
+$red : #E31515;
+
+.gallery {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: left;
+  margin: 0 100px 0 100px;
+  padding: 10px;
+  display: block;
+  margin-bottom: 20px;
+  position: relative;
+  @include box-sizing(border-box);
+
+  &.fullscreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    margin: 0;
+    padding: 0;
+
+    .gallery-image-counter {
+      display: inline-block;
+      position: absolute;
+      bottom: 10px;
+      width: 50%;
+      left: 25%;
+      text-align: center;
+      color: white;
+      font-size: 40px;
+    }
+
+    .close-gallery-button {
+      display: block;
+      position: absolute;
+      font-family: $thinFont;
+      right: 20px;
+      bottom: 20px;
+      width: 80px;
+      height: 80px;
+
+      border-radius: 50%;
+      z-index: 1006;
+      border: 1px solid white;
+      background: transparent;
+      cursor:pointer;
+      padding: 10px;
+      overflow:hidden;
+      @include transition(all 300ms ease);
+
+      &:before {
+        content: "";
+        position: absolute;
+        background-color: black;
+        width: 0%;
+        height: 0%;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        @include transition(all 300ms ease);
+      }
+      &:after {
+        content: "x";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        color: white;
+        font-size: 32px;
+        margin-top: -25px;
+        margin-left: -10px;
+        @include transition(all 300ms ease);
+      }
+
+      &:hover {
+        &:after {
+        }
+        &:before {
+          content: "";
+          top: 10%;
+          left: 10%;
+          width: 80%;
+          height: 80%;
+          background-color: $red;
+          @include transition(all 300ms ease);
+        }
+      }
+    }
+    .left-gallery-image-button,
+    .right-gallery-image-button {
+      display: block;
+      position: absolute;
+      font-family: $thinFont;
+      width: 80px;
+      height: 80px;
+      font-size: 28px;
+      top: 50%;
+      margin-top: -40px;
+      z-index: 1006;
+      border: 1px solid white;
+      background: transparent;
+      cursor:pointer;
+      padding: 10px;
+      overflow:hidden;
+      @include transition(all 300ms ease);
+      color: white;
+      &:before {
+        content: "";
+        position: absolute;
+        background-color: black;
+        width: 0%;
+        height: 0%;
+        left: 50%;
+        top: 50%;
+        @include transition(all 300ms ease);
+      }
+      &:hover {
+        &:before {
+          content: "";
+          top: 10%;
+          left: 10%;
+          width: 80%;
+          height: 80%;
+          background-color: $red;
+          @include transition(all 300ms ease);
+        }
+      }
+      &:after {
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        margin-left: -6px;
+        z-index: 1007;
+      }
+    }
+
+    .left-gallery-image-button {
+      left: 20px;
+      &:after {
+        content: "<";
+      }
+    }
+
+    .right-gallery-image-button {
+      right: 20px;
+      &:after {
+        content: ">";
+      }
+    }
+
+    .gallery-item {
+      display: none;
+      &.selected {
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        border-top: 52px solid transparent;
+        top: 0;
+        .gallery-icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          img {
+            max-height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .left-gallery-image-button,
+  .right-gallery-image-button,
+  .close-gallery-button {
+    display: none;
+  }
+
+  .open-gallery-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    .label {
+      display: inline-block;
+      z-index: 20000;
+      color: white;
+      padding: 10px;
+      background-color: $red;
+      font-size: 20px;
+    }
+  }
+
+  .gallery-item {
+    width: 20%;
+    height: 50px;
+    padding: 0 10px 10px 0;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    @include box-sizing(border-box);
+
+    .gallery-icon {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      img {
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+        border: 0;
+
+      }      
+    }
+
+    .wp-caption-text {
+        display: none;
+    }
+  }
+  .gallery-image-counter {
+    display: none;
+  }
+}

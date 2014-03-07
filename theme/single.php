@@ -26,7 +26,6 @@
 							<?php comments_template(); ?>
 
 						</article>
-						<div class="fullscreen-overlay"></div>
 					<?php endwhile; ?>
 
 					<?php else : ?>

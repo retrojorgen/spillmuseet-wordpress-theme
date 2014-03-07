@@ -128,7 +128,9 @@ function bones_scripts_and_styles() {
 		// modernizr (without media query polyfill)
 
 		// register main stylesheet
+		wp_register_style( 'retroGallery-stylesheet', get_stylesheet_directory_uri() . '/library/css/retroGallery.css', array(), '', 'all' );
 		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/screen.css', array(), '', 'all' );
+		
 
 
 		// comment reply script for threaded comments
@@ -142,6 +144,7 @@ function bones_scripts_and_styles() {
 		wp_register_script( 'spillmuseet-js', get_stylesheet_directory_uri() . '/library/js/spillmuseet.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
+		wp_enqueue_style( 'retroGallery-stylesheet' );
 		wp_enqueue_style( 'bones-stylesheet' );
 
 		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet

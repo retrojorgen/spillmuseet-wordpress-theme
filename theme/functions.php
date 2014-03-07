@@ -50,6 +50,7 @@ require_once( 'library/custom-post-type.php' ); // you can disable this if you l
 // Thumbnail sizes
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
+add_editor_style();
 
 /*
 to add more sizes, simply copy a line from above

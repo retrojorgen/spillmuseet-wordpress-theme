@@ -1,10 +1,82 @@
-body#tinymce.wp-editor { 
-    font-family: Arial, Helvetica, sans-serif; 
-    margin: 10px; 
-    background-color: black;
-    color: white;
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,400italic);
+
+html .mceContentBody {
 }
 
-body#tinymce.wp-editor a {
-    color: #4CA6CF;
+body {
+	background-color: rgba(0,0,0,1);
+	color: rgba(255,255,255,0.6);
+	-webkit-font-smoothing: antialiased;
+  	font-weight: normal;
+  	font-style: normal;
+  	line-height: 1;
+}
+
+h1,h2,h3,h4 {
+	font-family: "Roboto Slab";
+}
+
+p, .wp-caption {
+	font-family: "Roboto";
+}
+
+
+h1 {
+	color: rgba(255,255,255,0.8);
+	font-size: 40px;
+	margin: 0;
+	font-weight: normal;
+}
+
+h2 {
+	color: rgba(255,255,255,0.4);
+	font-size: 30px;
+	font-weight: normal;
+}
+
+h3,h4 {
+	font-size: 28px;
+	text-align: left;
+	color: red;
+}
+
+img.aligncenter {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  padding: 0 20px 20px 20px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: normal;
+  font-family: "Roboto";
+  line-height: 1.5em;
+}
+
+.wp-caption {
+	max-width: 400px;
+	overflow: hidden;
+	border: 1px solid rgba(255,255,255,0.1);
+	background-color: transparent;
+}
+
+.wp-caption a {
+  width: 100%;
+}
+
+.wp-caption .wp-caption-text {
+  padding: 10px 10px 10px 10px;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1;
+  background-color: transparent;
+}
+
+.wp-caption img {
+  max-width: 100%;
+  min-width: 300px;
+  padding: 0;
+  margin: 0;
 }

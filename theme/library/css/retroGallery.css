@@ -1,0 +1,264 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,400italic);
+/* line 21, ../scss/sass/retroGallery.scss */
+.gallery {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  margin: 0 100px 0 100px;
+  padding: 10px;
+  display: block;
+  margin-bottom: 20px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 31, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  padding: 0;
+}
+/* line 42, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .gallery-image-counter {
+  display: inline-block;
+  position: absolute;
+  bottom: 10px;
+  width: 50%;
+  left: 25%;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+/* line 53, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .close-gallery-button {
+  display: block;
+  position: absolute;
+  font-family: "Roboto";
+  right: 20px;
+  bottom: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  z-index: 1006;
+  border: 1px solid white;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  overflow: hidden;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+/* line 71, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .close-gallery-button:before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 0%;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+/* line 82, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .close-gallery-button:after {
+  content: "x";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: white;
+  font-size: 32px;
+  margin-top: -25px;
+  margin-left: -10px;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+/* line 97, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .close-gallery-button:hover:before {
+  content: "";
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: #e31515;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+/* line 109, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .left-gallery-image-button,
+.gallery.fullscreen .right-gallery-image-button {
+  display: block;
+  position: absolute;
+  font-family: "Roboto";
+  width: 80px;
+  height: 80px;
+  font-size: 28px;
+  top: 50%;
+  margin-top: -40px;
+  z-index: 1006;
+  border: 1px solid white;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  overflow: hidden;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+  color: white;
+}
+/* line 126, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .left-gallery-image-button:before,
+.gallery.fullscreen .right-gallery-image-button:before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 0%;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+/* line 137, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .left-gallery-image-button:hover:before,
+.gallery.fullscreen .right-gallery-image-button:hover:before {
+  content: "";
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: #e31515;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+/* line 147, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .left-gallery-image-button:after,
+.gallery.fullscreen .right-gallery-image-button:after {
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  margin-left: -6px;
+  z-index: 1007;
+}
+/* line 156, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .left-gallery-image-button {
+  left: 20px;
+}
+/* line 158, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .left-gallery-image-button:after {
+  content: "<";
+}
+/* line 163, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .right-gallery-image-button {
+  right: 20px;
+}
+/* line 165, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .right-gallery-image-button:after {
+  content: ">";
+}
+/* line 170, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .gallery-item {
+  display: none;
+}
+/* line 172, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .gallery-item.selected {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-top: 52px solid transparent;
+  top: 0;
+}
+/* line 179, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .gallery-item.selected .gallery-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+/* line 186, ../scss/sass/retroGallery.scss */
+.gallery.fullscreen .gallery-item.selected .gallery-icon img {
+  max-height: 100%;
+}
+/* line 196, ../scss/sass/retroGallery.scss */
+.gallery .left-gallery-image-button,
+.gallery .right-gallery-image-button,
+.gallery .close-gallery-button {
+  display: none;
+}
+/* line 200, ../scss/sass/retroGallery.scss */
+.gallery .open-gallery-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+/* line 209, ../scss/sass/retroGallery.scss */
+.gallery .open-gallery-button .label {
+  display: inline-block;
+  z-index: 20000;
+  color: white;
+  padding: 10px;
+  background-color: #e31515;
+  font-size: 20px;
+}
+/* line 219, ../scss/sass/retroGallery.scss */
+.gallery .gallery-item {
+  width: 20%;
+  height: 50px;
+  padding: 0 10px 10px 0;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 228, ../scss/sass/retroGallery.scss */
+.gallery .gallery-item .gallery-icon {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+/* line 232, ../scss/sass/retroGallery.scss */
+.gallery .gallery-item .gallery-icon img {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  border: 0;
+}
+/* line 241, ../scss/sass/retroGallery.scss */
+.gallery .gallery-item .wp-caption-text {
+  display: none;
+}
+/* line 245, ../scss/sass/retroGallery.scss */
+.gallery .gallery-image-counter {
+  display: none;
+}
