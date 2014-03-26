@@ -1,0 +1,57 @@
+.rad-radio {
+	width: 270px;
+	height: 87px;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	border: 2px solid rgba(255,255,255,0.2);
+	@include border-radius(4px);
+	background-color: rgba(0,0,0,0.4);
+	.rad-player-image {
+		display: none;
+	}
+	margin-top: 20px;
+	cursor: pointer;
+
+	.episode-details {
+		border-left: 96px solid transparent;
+		text-align: left;
+		.title {
+			padding: 10px 10px 0 0;
+			margin: 0;
+			font-size: 17px;
+		}
+		.date {
+			margin: 0;
+			color: $red;
+			font-size: 16px;
+			padding: 0px 10px 10px 0;
+		}
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 130px;
+		height: 100px;
+		background-image: url(../img/play-button.svg);
+		background-repeat: no-repeat;
+		background-size: 130px 100px;
+		z-index: 100;
+		background-position: -17px -10px;
+	}
+	&:before {
+		content: "Nyeste episode!";
+		text-align: center;
+		color: white;
+		width: 40px;
+		@include border-radius(50%);
+		height: 40px;
+		padding: 14px;
+		background-color: $red;
+		right: -20px;
+		top: -10px;
+		position: absolute;
+	}
+}

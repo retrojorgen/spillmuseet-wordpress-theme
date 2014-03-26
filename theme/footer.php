@@ -59,13 +59,14 @@
         <section class="logo footer-section">
           <h4>Samarbeidspartnere</h4>
           <a href="http://www.radcrew.net" target="_blank" class="logo-rad-crew">Rad Crew</a>
+          <a href="http://www.spillexpo.no" target="_blank" class="logo-spillexpo">Spillexpo</a>
+          <a href="http://www.alphageek.no" target="_blank" class="logo-alphageek">Alphageek.no</a>
         </section>
 
 			</footer>
 
 	</div>
 </div>
-
 		<?php // all js scripts are loaded in library/bones.php ?>
 		<?php wp_footer(); ?>
     <script>

@@ -1,5 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto:100,400,400italic);
+@font-face {
+  font-family: "Ubuntu Condensed";
+  src: url('/fonts/UbuntuCondensed-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
 /* line 21, ../scss/sass/retroGallery.scss */
 .gallery {
   border-top: 1px solid rgba(255, 255, 255, 0.1);

@@ -13,3 +13,18 @@
     @content;
   }
 }
+
+$otherThanPhone: "only screen and (min-width : 602px)";
+$ipadPortrait: "only screen and (min-width : 815px)";
+$ipadLandscape: "only screen and (min-width : 1000px)";
+$desktop: "only screen and (min-width : 1025px)";
+$megaDesktop: "only screen and (min-width : 1312px)";
+
+@include font-face("Ubuntu Condensed", font-files("UbuntuCondensed-Regular.ttf"));
+@include font-face("Roboto", font-files("Roboto-Regular.ttf"));
+
+
+
+$regularFont : 'Ubuntu Condensed';
+$thinFont : 'Roboto';
+$red : #E31515;

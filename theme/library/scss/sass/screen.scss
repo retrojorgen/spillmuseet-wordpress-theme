@@ -7,22 +7,8 @@
 @import "compass";
 @import "animation";
 @import "_base";
-
-
-$otherThanPhone: "only screen and (min-width : 602px)";
-$ipadPortrait: "only screen and (min-width : 815px)";
-$ipadLandscape: "only screen and (min-width : 1000px)";
-$desktop: "only screen and (min-width : 1025px)";
-$megaDesktop: "only screen and (min-width : 1312px)";
-
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
-@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,400italic);
-
-
-
-$regularFont : 'Roboto Slab';
-$thinFont : 'Roboto';
-$red : #E31515;
+@import "_video";
+@import "_rad-radio";
 
 @include keying(playing) {
   from {
@@ -151,6 +137,7 @@ a {
       }
       height: 120px;
       overflow: hidden;
+      text-align: center;
       @media #{$desktop} {
       }
 
@@ -194,13 +181,12 @@ a {
         }
       }
       .logo-retrospillmessen {
+        position: relative;
+        display: inline-block;
+        top: 15px;
         width: 220px;
         height: 87px;
-        position: absolute;
-        top: 15px;
-        left: 50%;
-        margin-left: -300px;
-        z-index: 300;
+        vertical-align: middle;
         @include box-sizing(border-box);
 
         background: {
@@ -232,43 +218,34 @@ a {
       opacity: 0;
       margin-top: -10px;
       display: none;
-      max-height: 50px;
-      overflow: hidden;
       @include box-sizing(border-box);
 
-      .follow {
-        display: none;
-        @media #{$ipadPortrait} {
-          display: inline-block;
-          height: 100%;
-          padding: 13px 10px 0 10px;
-          vertical-align:top;
-          color: $red;
-          border-left: 1px solid rgba(255,255,255,0.2);
-          border-right: 1px solid rgba(255,255,255,0.2);
-        }
-        .follow-text {
-          display: none;
-          @media #{$desktop} {
-            display: inline-block;
-          }
-        }
 
-        .fb-like {
-          display: inline-block;
+      .spillmuseet-logo {
+        display: inline-block;
+        width: 170px;
+        height: 29px;
+        margin-top: 1px;
+        vertical-align: middle;
+        cursor: pointer;
+        background: {
+          image: url(../img/spillmuseet-horizontal.svg);
+          size: 160px;
+          repeat: no-repeat;
         }
       }
 
       form[role="search"] {
         
         display: none;
-        position: relative;
-        vertical-align: top;
-        padding: 10px 0 0 5px;
         @media #{$ipadLandscape} {
         }
         @media #{$desktop} {
           display: inline-block;
+          position: relative;
+          vertical-align: top;
+          padding: 10px 0 0 5px;
+          float: right;
         }
 
         .screen-reader-text {
@@ -278,22 +255,24 @@ a {
           width: 1px;
           position: relative;
           display: none;
+
         }
         input[type="text"] {
-          font-size: 13px;
+          font-size: 18px;
           font-family: $regularFont;
           background-color: black;
           border: 1px solid rgba(255,255,255,0.4);
           padding: 5px;
           margin: 0;
           color: white;
+          width: 200px;
         }
         input[type="submit"] {
           margin: 0 0 0 0;
           padding: 0;
-          font-size: 13px;
+          font-size: 18px;
           font-family: $regularFont;
-          padding: 5px 5px 5px 5px;
+          padding: 5px 10px 5px 10px;
           background-color: black;
           border: 1px solid rgba(255,255,255,0.4);
           margin-left: -5px;
@@ -318,15 +297,14 @@ a {
         padding: 0;
         margin: 0 0 0 0;
         li {
-          padding: 10px;
           margin: 0;
           display: block;
           color: white;
           &.menu-item-has-children {
             a {
-              padding-right: 21px;
+              padding-right: 15px;
               @media #{$desktop} {
-                padding-right: 25px;
+                padding-right: 15px;
               }
             }
             &:after {
@@ -334,8 +312,8 @@ a {
               position: absolute;
               width: 8px;
               height: 8px;
-              right: 6px;
-              top: 23px;
+              right: 5px;
+              top: 28px;
               bottom: 16px;
               background: {
                 size: 8px 8px;
@@ -343,7 +321,7 @@ a {
               }
               repeat: no-repeat;
               @media #{$desktop} {
-                right: 10px;
+                right: 5px;
               }
 
             }
@@ -357,7 +335,7 @@ a {
 
       @media #{$otherThanPhone} {
         display: inline-block;
-        text-align: center;
+        text-align: left;
         opacity: 1;
         margin-top: 0;
         
@@ -367,12 +345,12 @@ a {
         top: 120px;
         margin-left: 0;
         z-index: 50000;
-        height: 50px;
+        height: 57px;
         background-color: rgba(0,0,0,1);
         border-bottom: 1px solid rgba(255,255,255,0.1);
 
         @media #{$ipadLandscape} {
-          padding: 0 0 0 10px;
+          padding: 0 14px 0 14px;
         }
 
         @media #{$megaDesktop} {
@@ -423,7 +401,7 @@ a {
                 display: block;
                 z-index: 500;
                 left: 0;
-                top: 49px;
+                top: 56px;
                 li {
                   width: 100%;
                   display: block;
@@ -439,19 +417,27 @@ a {
             }
             
             a {
-              color: white;
+              color: rgba(255,255,255,0.8);
               font-family: $regularFont;
               text-decoration: none;
-              font-size: 14px;
+              font-size: 22px;
               font-weight: 400;
               text-transform: uppercase;
-              padding: 15px 11px 15px 11px;
+              padding: 15px 5px 15px 5px;
               display: block;
 
               @media #{$desktop} {
-                padding: 15px 15px 15px 15px;
+                padding: 15px 5px 15px 5px;
               }
               &:hover {
+              }
+            }
+
+            ul {
+              li {
+                a {
+                  font-size: 14px;
+                }
               }
             }
           }
@@ -473,6 +459,8 @@ a {
       padding: 10px;
 
       .sidebar-section {
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
 
         .sidebar-paragraph {
           font-size: 14px;
@@ -637,7 +625,7 @@ a {
               .main-image-container {
                 height: 250px;
                 img {
-                  max-width: 100%;
+                  max-width: none;
                   margin-left: 0;
                 }
               }
@@ -1098,9 +1086,37 @@ a {
       }
     }
 
-    .spillmuseet-logo {
+    .logo-spillexpo {
       display: inline-block;
       margin: 0 0 0 30px;
+      text-indent: -99999px;
+
+      width: 180px;
+      height: 102px;
+      background: {
+        image: url(../img/spillexpo-logo.png);
+        size: 180px;
+        repeat: no-repeat;
+      }
+    }
+
+    .logo-alphageek {
+      display: inline-block;
+      margin: 20px 0 0 30px;
+      text-indent: -99999px;
+
+      width: 180px;
+      height: 102px;
+      background: {
+        image: url(../img/alphageek-logo.png);
+        size: 180px;
+        repeat: no-repeat;
+      }
+    }
+
+    .spillmuseet-logo {
+      display: inline-block;
+      margin: 0 0 0 14px;
 
       width: 180px;
       height: 28px;

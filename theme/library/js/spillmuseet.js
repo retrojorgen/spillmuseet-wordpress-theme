@@ -59,6 +59,14 @@
       'height': ''
     });
 
+    if($('#videos-wrapper').length) {
+      $('#videos-wrapper').retroVideo();
+    }
+
+    if($('#rad-radio').length) {
+      $('#rad-radio').retroRad();
+    }
+
     $('.wp-caption').attr('style', '');
     var articlesOffset = $('.articles').offset().top;
     var element = $('.main-article h2')[0] || $('.main-article h1')[0];

@@ -11,7 +11,23 @@
 		<?php // Google Chrome Frame for IE ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title><?php wp_title(''); ?></title>
+		<title><?php if ( is_category() ) {
+	echo ''; single_cat_title(); echo '&quot; | '; bloginfo( 'name' );
+} elseif ( is_tag() ) {
+	echo ''; single_tag_title(); echo '&quot; | '; bloginfo( 'name' );
+} elseif ( is_archive() ) {
+	wp_title(''); echo ' Archive | '; bloginfo( 'name' );
+} elseif ( is_search() ) {
+	echo 'Søk etter &quot;'.wp_specialchars($s).'&quot; | '; bloginfo( 'name' );
+} elseif ( is_home() || is_front_page() ) {
+	bloginfo( 'name' ); echo ' | '; bloginfo( 'description' );
+}  elseif ( is_404() ) {
+	echo 'Error 404 Not Found | '; bloginfo( 'name' );
+} elseif ( is_single() ) {
+	wp_title('');
+} else {
+	echo wp_title( ' | ', false, right ); bloginfo( 'name' );
+} ?></title>
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
@@ -56,22 +72,33 @@
 <div class="articles-container">
 
     <header class="main-header" role="banner">
+    <!--
     <a href="<?php echo home_url(); ?>">
       <div class="logo-image"></div>
     </a>
+    -->
 	<a href="http://www.spillmuseet.no/retrospillmessen/">
       <div class="logo-retrospillmessen"></div>
     </a>
+	<div class="rad-radio" id="rad-radio">
+	  <div class="rad-player">
+	    <div class="rad-player-image">
+	      <img src="http://www.radcrew.net/media/powerpress/radlogo.jpg">
+	    </div>
+	  </div>
+	  <div class="episode-details">
+	    <h3 class="title"></h3>
+	    <p class="date"></p>
+	  </div>
+	</div>
+
       <div class="link-sprite-container">
         <div class="link-sprite"></div>
       </div>
     </header>
 	<nav class="main-navigation" role="navigation">
+		<a href="/" class="spillmuseet-logo"></a>
 		<?php bones_main_nav(); ?>
-		<div class="follow">
-			<span class="follow-text">Følg oss</span>
-			<div class="fb-like" data-href="https://www.facebook.com/Spillmuseet" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-		</div>
 		<?php get_search_form(); ?>
 	</nav>
 	
