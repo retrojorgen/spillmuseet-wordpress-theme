@@ -6,11 +6,10 @@
 				while (have_posts() && $counter <= 5) { 
 					the_post(); ?><li class="article-container">
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'article' ); ?> role="article">
-			            <div class="category"><?php echo get_the_category_list($post_id, ', '); ?></div>
 						<header class="article-header">
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 								<div class="main-image-container">
-						 			<?php echo get_the_post_thumbnail( $post_id, 'medium', $attr ); ?>
+						 			<?php echo get_the_post_thumbnail( $post_id, 'large', $attr ); ?>
 						 			 
 								</div>
 							</a>
@@ -18,13 +17,7 @@
 							<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 
 						</header>
-
-						<section class="entry-content clearfix">
-							<?php the_excerpt(); ?><p><a href="<?php the_permalink() ?>">Les mer..</a></p>
-						</section>
-
 						<?php // comments_template(); // uncomment if you want to use them ?>
-
 					</article>
 				</li><?php 
 					$counter++;
@@ -98,7 +91,6 @@
 				while (have_posts()) { 
 					the_post(); ?><li class="article-container">
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'article' ); ?> role="article">
-			            <div class="category"><?php echo get_the_category_list($post_id, ', '); ?></div>
 						<header class="article-header">
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 								<div class="main-image-container">
@@ -110,11 +102,6 @@
 							<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 
 						</header>
-
-						<section class="entry-content clearfix">
-							<?php the_excerpt(); ?><p><a href="<?php the_permalink() ?>">Les mer..</a>
-						</section>
-
 						<?php // comments_template(); // uncomment if you want to use them ?>
 
 					</article>

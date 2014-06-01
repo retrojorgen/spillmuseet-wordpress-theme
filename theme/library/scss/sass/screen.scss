@@ -61,9 +61,9 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-family: $regularFont;
-  background-color: rgba(20,20,20,1);
-  color: white;
+  font-family: $regularFont, Verdana;
+  background-color: #ececec;
+  color: #333333;
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   font-style: normal;
@@ -74,7 +74,7 @@ div, li, ul, span, img,h1,h2,h3,p,a {
 }
 
 a {
-  font-family: $regularFont;
+  font-family: $regularFont, Verdana;
 }
 
 .mobile-topbar {
@@ -200,11 +200,11 @@ a {
   }
 
   width: 100%;
-  max-width: 1312px;
+  max-width: 980px;
   position: relative;
   margin: 0 auto;
   z-index: 1000;
-  background-color: rgba(10,10,10,1);
+  background-color: white;
   overflow-x: hidden;
 
   @media #{$otherThanPhone} {
@@ -259,7 +259,7 @@ a {
         }
         input[type="text"] {
           font-size: 18px;
-          font-family: $regularFont;
+          font-family: $regularFont, Verdana;
           background-color: black;
           border: 1px solid rgba(255,255,255,0.4);
           padding: 5px;
@@ -271,7 +271,7 @@ a {
           margin: 0 0 0 0;
           padding: 0;
           font-size: 18px;
-          font-family: $regularFont;
+          font-family: $regularFont, Verdana;
           padding: 5px 10px 5px 10px;
           background-color: black;
           border: 1px solid rgba(255,255,255,0.4);
@@ -346,7 +346,6 @@ a {
         margin-left: 0;
         z-index: 50000;
         height: 57px;
-        background-color: rgba(0,0,0,1);
         border-bottom: 1px solid rgba(255,255,255,0.1);
 
         @media #{$ipadLandscape} {
@@ -354,9 +353,9 @@ a {
         }
 
         @media #{$megaDesktop} {
-          width: 1312px;
+          width: 980px;
           left: 50%;
-          margin-left: -656px;
+          margin-left: -490px;
         }
 
         &.tiny {
@@ -418,7 +417,7 @@ a {
             
             a {
               color: rgba(255,255,255,0.8);
-              font-family: $regularFont;
+              font-family: $regularFont, Verdana;
               text-decoration: none;
               font-size: 22px;
               font-weight: 400;
@@ -449,12 +448,12 @@ a {
     display: none;
 
     @media #{$otherThanPhone} {
-      margin-top: 158px;
+      margin-top: 176px;
       @include box-sizing(border-box);
     }
     @media #{$desktop} {
       width: 22%;
-      display: inline-block;
+      display: none;
       vertical-align: top;
       padding: 10px;
 
@@ -500,18 +499,18 @@ a {
     z-index: 1002;
     border: 1px solid rgba(255,255,255,0.1);
     
-    background-color: rgba(0,0,0,1);
+    background-color: white;
     margin-top: 30px;
     padding: 0 0 20px;
     @media #{$otherThanPhone} {
-      margin-top: 158px;
+      margin-top: 176px;
     }
     @media #{$ipadLandscape} {
       width: 980px;
 
     }
     @media #{$desktop} {
-      width: 76%;
+      width: 100%;
       display: inline-block;
     }
 
@@ -539,6 +538,7 @@ a {
     .articles-list {
       list-style: none;
       padding: 10px 0 0 0;
+
       @media #{$otherThanPhone} {
         padding: 0 0 0 0;
       }
@@ -551,9 +551,9 @@ a {
       .article-container {
         @include box-sizing(border-box);
         vertical-align: top;
+        position: relative;
 
         @media #{$otherThanPhone} {
-          padding: 10px;
           width: 50%;
           display: inline-block;
         }
@@ -564,9 +564,9 @@ a {
         &:nth-child(10) {
           .article {
             .main-image-container {
-              height: 200px;
+              height: 400px;
               img {
-                margin-left: -100px;
+                min-width: 100%;
               }
             }
           }
@@ -584,7 +584,7 @@ a {
             .main-image-container {
               height: 80px;
               img {
-                max-width: 100%;
+                min-width: 100%;
               }
             }
           }
@@ -603,9 +603,10 @@ a {
           &:nth-child(10) {
             .article {
               .main-image-container {
-                height: 250px;
+                height: 648px;
                 img {
                   margin-left: 0px;
+                  min-width: 100%;
                 }
               }
             }
@@ -614,7 +615,6 @@ a {
           &:nth-child(2),
           &:nth-child(5),
           &:nth-child(8) {
-            padding: 10px;
           }
 
           &:nth-child(2),
@@ -623,10 +623,12 @@ a {
             width: 50%;
             .article {
               .main-image-container {
-                height: 250px;
+                height: 648px;
                 img {
                   max-width: none;
                   margin-left: 0;
+                  min-width: 100%;
+                  min-height: 100%;
                 }
               }
             }
@@ -641,9 +643,9 @@ a {
             width: 33.3%;
             .article {
               .main-image-container {
-                height: 160px;
+                height: 250px;
                 img {
-                  max-width: 100%;
+                  max-height: 150%;
                 }
               }
             }
@@ -652,7 +654,6 @@ a {
 
         .article {
           position: relative;
-          margin-bottom: 20px;
           border: 1px solid rgba(255,255,255,0.1);
 
           .wp-caption-text {
@@ -662,129 +663,25 @@ a {
             display: none;
           }
           h1 {
-            color: rgba(255,255,255,0.8);
-            padding: 0 20px 0 20px;
+            position: absolute;
+            bottom: 0;
+            padding: 10px;
+            color: white;
+            background-color: rgba(0,0,0,0.8);
+            width: 100%;
             font-size: 15px;
-            margin-bottom: 0;
+            margin: 0;
+            a {
+              color: white;
+            }
+
 
             @media #{$otherThanPhone} {
               font-size: 20px;
             }
 
             a {
-              color: white;
             }
-          }
-          .byline {
-            font-size: 14px;
-          }
-          h2 {
-            font-family: $thinFont;
-            font-size: 12px;
-            color: rgba(255,255,255,0.6);
-            padding: 0 20px 0 20px;
-            margin-top: 10px;
-            font-weight: normal;
-
-            @media #{$otherThanPhone} {
-              font-size: 16px;
-            }
-          }
-
-          p {
-            font-family: $thinFont;
-            font-size: 12px;
-            color: rgba(255,255,255,0.6);
-            padding: 0 20px 0 20px;
-            margin-top: 10px;
-            a {
-              font-size: 10px;
-            }
-
-            @media #{$otherThanPhone} {
-              font-size: 16px;
-              a {
-                font-size: 14px;
-              }
-            }
-          }
-
-          .tags {
-            font-size: 11px;
-            a {
-              font-size: 11px;
-            }
-          }
-
-          .category {
-            display: none;
-
-            @media #{$otherThanPhone} {
-              position: absolute;
-              top: 0;
-              font-family: $thinFont;
-              font-size: 10px;
-              z-index: 100;
-              padding: 5px 10px 5px 10px;
-              text-transform: uppercase;
-              color: white;
-              margin-top: -8px;
-              
-              background-color: #E31515;
-              font-size: 14px;
-              margin-left: 8px;
-              margin-top: -18px;
-            }
-
-            ul {
-              padding: 0;
-              margin: 0;
-              list-style: none;
-              li {
-                a {
-                  color: white;
-                }
-              }
-            }
-
-            &:after {
-              position: absolute;
-              content: "";
-              background: {
-                size: 20px 10px;
-                repeat: no-repeat;
-              }
-              width: 20px;
-              height: 10px;
-              bottom: -10px;
-              left: -5px;
-            }
-            &.anmeldelse {
-              background-color: #E31515;
-              &:after {
-                background-image: url(../img/grey-flip.svg);
-              }
-            }
-            &.toppliste {
-              background-color: #E31515;
-              &:after {
-                background-image: url(../img/grey-flip.svg);
-              }
-            }
-
-          }
-
-          .comments {
-            position: absolute;
-            width: 50%;
-            top: -22px;
-            color: rgba(208,211,208,1);
-            font-family: $thinFont;
-            right: 0;
-            text-align: right;
-            border-bottom: 1px solid rgba(208,211,208,0.5);
-            z-index: 100;
-
           }
 
           .main-image-container {
@@ -843,9 +740,13 @@ a {
     text-align: left;
   }
 
+  .article-header {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
   h1 {
     color: rgba(255,255,255,0.8);
-    font-family: $regularFont;
+    font-family: $regularFont, Verdana;
     font-size: 40px;
     padding: 20px 20px 0px 20px;
     margin: 0;
@@ -856,7 +757,7 @@ a {
   }
   h2 {
     color: rgba(255,255,255,0.4);
-    font-family: $regularFont;
+    font-family: $regularFont, Verdana;
     font-size: 20px;
     font-weight: normal;
     padding: 0 20px 0 20px;
@@ -868,7 +769,7 @@ a {
   h3,h4 {
     font-size: 18px;
     text-align: left;
-    font-family: $regularFont;
+    font-family: $regularFont, Verdana;
     color: $red;
     padding: 0 20px 0 20px;
     @media #{$otherThanPhone} {
@@ -974,15 +875,42 @@ a {
     font-size: 16px;
     color: rgba(255,255,255,0.6);
     font-weight: normal;
-    font-family: $thinFont;
+    font-family: $thinFont, Verdana;
     line-height: 1.5em;
     &.byline {
-      font-size: 14px;
+      position: relative;
+      img {
+        float: left;
+        padding-right: 10px;
+        border: 0;
+        @include border-radius(50%);
+      }
+
+      .author {
+        font-size: 20px;
+      }
+
+      .date {
+        font-size: 14px;
+      }
+
+      .author-bio {
+        display: none;
+        @media #{$otherThanPhone} {
+          display: block;
+          font-size: 14px; 
+          position: absolute;
+          left: 270px;
+          top: 0;
+          max-width: 400px;
+        }
+      }
+
       padding: 0 20px 20px 20px;
     }
     @media #{$otherThanPhone} {
-      padding: 0 100px 20px 100px;
-      font-size: 18px;
+      padding: 0 120px 20px 120px;
+      font-size: 16px;
     }
   }
 
@@ -1006,7 +934,7 @@ a {
       max-width: 50%;
       color: $red;
       font-size: 20px;
-      font-family: $regularFont;
+      font-family: $regularFont, Verdana;
       font-style: italic;
       word-wrap: break-word;
       &:before {
@@ -1086,6 +1014,20 @@ a {
       }
     }
 
+    .logo-playstation {
+      display: inline-block;
+      margin: 0 0 0 30px;
+      text-indent: -99999px;
+
+      width: 180px;
+      height: 80px;
+      background: {
+        image: url(../img/playstation-logo.png);
+        size: 180px;
+        repeat: no-repeat;
+      }
+    }
+
     .logo-spillexpo {
       display: inline-block;
       margin: 0 0 0 30px;
@@ -1106,7 +1048,7 @@ a {
       text-indent: -99999px;
 
       width: 180px;
-      height: 102px;
+      height: 57px;
       background: {
         image: url(../img/alphageek-logo.png);
         size: 180px;

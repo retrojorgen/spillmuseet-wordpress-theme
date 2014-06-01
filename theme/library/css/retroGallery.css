@@ -2,12 +2,12 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:100,400,400italic);
 @font-face {
   font-family: "Ubuntu Condensed";
-  src: url('/fonts/UbuntuCondensed-Regular.ttf') format('truetype');
+  src: url('../css/fonts/UbuntuCondensed-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  src: url('../css/fonts/Roboto-Regular.ttf') format('truetype');
 }
 
 /* line 21, ../scss/sass/retroGallery.scss */
@@ -50,7 +50,7 @@
 .gallery.fullscreen .close-gallery-button {
   display: block;
   position: absolute;
-  font-family: "Roboto";
+  font-family: "Roboto", Verdana;
   right: 20px;
   bottom: 20px;
   width: 80px;
@@ -115,7 +115,7 @@
 .gallery.fullscreen .right-gallery-image-button {
   display: block;
   position: absolute;
-  font-family: "Roboto";
+  font-family: "Roboto", Verdana;
   width: 80px;
   height: 80px;
   font-size: 28px;

@@ -53,7 +53,7 @@ $red : #E31515;
     .close-gallery-button {
       display: block;
       position: absolute;
-      font-family: $thinFont;
+      font-family: $thinFont, Verdana;
       right: 20px;
       bottom: 20px;
       width: 80px;
@@ -109,7 +109,7 @@ $red : #E31515;
     .right-gallery-image-button {
       display: block;
       position: absolute;
-      font-family: $thinFont;
+      font-family: $thinFont, Verdana;
       width: 80px;
       height: 80px;
       font-size: 28px;

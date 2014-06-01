@@ -1,12 +1,6 @@
 				<div id="sidebar" class="sidebar fourcol last clearfix" role="complementary">
 			
 					<div class="sidebar-section">
-						<h3 class="sidebar-title" style="font-size: 20px">Vil du skrive for Spillmuseet?</h3>
-						<p class="sidebar-paragraph" style="font-size: 16px">Spillmuseet søker deg som har lyst til å bli med å lage det beste magasinet for spillkultur i Norge!</p>
-						<p class="sidebar-paragraph" style="font-size: 16px">Høres det ut som noe for deg? <br><a href="http://www.spillmuseet.no/vil-du-skrive-for-spillmuseet/">Les mer her</a></p>
-					</div>
-
-					<div class="sidebar-section">
 						<h3 class="sidebar-title">Følg oss på facebook</h3>
 						<p class="sidebar-paragraph">På facebook kan du holde deg oppdatert på alt som skjer med Spillmuseet og Retrospillmessen 2014 i mai!</p>
 						<div class="fb-like" data-href="https://www.facebook.com/Spillmuseet" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>			

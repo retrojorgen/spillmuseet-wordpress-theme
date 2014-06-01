@@ -68,17 +68,15 @@
     }
 
     $('.wp-caption').attr('style', '');
-    var articlesOffset = $('.articles').offset().top;
-    var element = $('.main-article h2')[0] || $('.main-article h1')[0];
-    var fromTop = $(element).offset().top - articlesOffset;
-    var height = $(element).height();
 
-
-    if($('.article.fb-like').length) {
-      console.log(fromTop, height, 60);
-      $('.article.fb-like').css({
-        'top': fromTop + height + 80 + 'px'
-      });
+    if($('.articles').length) {
+      var articlesOffset = $('.articles').offset().top;  
     }
+
+    if($('.main-article h2').length) {
+      var element = $('.main-article h2')[0] || $('.main-article h1')[0];  
+    }
+    
+    var height = $(element).height();
   });
 })(jQuery);

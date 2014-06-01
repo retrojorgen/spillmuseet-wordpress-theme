@@ -1,7 +1,7 @@
 .videos-wrapper {
 	display: none;
 	@media #{$otherThanPhone} {
-		display: block;
+		display: none;
 		padding: 0 0 20px 0;
 		border-top: 1px solid rgba(255,255,255,0.6);
 		border-bottom: 1px solid rgba(255,255,255,0.6);

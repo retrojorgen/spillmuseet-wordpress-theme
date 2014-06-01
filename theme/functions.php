@@ -72,6 +72,14 @@ You can change the names and dimensions to whatever
 you like. Enjoy!
 */
 
+if ( current_user_can('contributor') && !current_user_can('upload_files') )
+	add_action('admin_init', 'allow_contributor_uploads');
+
+function allow_contributor_uploads() {
+	$contributor = get_role('contributor');
+	$contributor->add_cap('upload_files');
+}
+
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
@@ -179,6 +187,8 @@ function bones_wpsearch($form) {
 	</form>';
 	return $form;
 } // don't remove this bracket!
+
+
 
 
 ?>

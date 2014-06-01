@@ -23,21 +23,21 @@
           </ul>
           <h4>Spillmuseet på nett</h4>
           <ul>
-            <li>Redaktør <a href="mailto:redaktor@spillmuseet.no">Christian Hagen</a></li>
-            <li>Utvikler <a href="mailto:utvikler@spillmuseet.no">Jørgen Jacobsen</a></li>
+            <li>Redaktør - Christian Hagen</a></li>
+            <li>Utvikler - Jørgen Jacobsen</a></li>
           </ul>
         </section>
 
         <section class="logo footer-section">
           <h4>Spillmuseet er</h4>
           <ul>
-            <li>Jan Olav Hegvik</li>
-            <li>Tomas Kristiansen</li>
-            <li>Marianne Skadal</li>
+            <li><a href="mailto:leder@spillmuseet.no"><strong>Styreleder</strong> - Jan Olav Hegvik</a></li>
+            <li><a href="mailto:leder@spillmuseet.no"><strong>Økonomisk ansvarlig</strong> - Tomas Kristiansen</a></li>
+            <li><strong>Styremedlem</strong> - Marianne Skadal</li>
+            <li><strong>Styremedlem</strong> - Trond Sinfour Borgersen</li>
+            <li><strong>Styremedlem</strong> - Ole Gunnar Nedrebø</li>
+            <li><strong>Styremedlem</strong> - Kim André Hegvik</li>
             <li>Christian Hagen</li>
-            <li>Trond Sinfour Borgersen</li>
-            <li>Ole Gunnar Nedrebø</li>
-            <li>Kim André Hegvik</li>
             <li>Jørgen Jacobsen</li>
           </ul>
           <h4>Kontakt oss</h4>
@@ -61,6 +61,7 @@
           <a href="http://www.radcrew.net" target="_blank" class="logo-rad-crew">Rad Crew</a>
           <a href="http://www.spillexpo.no" target="_blank" class="logo-spillexpo">Spillexpo</a>
           <a href="http://www.alphageek.no" target="_blank" class="logo-alphageek">Alphageek.no</a>
+          <a href="http://www.playstation.no" target="_blank" class="logo-playstation">Playstation.no</a>
         </section>
 
 			</footer>
