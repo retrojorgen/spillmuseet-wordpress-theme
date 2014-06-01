@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+					<section class="articles">
 					<div class="article fb-like" data-href="<?php the_permalink() ?>" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

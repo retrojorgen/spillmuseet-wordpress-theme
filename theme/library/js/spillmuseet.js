@@ -76,7 +76,7 @@
     if($('.main-article h2').length) {
       var element = $('.main-article h2')[0] || $('.main-article h1')[0];  
     }
-    
+    $('span').css('color', 'rgba(0,0,0,0.6)');
     var height = $(element).height();
   });
 })(jQuery);

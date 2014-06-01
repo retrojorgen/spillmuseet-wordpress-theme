@@ -69,40 +69,13 @@
 		<button class="mobile-menu-toggle"></button>
 		<div class="logo"></div>
 </div>
+<nav class="main-navigation" role="navigation">
+	<a href="/" class="spillmuseet-logo"></a>
+	<?php bones_main_nav(); ?>
+	<?php get_search_form(); ?>
+</nav>
 <div class="articles-container">
-
-    <header class="main-header" role="banner">
-    <!--
-    <a href="<?php echo home_url(); ?>">
-      <div class="logo-image"></div>
-    </a>
-    -->
-	<a href="http://www.spillmuseet.no/retrospillmessen/">
-      <div class="logo-retrospillmessen"></div>
-    </a>
-	<div class="rad-radio" id="rad-radio">
-	  <div class="rad-player">
-	    <div class="rad-player-image">
-	      <img src="http://www.radcrew.net/media/powerpress/radlogo.jpg">
-	    </div>
-	  </div>
-	  <div class="episode-details">
-	    <h3 class="title"></h3>
-	    <p class="date"></p>
-	  </div>
-	</div>
-
-      <div class="link-sprite-container">
-        <div class="link-sprite"></div>
-      </div>
-    </header>
-	<nav class="main-navigation" role="navigation">
-		<a href="/" class="spillmuseet-logo"></a>
-		<?php bones_main_nav(); ?>
-		<?php get_search_form(); ?>
-	</nav>
 	
-	
-	<section class="articles">
+
 		
 

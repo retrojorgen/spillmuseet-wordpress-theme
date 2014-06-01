@@ -1,0 +1,311 @@
+    .main-navigation {
+      position: fixed;
+      z-index: 5000;
+      background-color: $red;
+      width: 100%;
+      opacity: 0;
+      margin-top: -10px;
+      display: none;
+      @include box-sizing(border-box);
+
+
+      .spillmuseet-logo {
+        display: inline-block;
+        width: 170px;
+        height: 29px;
+        margin-top: 1px;
+        vertical-align: middle;
+        cursor: pointer;
+        background: {
+          image: url(../img/spillmuseet-horizontal.svg);
+          size: 160px;
+          repeat: no-repeat;
+        }
+      }
+
+      form[role="search"] {
+        
+        display: none;
+        @media #{$ipadLandscape} {
+        }
+        @media #{$desktop} {
+          display: inline-block;
+          position: relative;
+          vertical-align: top;
+          padding: 10px 0 0 5px;
+          position: absolute;
+          top: -66px;
+          left: 50%;
+          margin-left: -100px;
+        }
+
+        .screen-reader-text {
+          text-indent: -999999px;
+          overflow: hidden;
+          max-width: 1px;
+          width: 1px;
+          position: relative;
+          display: none;
+
+        }
+        input[type="text"] {
+          font-size: 18px;
+          font-family: $regularFont, Verdana;
+          background-color: black;
+          border: 1px solid rgba(255,255,255,0.4);
+          padding: 5px;
+          margin: 0;
+          color: white;
+          width: 200px;
+        }
+        input[type="submit"] {
+          margin: 0 0 0 0;
+          padding: 0;
+          font-size: 18px;
+          font-family: $regularFont, Verdana;
+          padding: 5px 10px 5px 10px;
+          background-color: black;
+          border: 1px solid rgba(255,255,255,0.4);
+          margin-left: -5px;
+          color: white;
+        }
+      }
+
+      &.active {
+        display: block;
+        opacity: 1;
+        margin: 0;
+        @include transition(all 100ms linear);
+        height: 100%;
+        border-top: 40px solid transparent;
+        @include box-sizing(border-box);
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 0 0;
+        li {
+          margin: 0;
+          display: block;
+          color: white;
+
+          &.menu-item-has-children {
+            a {
+              padding-right: 15px;
+              position: relative;
+              &:after {
+                content: "";
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                right: 5px;
+                top: 28px;
+                bottom: 16px;
+                background: {
+                  size: 8px 8px;
+                  image: url(../img/arrow.svg);
+                }
+                repeat: no-repeat;
+                @media #{$desktop} {
+                  right: 5px;
+                }
+
+              }
+              @media #{$desktop} {
+                padding-right: 15px;
+              }
+            }
+            &#menu-item-2962 {
+              .sub-menu {
+                background-color: white;
+              }
+            }
+            .sub-menu {
+              #menu-item-2963,
+              #menu-item-2964,
+              #menu-item-2965,
+              #menu-item-2966 {
+                margin: 10px;
+                @media #{$otherThanPhone} {
+                  &:hover {
+                    @include box-shadow(1px 1px 20px rgba(0,0,0,0.2));
+                  }
+                }
+              }
+
+              #menu-item-2963 {
+                position: relative;
+                width: 200px;
+                height: 80px;
+                background: {
+                  image: url(../img/nerdalert-nerdcast.png);
+                  repeat: no-repeat;
+                  position: 8px 8px;
+                  size: 90%;
+                }
+                text-indent: -9999999px;
+              }
+              #menu-item-2964 {
+                position: relative;
+                width: 200px;
+                height: 80px;
+                background: {
+                  image: url(../img/nerdalert-nerdview.png);
+                  repeat: no-repeat;
+                  position: 8px 8px;
+                  size: 90%;
+                }
+                text-indent: -9999999px;
+              }
+              #menu-item-2965 {
+                position: relative;
+                width: 200px;
+                height: 80px;
+                background: {
+                  image: url(../img/nerdalert-tankesmie.png);
+                  repeat: no-repeat;
+                  position: 8px 8px;
+                  size: 90%;
+                }
+                text-indent: -9999999px;
+              }
+              #menu-item-2966 {
+                position: relative;
+                width: 200px;
+                height: 80px;
+                background: {
+                  image: url(../img/nerdalert-nerdcastx.png);
+                  repeat: no-repeat;
+                  position: 8px 8px;
+                  size: 90%;
+                }
+                text-indent: -9999999px;
+              }
+              a {
+                &:after {
+                  height: 0;
+                }
+              }
+            }
+          }
+          a {
+            color: white;
+          }
+        }
+
+      }
+
+      @media #{$otherThanPhone} {
+        display: inline-block;
+        text-align: left;
+        opacity: 1;
+        margin-top: 0;
+        
+        position: absolute;
+        left:0;
+        width: 100%;
+        top: 120px;
+        margin-left: 0;
+        z-index: 50000;
+        height: 57px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+
+        @media #{$ipadLandscape} {
+          padding: 0 14px 0 14px;
+        }
+
+        @media #{$megaDesktop} {
+          width: 980px;
+          left: 50%;
+          margin-left: -490px;
+        }
+
+        &.tiny {
+          @media #{$otherThanPhone} {
+            position: fixed;
+            top: 0;
+          }
+        }
+
+        ul {
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          @media #{$desktop} {
+          }
+
+          li {
+            display: inline-block;
+            padding: 0;
+
+            .sub-menu {
+              display: none;
+            }
+
+            &.current-menu-item {
+              a {
+                background-color: $red;
+              }
+            }
+
+            &:hover {
+              background-color: white;
+              >a {
+                color: $red;
+              }
+              .sub-menu {
+                min-width: 100%;
+                background-color: black;
+                position: absolute;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: block;
+                z-index: 500;
+                left: 0;
+                top: 56px;
+                li {
+                  display: inline-block;
+                  text-align: left;
+                  a {
+                  }
+                }
+              }
+            }
+
+            &:hover {
+               
+            }
+            
+            a {
+              color: rgba(255,255,255,0.8);
+              font-family: $regularFont, Verdana;
+              text-decoration: none;
+              font-size: 22px;
+              font-weight: 400;
+              text-transform: uppercase;
+              padding: 15px 5px 15px 5px;
+              display: block;
+
+              @media #{$desktop} {
+                padding: 15px 5px 15px 5px;
+              }
+              &:hover {
+              }
+            }
+
+            ul {
+              li {
+                a {
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
