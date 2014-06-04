@@ -1,23 +1,31 @@
 .rad-radio {
-	width: 270px;
+	display: none;
+	@media #{$otherThanPhone} {
+		display: inline-block;
+	}
+	width: 346px;
 	height: 87px;
 	display: inline-block;
 	vertical-align: middle;
-	position: relative;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	margin-left: -440px;
 	border: 2px solid rgba(255,255,255,0.2);
 	@include border-radius(4px);
-	background-color: rgba(0,0,0,0.4);
-	.rad-player-image {
-		display: none;
+	background-color: rgba(202, 143, 38, 0.4);
+	.podcast-image {
+		height: 100%;
 	}
 	margin-top: 20px;
 	cursor: pointer;
 
 	.episode-details {
-		border-left: 96px solid transparent;
 		text-align: left;
+		display: inline-block;
+		vertical-align: top;
 		.title {
-			padding: 10px 10px 0 0;
+			padding: 10px 28px 0 10px;
 			margin: 0;
 			font-size: 17px;
 		}
@@ -25,14 +33,14 @@
 			margin: 0;
 			color: $red;
 			font-size: 16px;
-			padding: 0px 10px 10px 0;
+			padding: 0px 10px 10px 10px;
 		}
 	}
 	&:after {
 		content: "";
 		position: absolute;
 		top: 0;
-		left: 0;
+		left: -9px;
 		width: 130px;
 		height: 100px;
 		background-image: url(../img/play-button.svg);
@@ -51,7 +59,7 @@
 		padding: 14px;
 		background-color: $red;
 		right: -20px;
-		top: -10px;
+		top: -7px;
 		position: absolute;
 	}
 }

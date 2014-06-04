@@ -5,17 +5,22 @@
 					player,
 					windowPlayer,
 					playerData,
+					soundCloudUrl,
+					imageUrl,
 
 				createPlayer = function() {
 					$('.episode-details .title').text(playerData.title);
 					var newDate = new Date(playerData.pubDate);
 					$('.episode-details .date').text(newDate.getDate() + "." + newDate.getMonth() + "." + newDate.getFullYear());
+					$('.podcast-image').attr('src', imageUrl);
 				},
 
 				openPlayer = function(event) {
-					var windowPlayer = window.open('/radRadio.php','','width=460,height=300');
+					//var windowPlayer = window.open('/radRadio.php','','width=460,height=300');
+					var windowPlayer = window.open(soundCloudUrl);
 
 						windowPlayer.focus();
+/**
 						console.log($(windowPlayer.document).find('body').children());
 
 						windowPlayer.onload = function () {
@@ -24,6 +29,8 @@
 						  $(windowPlayer.document).find('.description').text(playerData.description);
 						  $(windowPlayer.document).find('.download').attr('href', playerData.file);
 						};
+
+**/
 				},
 
 				fixSillyStrings = function (sillyString) {
@@ -54,9 +61,16 @@
 							$items = $xml.find('item');
 							$mostRecentCast = $($items[0]);
 							$title = $mostRecentCast.find('title').text();
+							soundCloudUrl = $mostRecentCast.find('link').text();
 							$file = $mostRecentCast.find('enclosure').attr('url');
 							$pubDate = $mostRecentCast.find('pubDate').text();
 							$description = $mostRecentCast.find('description').text();
+							$image = $mostRecentCast.find('*').filter(function() {
+								return this.nodeName === 'itunes:image';
+							});
+
+							imageUrl = $image.attr('href');
+
 							playerData = {
 								'title': $title,
 								'file': $file,

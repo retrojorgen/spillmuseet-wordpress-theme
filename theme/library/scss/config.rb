@@ -2,11 +2,10 @@
 
 # Set this to the root of your project when deployed:
 require 'animation'
-http_path = "/"
-css_dir = "../css"
-sass_dir = "sass"
-images_dir = "images"
-javascripts_dir = "javascripts"
+http_path = '/'
+css_dir = '../css'
+images_dir = '../css'
+fonts_dir =  '../css/fonts'
 
 
 # You can select your preferred output style here (can be overridden via the command line):

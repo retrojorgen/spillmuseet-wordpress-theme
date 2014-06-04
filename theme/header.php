@@ -65,15 +65,27 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 
+<div class="donkey-kong-wrapper-1"><div class="donkey-kong-container"></div></div>
+<div class="donkey-kong-wrapper-2"><div class="donkey-kong-container"></div></div>
+<div class="donkey-kong-wrapper-3"><div class="donkey-kong-container"></div></div>
+
+	<div class="rad-radio" id="rad-radio">
+	  <img class="podcast-image" src="">
+	  <div class="episode-details">
+	    <h3 class="title"></h3>
+	    <p class="date"></p>
+	  </div>
+	</div>
+
 <div class="mobile-topbar">
 		<button class="mobile-menu-toggle"></button>
 		<div class="logo"></div>
 </div>
-<nav class="main-navigation" role="navigation">
-	<a href="/" class="spillmuseet-logo"></a>
-	<?php bones_main_nav(); ?>
-	<?php get_search_form(); ?>
-</nav>
+	<nav class="main-navigation" role="navigation">
+		<a href="/" class="spillmuseet-logo"></a>
+		<?php bones_main_nav(); ?>
+		<?php get_search_form(); ?>
+	</nav>
 <div class="articles-container">
 	
 

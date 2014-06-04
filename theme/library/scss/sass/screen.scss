@@ -19,7 +19,7 @@
   
   @include animation(jumping 10s infinite linear);
   @media #{$desktop} {
-    @include animation(jumping 15s infinite linear);  
+    @include animation(jumping 15s infinite linear);
   }
   .link-sprite {
     width: 50px;
@@ -154,22 +154,22 @@ a {
   width: 100%;
   max-width: 980px;
   position: relative;
-  margin: 154px auto 0 auto;
+  margin: 0 auto 0 auto;
   z-index: 1000;
   background-color: white;
   overflow-x: hidden;
 
   @media #{$otherThanPhone} {
+      margin-top: 130px;
     }
 
 
   .articles {
     position: relative;
     z-index: 1002;
-    border: 1px solid rgba(255,255,255,0.1);
-    
     padding: 0 0 20px;
     @media #{$otherThanPhone} {
+      margin-top: 57px;
     }
     @media #{$ipadLandscape} {
       width: 980px;
@@ -203,7 +203,7 @@ a {
 
     .articles-list {
       border-top: 1px solid white;
-      margin: 0;
+      margin: 0 0 0 0;
       padding: 0;
       list-style: none;
       position: relative;
@@ -216,9 +216,17 @@ a {
         height: 0;
       }
 
+
+
       li {
         overflow: hidden;
         position: relative;
+        opacity: 0;
+        @include transition(all 400ms linear);
+        &.active {
+          opacity: 1;
+          @include transition(all 400ms linear);
+        }
 
         img {
           margin-left: -15%;
@@ -241,9 +249,17 @@ a {
       li:nth-child(1) {
         width: 100%;
         border-bottom: 1px solid white;
-        max-height: 500px;
+        overflow:visible;
+        .main-image-container {
+          max-height: 500px;
+          img {
+            margin-left: 0;
+          }
+        }
         h2 {
           font-size: 40px;
+          position: relative;
+          border-bottom: 1px solid white;
         }
       }
       li:nth-child(2) {
@@ -255,6 +271,9 @@ a {
         width: 50%;
         border-bottom: 1px solid white;
         float: left;
+        img {
+          max-width: 150%;
+        }
         h2 {
 
         }
@@ -275,6 +294,9 @@ a {
         float: right;
         max-height: 237px;
         border-bottom: 1px solid white;
+        img {
+          margin-left: -26%;
+        }
         h2 {
           font-size: 17px;
         }
@@ -311,6 +333,9 @@ a {
       li:nth-child(11) {
         float:left;
         width: 33.3333%;
+        img {
+          margin-left: -26%;
+        }
         max-height: 237px;
         h2 {
           font-size: 17px;
@@ -524,10 +549,11 @@ a {
     }
   }
 
-  p {
+  p,
+  h5 {
     padding: 0 20px 20px 20px;
     font-size: 16px;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.8);
     font-weight: normal;
     font-family: $thinFont, Verdana;
     line-height: 1.5em;

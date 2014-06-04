@@ -1,5 +1,20 @@
 (function($) {
   $(function() {
+    var newsFromTop = $('.articles-list li');
+    $('.articles-list li').each(function(index) {
+      console.log($(this).offset().top);
+    });
+
+    setActive = function(number) {
+      newsFromTop.each(function(index) {
+        var height= $(this).offset().top;
+        if(height <= (number+window.innerHeight-60)) {
+          console.log('active');
+          $(this).addClass('active');
+        }
+      });
+    };
+    setActive(60);
     $('.mobile-menu-toggle').on('touchstart', function () {
       event.stopPropagation();
       $('.main-navigation').toggleClass('active');
@@ -7,7 +22,7 @@
     var headerToggle = false;
 
     var headerAdjust = function (event) {
-
+        setActive(window.scrollY);
 
         if(!headerToggle && window.scrollY >= 120) {
           $('.main-navigation')
