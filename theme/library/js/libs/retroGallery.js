@@ -110,6 +110,7 @@
 					});
 
 					$(that).removeClass('fullscreen');
+					$('.entry-content').append($(that));
 					openButton.show();
 				},
 
@@ -120,7 +121,7 @@
 				 * @return {void}
 				 */
 				openGallery = function(event) {
-					console.log($(that));
+
 
 					$(that).addClass('fullscreen');
 
@@ -128,6 +129,8 @@
 						'height': '100%',
 						'overflow': 'hidden'
 					});
+
+					$('body').prepend($(that));
 
 					openButton.hide();
 				},

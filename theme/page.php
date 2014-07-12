@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-
+	<section class="articles">
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class( 'main-article' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">

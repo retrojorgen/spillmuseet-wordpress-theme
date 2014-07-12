@@ -15,7 +15,10 @@
       });
     };
     setActive(60);
-    $('.mobile-menu-toggle').on('touchstart', function () {
+    $('.donkey-kong-container').addClass('visible');
+    console.log($('.donkey-kong-container'));
+    $('.mobile-menu-toggle').on('click', function () {
+    //$('.mobile-menu-toggle').on('touchstart', function () {
       event.stopPropagation();
       $('.main-navigation').toggleClass('active');
     });
@@ -64,14 +67,26 @@
       document.addEventListener("scroll", adjustMenu, false);
     }
 
-    $('.wp-caption').css('width', '100%');
     $('.gallery').each(function(key, node) {
       $(node).retroGallery();
     });
 
-    $('img').attr({
-      'width': '',
-      'height': ''
+    //resize images only if they are bigger than 300
+    $('img').each(function (index) {
+      if($(this).attr('width') > 300) {
+        $(this).attr({
+          'width': '',
+          'height': ''
+        });
+      }
+    });
+
+    $('.wp-caption').each(function (index) {
+      var child = $(this).find('img');
+      var width = $(child[0]).attr('width');
+      if(width > 0) {
+        $(this).find('.wp-caption-text').css('width', width);
+      }
     });
 
     if($('#videos-wrapper').length) {

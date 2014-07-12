@@ -23,8 +23,8 @@
           </ul>
           <h4>Spillmuseet på nett</h4>
           <ul>
-            <li>Redaktør - Christian Hagen</a></li>
-            <li>Utvikler - Jørgen Jacobsen</a></li>
+            <li>Redaktør - Jan Olav Hegvik</li>
+            <li>Utvikler - Jørgen Jacobsen</li>
           </ul>
         </section>
 
@@ -48,20 +48,19 @@
 
 
         <section class="logo footer-section">
-          <h4>Retrospillmessen 2014</h4>
-          <p class="footer-paragraph">Er du klar for Norges største retrospillevent?<br><br>
-          24.-25. mai arrangerer Spillmuseet Norges største retrospillmesse med mengder av retrokonsoller og underholdning for barn og voksne i alle aldre.
-          <br><br>
+          <h4>Spillexpo 2014</h4>
+          <p class="footer-paragraph">I 2014 arrangerte vi Norges største retrospillmesse, og i høst tar vi
+          med oss store deler av den samme messen til SpillExpo. Besøk oss!<br>
           <a href="http://www.spillmuseet.no/retrospillmessen">Les mer om Retrospillmessen 2014 her!</a>
           </p>
         </section>
 
         <section class="logo footer-section">
           <h4>Samarbeidspartnere</h4>
-          <a href="http://www.radcrew.net" target="_blank" class="logo-rad-crew">Rad Crew</a>
           <a href="http://www.spillexpo.no" target="_blank" class="logo-spillexpo">Spillexpo</a>
-          <a href="http://www.alphageek.no" target="_blank" class="logo-alphageek">Alphageek.no</a>
           <a href="http://www.playstation.no" target="_blank" class="logo-playstation">Playstation.no</a>
+          <h4>Sjekk også ut</h4>
+          <a href="http://www.radcrew.net" target="_blank" class="logo-rad-crew">Rad Crew</a>
         </section>
 
 			</footer>

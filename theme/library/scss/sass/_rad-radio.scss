@@ -1,19 +1,25 @@
 .rad-radio {
-	display: none;
-	@media #{$otherThanPhone} {
-		display: inline-block;
-	}
-	width: 346px;
+	display: inline-block;
+	width: 280px;
 	height: 87px;
 	display: inline-block;
 	vertical-align: middle;
 	position: absolute;
-	top: 10px;
+	top: 41px;
 	left: 50%;
-	margin-left: -440px;
+	margin-left: -140px;
+	@media #{$multiColumn} {
+		width: 346px;
+		margin-left: -173px;
+	}
+	@media #{$desktop} {
+		top: 60px;
+		margin-left: -190px;
+	}
 	border: 2px solid rgba(255,255,255,0.2);
+	@include box-shadow(0 0 20px rgba(0,0,0,0.3));
 	@include border-radius(4px);
-	background-color: rgba(202, 143, 38, 0.4);
+	background-color: white;
 	.podcast-image {
 		height: 100%;
 	}
@@ -24,10 +30,14 @@
 		text-align: left;
 		display: inline-block;
 		vertical-align: top;
+		width: 64%;
+		@media #{$multiColumn} {
+			width: 74%;
+		}
 		.title {
 			padding: 10px 28px 0 10px;
 			margin: 0;
-			font-size: 17px;
+			font-size: 15px;
 		}
 		.date {
 			margin: 0;

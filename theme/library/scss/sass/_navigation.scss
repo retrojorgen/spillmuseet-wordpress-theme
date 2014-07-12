@@ -1,15 +1,27 @@
 .donkey-kong-container {
+  display: none;
+  @media #{$otherThanPhone} {
+    display: inline-block;
+    opacity: 0;
+    &.visible {
+      opacity: 1;
+      @include transition(opacity 400ms 1s);
+    }
+  }
   width: 250px;
   height: 226px;
+  position: absolute;
+  top:0;
+  left: 0;
   background: url(../img/donkey-kong-sprite.png) no-repeat;
   @include animation(donkeyKong 4s infinite steps(4));
 }
 
 .donkey-kong-wrapper-1 {
   position: absolute;
-  top: 234px;
+  top: 360px;
   left: 50%;
-  margin-left: 230px;
+  margin-left: 330px;
   display: inline-block;
   @include rotate(45deg);
   @include animation(donkeyAnim1 10s infinite linear 2s);
@@ -19,15 +31,15 @@
   position: absolute;
   top: 400px;
   left: 50%;
-  margin-left: 230px;
+  margin-left: 330px;
   display: inline-block;
-  @include rotate(20deg);
+  @include rotate(66deg);
   @include animation(donkeyAnim1 10s infinite linear 23s);
 }
 
 .donkey-kong-wrapper-3 {
   position: absolute;
-  top: 300px;
+  top: 360px;
   left: 50%;
   margin-left: -465px;
   display: inline-block;
@@ -36,6 +48,10 @@
 }
 
 .duck-hunt-wrapper {
+  display: none;
+  @media #{$otherThanPhone} {
+    display: inline-block;
+  }
   @include animation(flyingBird 15s infinite linear);
   position: absolute;
   .duck-hunt-container {
@@ -53,7 +69,7 @@
     margin-left: 230px;
   }
   10% {
-    margin-left: 363px;
+    margin-left: 500px;
   }
   20% {
     margin-left: 230px;
@@ -68,7 +84,7 @@
     margin-left: -465px;
   }
   10% {
-    margin-left: -558px;
+    margin-left: -598px;
   }
   20% {
     margin-left: -465px;
@@ -134,9 +150,21 @@
       background-color: $red;
       width: 100%;
       opacity: 0;
-      margin-top: -10px;
+      visibility: 0;
       display: none;
+      margin-top: -10px;
       @include box-sizing(border-box);
+      @include transition(visibility 200ms, opacity 200ms, margin 200ms);
+      position: fixed;
+
+      @media #{$multiColumn} {
+        background-color: rgba(223, 0, 0, 0.843137);
+        position: fixed;
+        top: 0;
+        margin-left: 0;
+        left: 0;
+        width: 100%;
+      }
 
 
       .spillmuseet-logo {
@@ -163,10 +191,6 @@
           position: relative;
           vertical-align: top;
           padding: 10px 0 0 5px;
-          position: absolute;
-          top: -90px;
-          left: 50%;
-          margin-left: 136px;
         }
 
         .screen-reader-text {
@@ -203,11 +227,14 @@
 
       &.active {
         display: block;
+        visibility: 1;
         opacity: 1;
         margin: 0;
-        @include transition(all 100ms linear);
+        position: fixed;
+        @include transition(visibility 200ms, opacity 200ms, margin 200ms);
         height: 100%;
-        border-top: 40px solid transparent;
+        border-top: 10px solid transparent;
+        top: 10px;
         @include box-sizing(border-box);
         overflow: auto;
         -webkit-overflow-scrolling: touch;
@@ -221,132 +248,123 @@
           margin: 0;
           display: block;
           color: white;
+          padding: 10px;
 
           &.menu-item-has-children {
+            li {
+              padding: 10px;
+              a {
+                border: 0;
+              }
+            }
             a {
               padding-right: 15px;
               position: relative;
-              &:after {
-                content: "";
-                position: absolute;
-                width: 8px;
-                height: 8px;
-                right: 5px;
-                top: 28px;
-                bottom: 16px;
-                background: {
-                  size: 8px 8px;
-                  image: url(../img/arrow.svg);
-                }
-                repeat: no-repeat;
-                @media #{$desktop} {
+              font-size: 22px;
+              display: inline-block;
+              border-bottom: 1px solid white;
+              @media #{$desktop} {
+                border-bottom: 0;
+                &:after {
+                  content: "";
+                  position: absolute;
+                  width: 8px;
+                  height: 8px;
                   right: 5px;
+                  top: 28px;
+                  bottom: 16px;
+                  background: {
+                    size: 8px 8px;
+                    image: url(../img/arrow.svg);
+                    width: 90%;
+                  }
+                  repeat: no-repeat;
+                  @media #{$desktop} {
+                    right: 5px;
+                  }
                 }
-
               }
               @media #{$desktop} {
                 padding-right: 15px;
               }
             }
-            &#menu-item-2962 {
-              .sub-menu {
-                background-color: white;
+            @media #{$desktop} {
+              &#menu-item-10333 {
+                .sub-menu {
+                  background-color: white;
+                }
               }
-            }
-            .sub-menu {
-              #menu-item-2963,
-              #menu-item-2964,
-              #menu-item-2965,
-              #menu-item-2966 {
-                margin: 10px;
-                @media #{$otherThanPhone} {
-                  &:hover {
-                    @include box-shadow(1px 1px 20px rgba(0,0,0,0.2));
+              .sub-menu {
+                #menu-item-10335 a,
+                #menu-item-10336 a,
+                #menu-item-10337 a,
+                #menu-item-10607 a,
+                #menu-item-10402 a,
+                #menu-item-10994 a {
+                  display: inline-block;
+                  position: relative;
+                  width: 200px;
+                  height: 80px;
+                  margin: 10px;
+                  text-indent: -9999999px;
+                  background: {
+                    repeat: no-repeat;
+                    position: 8px 8px;
+                    size: 90%;
+                  }
+                  @media #{$desktop} { // fix
+                    &:hover {
+                      @include box-shadow(1px 1px 20px rgba(0,0,0,0.2));
+                    }
                   }
                 }
-              }
 
-              #menu-item-2963 {
-                position: relative;
-                width: 200px;
-                height: 80px;
-                background: {
-                  image: url(../img/nerdalert-nerdcast.png);
-                  repeat: no-repeat;
-                  position: 8px 8px;
-                  size: 90%;
+                #menu-item-10402 a {
+                  background-image: url(../img/nerdalert-nerdcast.png);
                 }
-                text-indent: -9999999px;
-              }
-              #menu-item-2964 {
-                position: relative;
-                width: 200px;
-                height: 80px;
-                background: {
-                  image: url(../img/nerdalert-nerdview.png);
-                  repeat: no-repeat;
-                  position: 8px 8px;
-                  size: 90%;
+                #menu-item-10607 a {
+                  background-image: url(../img/nerdalert-nerdview.png);
                 }
-                text-indent: -9999999px;
-              }
-              #menu-item-2965 {
-                position: relative;
-                width: 200px;
-                height: 80px;
-                background: {
-                  image: url(../img/nerdalert-tankesmie.png);
-                  repeat: no-repeat;
-                  position: 8px 8px;
-                  size: 90%;
+                #menu-item-10336 a {
+                  background-image: url(../img/nerdalert-tankesmie.png);
                 }
-                text-indent: -9999999px;
-              }
-              #menu-item-2966 {
-                position: relative;
-                width: 200px;
-                height: 80px;
-                background: {
-                  image: url(../img/nerdalert-nerdcastx.png);
-                  repeat: no-repeat;
-                  position: 8px 8px;
-                  size: 90%;
+                #menu-item-10335 a {
+                  background-image: url(../img/nerdalert-nerdcastx.png);
                 }
-                text-indent: -9999999px;
+                #menu-item-10994 a {
+                  width: 318px;
+                  background-image: url(../img/nerdalert-retroreise.png);
+                }
               }
               a {
                 &:after {
-                  height: 0;
                 }
               }
             }
           }
           a {
             color: white;
+            font-size: 24px;
           }
         }
 
       }
 
-      @media #{$otherThanPhone} {
+      @media #{$desktop} { // fix
         display: block;
         text-align: left;
         opacity: 1;
         margin: 0 auto 0;
         width: 100%;
-        position: absolute;
         height: 57px;
         border-bottom: 1px solid rgba(255,255,255,0.1);
         padding: 0 14px 0 14px;
 
         @media #{$centeredMenu} {
-          width: 980px;
-          left: 50%;
-          margin-left: -490px;
         }
 
         &.tiny {
-          @media #{$otherThanPhone} {
+          @media #{$desktop} { // fix
             position: fixed;
             top: 0;
           }
@@ -370,7 +388,6 @@
 
             &.current-menu-item {
               a {
-                background-color: $red;
               }
             }
 
@@ -394,6 +411,10 @@
                   display: inline-block;
                   text-align: left;
                   a {
+                    border-bottom: 0;
+                    &:after {
+                      display: none;
+                    }
                   }
                 }
               }
@@ -431,3 +452,47 @@
         }
       }
     }
+
+
+.mobile-topbar {
+  background-color: $red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  width: 100%;
+  height: 40px;
+
+  @media #{$desktop} {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: {
+      image: url(../img/menu-button.svg);
+      size: 20px;
+      repeat: no-repeat;
+      color: rgba(0,0,0,0.5);
+      position: 10px;
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    position: absolute;
+    width: 150px;
+    left: 50%;
+    margin-left: -75px;
+    height: 20px;
+    top: 8px;
+    background-image: url(../img/spillmuseet-horizontal.svg);
+    background-size: 147px;
+    background-repeat: no-repeat;
+  }
+}

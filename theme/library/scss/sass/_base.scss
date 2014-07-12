@@ -14,8 +14,9 @@
   }
 }
 
+$multiColumn: "only screen and (min-width : 700px)";
 $otherThanPhone: "only screen and (min-width : 980px)";
-$ipadPortrait: "only screen and (min-width : 815px)";
+$ipadPortrait: "only screen and (min-width : 980px)";
 $ipadLandscape: "only screen and (min-width : 980px)";
 $centeredMenu: "only screen and (min-width : 980px)";
 $desktop: "only screen and (min-width : 1025px)";
@@ -23,7 +24,7 @@ $megaDesktop: "only screen and (min-width : 1312px)";
 
 //@include font-face("Ubuntu Condensed", font-files("UbuntuCondensed-Regular.ttf"));
 //@include font-face("Roboto", font-files("Roboto-Regular.ttf"));
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed:400,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto:100,400,400italic);
 
 
