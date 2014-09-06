@@ -3,10 +3,10 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto:100,400,400italic);
 /* line 21, ../scss/sass/retroGallery.scss */
-.gallery {
+.gallery.gallery-size-thumbnail {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: left;
-  margin: 0 100px 0 100px;
+  margin: 0 0 0 0;
   padding: 10px;
   display: block;
   margin-bottom: 20px;
@@ -15,8 +15,14 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 31, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen {
+@media only screen and (min-width: 815px) {
+  /* line 21, ../scss/sass/retroGallery.scss */
+  .gallery.gallery-size-thumbnail {
+    margin: 0 100px 0 100px;
+  }
+}
+/* line 34, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -27,8 +33,8 @@
   margin: 0;
   padding: 0;
 }
-/* line 42, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .gallery-image-counter {
+/* line 45, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .gallery-image-counter {
   display: inline-block;
   position: absolute;
   bottom: 10px;
@@ -38,8 +44,8 @@
   color: white;
   font-size: 40px;
 }
-/* line 53, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .close-gallery-button {
+/* line 56, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .close-gallery-button {
   display: block;
   position: absolute;
   font-family: "Roboto", Verdana;
@@ -59,8 +65,8 @@
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-/* line 71, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .close-gallery-button:before {
+/* line 74, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .close-gallery-button:before {
   content: "";
   position: absolute;
   background-color: black;
@@ -74,8 +80,8 @@
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-/* line 82, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .close-gallery-button:after {
+/* line 85, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .close-gallery-button:after {
   content: "x";
   position: absolute;
   left: 50%;
@@ -89,8 +95,8 @@
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-/* line 97, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .close-gallery-button:hover:before {
+/* line 100, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .close-gallery-button:hover:before {
   content: "";
   top: 10%;
   left: 10%;
@@ -102,9 +108,9 @@
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-/* line 109, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .left-gallery-image-button,
-.gallery.fullscreen .right-gallery-image-button {
+/* line 112, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .left-gallery-image-button,
+.gallery.gallery-size-thumbnail.fullscreen .right-gallery-image-button {
   display: block;
   position: absolute;
   font-family: "Roboto", Verdana;
@@ -125,9 +131,9 @@
   transition: all 300ms ease;
   color: white;
 }
-/* line 126, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .left-gallery-image-button:before,
-.gallery.fullscreen .right-gallery-image-button:before {
+/* line 129, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .left-gallery-image-button:before,
+.gallery.gallery-size-thumbnail.fullscreen .right-gallery-image-button:before {
   content: "";
   position: absolute;
   background-color: black;
@@ -140,9 +146,9 @@
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-/* line 137, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .left-gallery-image-button:hover:before,
-.gallery.fullscreen .right-gallery-image-button:hover:before {
+/* line 140, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .left-gallery-image-button:hover:before,
+.gallery.gallery-size-thumbnail.fullscreen .right-gallery-image-button:hover:before {
   content: "";
   top: 10%;
   left: 10%;
@@ -154,37 +160,37 @@
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-/* line 147, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .left-gallery-image-button:after,
-.gallery.fullscreen .right-gallery-image-button:after {
+/* line 150, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .left-gallery-image-button:after,
+.gallery.gallery-size-thumbnail.fullscreen .right-gallery-image-button:after {
   position: absolute;
   top: 50%;
   margin-top: -20px;
   margin-left: -6px;
   z-index: 1007;
 }
-/* line 156, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .left-gallery-image-button {
+/* line 159, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .left-gallery-image-button {
   left: 20px;
 }
-/* line 158, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .left-gallery-image-button:after {
+/* line 161, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .left-gallery-image-button:after {
   content: "<";
 }
-/* line 163, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .right-gallery-image-button {
+/* line 166, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .right-gallery-image-button {
   right: 20px;
 }
-/* line 165, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .right-gallery-image-button:after {
+/* line 168, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .right-gallery-image-button:after {
   content: ">";
 }
-/* line 170, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .gallery-item {
+/* line 173, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .gallery-item {
   display: none;
 }
-/* line 172, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .gallery-item.selected {
+/* line 175, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .gallery-item.selected {
   position: absolute;
   display: block;
   height: 100%;
@@ -192,8 +198,8 @@
   border-top: 52px solid transparent;
   top: 0;
 }
-/* line 179, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .gallery-item.selected .gallery-icon {
+/* line 182, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .gallery-item.selected .gallery-icon {
   position: absolute;
   top: 0;
   left: 0;
@@ -201,18 +207,18 @@
   height: 100%;
   text-align: center;
 }
-/* line 186, ../scss/sass/retroGallery.scss */
-.gallery.fullscreen .gallery-item.selected .gallery-icon img {
+/* line 189, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail.fullscreen .gallery-item.selected .gallery-icon img {
   max-height: 100%;
 }
-/* line 196, ../scss/sass/retroGallery.scss */
-.gallery .left-gallery-image-button,
-.gallery .right-gallery-image-button,
-.gallery .close-gallery-button {
+/* line 199, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail .left-gallery-image-button,
+.gallery.gallery-size-thumbnail .right-gallery-image-button,
+.gallery.gallery-size-thumbnail .close-gallery-button {
   display: none;
 }
-/* line 200, ../scss/sass/retroGallery.scss */
-.gallery .open-gallery-button {
+/* line 203, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail .open-gallery-button {
   position: absolute;
   left: 0;
   top: 0;
@@ -222,8 +228,8 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
-/* line 209, ../scss/sass/retroGallery.scss */
-.gallery .open-gallery-button .label {
+/* line 212, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail .open-gallery-button .label {
   display: inline-block;
   z-index: 20000;
   color: white;
@@ -231,8 +237,8 @@
   background-color: #e31515;
   font-size: 20px;
 }
-/* line 219, ../scss/sass/retroGallery.scss */
-.gallery .gallery-item {
+/* line 222, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail .gallery-item {
   width: 20%;
   height: 50px;
   padding: 0 10px 10px 0;
@@ -243,24 +249,24 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 228, ../scss/sass/retroGallery.scss */
-.gallery .gallery-item .gallery-icon {
+/* line 231, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail .gallery-item .gallery-icon {
   border: 0;
   padding: 0;
   margin: 0;
 }
-/* line 232, ../scss/sass/retroGallery.scss */
-.gallery .gallery-item .gallery-icon img {
+/* line 235, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail .gallery-item .gallery-icon img {
   padding: 0;
   margin: 0;
   max-width: 100%;
   border: 0;
 }
-/* line 241, ../scss/sass/retroGallery.scss */
-.gallery .gallery-item .wp-caption-text {
+/* line 244, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail .gallery-item .wp-caption-text {
   display: none;
 }
-/* line 245, ../scss/sass/retroGallery.scss */
-.gallery .gallery-image-counter {
+/* line 248, ../scss/sass/retroGallery.scss */
+.gallery.gallery-size-thumbnail .gallery-image-counter {
   display: none;
 }

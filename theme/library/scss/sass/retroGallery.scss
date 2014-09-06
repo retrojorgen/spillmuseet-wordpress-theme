@@ -18,10 +18,13 @@ $regularFont : 'Roboto Slab';
 $thinFont : 'Roboto';
 $red : #E31515;
 
-.gallery {
+.gallery.gallery-size-thumbnail  {
   border-top: 1px solid rgba(255,255,255,0.1);
   text-align: left;
-  margin: 0 100px 0 100px;
+  margin: 0 0 0 0;
+  @media #{$ipadPortrait} {
+    margin: 0 100px 0 100px;
+  }
   padding: 10px;
   display: block;
   margin-bottom: 20px;

@@ -1,20 +1,25 @@
 .rad-radio {
-	display: inline-block;
-	width: 280px;
-	height: 87px;
+	width: 100%;
+	height: 90px;
 	display: inline-block;
 	vertical-align: middle;
 	position: absolute;
-	top: 41px;
-	left: 50%;
-	margin-left: -140px;
+	top: 107px;
+	left: 0;
+	margin-left: 0;
+	display: inline-block;
 	@media #{$multiColumn} {
+		left: 50%;
+		top: 41px;
+		width: 280px;
+		height: 115px;
+		display: inline-block;
 		width: 346px;
-		margin-left: -173px;
+		margin-left: -490px;
 	}
 	@media #{$desktop} {
 		top: 60px;
-		margin-left: -190px;
+		margin-left: -490px;
 	}
 	border: 2px solid rgba(255,255,255,0.2);
 	@include box-shadow(0 0 20px rgba(0,0,0,0.3));
@@ -32,7 +37,7 @@
 		vertical-align: top;
 		width: 64%;
 		@media #{$multiColumn} {
-			width: 74%;
+			width: 66%;
 		}
 		.title {
 			padding: 10px 28px 0 10px;
@@ -63,13 +68,47 @@
 		content: "Nyeste episode!";
 		text-align: center;
 		color: white;
-		width: 40px;
+		width: 34px;
 		@include border-radius(50%);
-		height: 40px;
+		height: 32px;
 		padding: 14px;
 		background-color: $red;
-		right: -20px;
-		top: -7px;
+		right: 10px;
+		top: 12px;
+		font-size: 12px;
 		position: absolute;
+		@media #{$multiColumn} {
+			width: 40px;
+			right: -20px;
+			top: -7px;
+			height: 40px;
+			font-size: inherit;
+		}
+	}
+}
+
+.kaptenkrok-ad {
+	background: {
+		image: url(../img/kaptenkrok-ad-1.jpg);
+		size: cover;
+		repeat: no-repeat;
+	}
+	display: block;
+	width: 100%;
+	height: 73px;
+	top:54px;
+	left: 0;
+	margin-left: 0;
+	position: absolute;
+	@include box-shadow(0 0 20px rgba(0,0,0,0.3));
+	@media #{$multiColumn} {
+		width: 610px;
+		height: 115px;
+		top: 60px;
+		margin-left: -118px;
+		left: 50%;
+	}
+	@media #{$desktop} {
+		top:80px;
 	}
 }

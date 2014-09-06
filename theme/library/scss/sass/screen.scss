@@ -83,7 +83,7 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-family: $regularFont, Verdana;
+  font-family: $regularFont, verdana;
   background-color: #ececec;
   color: #333333;
   -webkit-font-smoothing: antialiased;
@@ -126,6 +126,12 @@ a {
     position: relative;
     z-index: 1002;
     padding: 0 0 20px;
+    margin-top: 66px;
+
+    @media #{$multiColumn} {
+      margin-top: 20px;
+    }
+
     @media #{$desktop} {
     }
     @media #{$ipadLandscape} {
@@ -193,15 +199,30 @@ a {
         @media #{$desktop} {
           opacity: 0;
         }
+        @media #{$multiColumn} {
+        }
         @include transition(all 400ms linear);
         &.active {
           opacity: 1;
           @include transition(all 400ms linear);
         }
+        img {
+          width: 100%;
+        }
         .main-image-container {
           margin: 0 0 -4px 0;
           @media #{$multiColumn} {
             margin: 0 0 0 0;
+            height: 100%;
+            &:after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              @include box-shadow(inset 0 0 60px rgba(0,0,0,0.3));
+            }
           }
           img {
             width: 100%;
@@ -223,14 +244,13 @@ a {
           background-color: rgba(0,0,0,0.8);
           padding: 10px;
           margin: 0;
-          text-transform: uppercase;
           font-weight: 800;
           @media #{$multiColumn} {
             position: absolute;
             bottom: 10px;
             left: 2%;
             border: none;
-            width: 80%;
+            max-width: 94%;
           }
           a {
             color: white;
@@ -251,7 +271,7 @@ a {
             }
           }
           h2 {
-            font-size: 40px;
+            font-size: 50px;
             position: absolute;
             border-bottom: 3px solid transparent;
           }
@@ -269,21 +289,28 @@ a {
             max-width: 150%;
           }
           h2 {
-
+            font-size: 33px;
           }
         }
         li:nth-child(4) {
+          width: 100%;
+          height: auto;
+          img {
+            max-width: 100%;
+          }
+        }
+        li:nth-child(5) {
           width: 66.6%;
           float: left;
           max-height: 490px;
           border-right: 3px solid transparent;
           border-bottom: 3px solid transparent;
           h2 {
-            font-size: 34px;
+            font-size: 40px;
           }
         }
-        li:nth-child(5),
-        li:nth-child(6) {
+        li:nth-child(6),
+        li:nth-child(7) {
           width: 33.3333%;
           float: right;
           height: 245px;
@@ -292,10 +319,10 @@ a {
             margin-left: -26%;
           }
           h2 {
-            font-size: 17px;
+            font-size: 23px;
           }
         }
-        li:nth-child(7) {
+        li:nth-child(8) {
           float:left;
           width: 66.6%;
           max-height: 245px;
@@ -305,26 +332,26 @@ a {
             margin-top: -15%;
           }
           h2 {
-            font-size: 18px;
+            font-size: 23px;
           }
         }
-        li:nth-child(8) {
+        li:nth-child(9) {
           float:right;
           width: 33.3333%;
           height: 245px;
           border-bottom: 3px solid transparent;
         }
-        li:nth-child(9),
-        li:nth-child(10) {
+        li:nth-child(10),
+        li:nth-child(11) {
           border-bottom: 3px solid transparent;
           border-right: 3px solid transparent;
         }
-        li:nth-child(11) {
+        li:nth-child(12) {
           border-bottom: 3px solid transparent;
         }
-        li:nth-child(9),
         li:nth-child(10),
-        li:nth-child(11) {
+        li:nth-child(11),
+        li:nth-child(12) {
           float:left;
           width: 33.3333%;
           img {
@@ -332,34 +359,34 @@ a {
           }
           max-height: 237px;
           h2 {
-            font-size: 17px;
+            font-size: 23px;
           }
         }
-        li:nth-child(12) {
+        li:nth-child(13) {
           width: 66.6%;
           float: left;
           max-height: 490px;
           border-bottom: 3px solid transparent;
           border-right: 3px solid transparent;
           h2 {
-            font-size: 28px;
+            font-size: 36px;
           }
         }
-        li:nth-child(13),
-        li:nth-child(14) {
+        li:nth-child(14),
+        li:nth-child(15) {
           width: 33.3333%;
           float: right;
           max-height: 245px;
           border-bottom: 3px solid transparent;
         }
-        li:nth-child(15) {
+        li:nth-child(16) {
           float:left;
           width: 33.3333%;
           max-height: 245px;
           border-right: 3px solid transparent;
           border-bottom: 3px solid transparent;
         }
-        li:nth-child(16) {
+        li:nth-child(17) {
           float:right;
           width: 66.6%;
           max-height: 245px;
@@ -368,7 +395,7 @@ a {
             margin-top: -15%;
           }
         }
-        li:nth-child(17) {
+        li:nth-child(18) {
           float:right;
           width: 100%;
           border-bottom: 3px solid transparent;
@@ -379,24 +406,24 @@ a {
             margin-left: 0;
           }
         }
-        li:nth-child(18),
-        li:nth-child(19) {
+        li:nth-child(19),
+        li:nth-child(20) {
           border-right: 3px solid transparent;
           border-bottom: 3px solid transparent;
         }
 
-        li:nth-child(20) {
+        li:nth-child(21) {
           border-bottom: 3px solid transparent;
         }
 
-        li:nth-child(18),
         li:nth-child(19),
-        li:nth-child(20) {
+        li:nth-child(20),
+        li:nth-child(21) {
           float:left;
           width: 33.3333%;
           max-height: 245px;
           h2 {
-            font-size: 17px;
+            font-size: 23px;
           }
         }
       }
@@ -430,17 +457,19 @@ a {
     margin: 0;
     font-weight: normal;
     @media #{$otherThanPhone} {
-      font-size: 40px;
+      font-size: 60px;
+      font-weight: bold;
     }
   }
   h2 {
     color: rgba(0,0,0,0.4);
     font-family: $regularFont, Verdana;
     font-size: 20px;
-    font-weight: normal;
+    font-weight: bold;
     padding: 0 20px 0 20px;
     @media #{$otherThanPhone} {
-      font-size: 30px;
+      font-size: 40px;
+      font-weight: 400;
     }
   }
 

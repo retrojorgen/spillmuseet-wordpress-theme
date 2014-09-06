@@ -77,9 +77,12 @@
 	  </div>
 	</div>
 
+	<a href="http://www.kaptenkrok.se" target="_blank" class="kaptenkrok-ad" id="kaptenkrok-ad">
+	</a>
+
 <div class="mobile-topbar">
 		<button class="mobile-menu-toggle"></button>
-		<div class="logo"></div>
+		<a href="<?php echo home_url(); ?>"><div class="logo"></div></a>
 </div>
 	<nav class="main-navigation" role="navigation">
 		<a href="/" class="spillmuseet-logo"></a>

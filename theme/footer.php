@@ -59,8 +59,6 @@
           <h4>Samarbeidspartnere</h4>
           <a href="http://www.spillexpo.no" target="_blank" class="logo-spillexpo">Spillexpo</a>
           <a href="http://www.playstation.no" target="_blank" class="logo-playstation">Playstation.no</a>
-          <h4>Sjekk også ut</h4>
-          <a href="http://www.radcrew.net" target="_blank" class="logo-rad-crew">Rad Crew</a>
         </section>
 
 			</footer>

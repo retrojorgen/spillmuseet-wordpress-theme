@@ -11,7 +11,9 @@
 				createPlayer = function() {
 					$('.episode-details .title').text(playerData.title);
 					var newDate = new Date(playerData.pubDate);
-					$('.episode-details .date').text(newDate.getDate() + "." + newDate.getMonth() + "." + newDate.getFullYear());
+					console.log('pubdate: ' + playerData.pubDate);
+					console.log('pubdate: ' + newDate);
+					$('.episode-details .date').text(newDate.getDate() + "." + (newDate.getMonth()+1) + "." + newDate.getFullYear());
 					$('.podcast-image').attr('src', imageUrl);
 				},
 

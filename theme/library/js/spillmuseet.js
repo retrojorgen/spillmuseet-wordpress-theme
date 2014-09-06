@@ -89,6 +89,11 @@
       }
     });
 
+    if($('h2 + img').length) {
+      var mainImageOffsetTop = $('h2 + img').offset().top;
+      $('.fb-like').css('top', mainImageOffsetTop - 200 + 'px');
+    }
+
     if($('#videos-wrapper').length) {
       $('#videos-wrapper').retroVideo();
     }
@@ -100,7 +105,7 @@
     $('.wp-caption').attr('style', '');
 
     if($('.articles').length) {
-      var articlesOffset = $('.articles').offset().top;  
+      var articlesOffset = $('.articles').offset().top;
     }
 
     if($('.main-article h2').length) {
