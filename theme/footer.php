@@ -1,4 +1,5 @@
-			<footer class="footer" role="contentinfo">
+  </div>
+  			<footer class="footer" role="contentinfo">
 
 				<section class="logo footer-section">
           <a class="spillmuseet-logo"></a>
@@ -62,8 +63,6 @@
         </section>
 
 			</footer>
-
-	</div>
 </div>
 		<?php // all js scripts are loaded in library/bones.php ?>
 		<?php wp_footer(); ?>

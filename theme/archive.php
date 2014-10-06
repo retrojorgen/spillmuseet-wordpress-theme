@@ -33,15 +33,22 @@
 									</h1>
 							<?php } ?>
 
-							<ul class="articles-list" role="main">
+							<ul class="articles-list category-view" role="main">
 							<?php 
-								$counter = 1;
+								$firstPost = 'first-post';
+								$counter = 0;
 								$mediumImageNumbers = array(5,6,8,9,10,11,13,14,15,18,19,20);
 							?>
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?><li class="article-container">
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?><li id="<?php echo $firstPost; ?>" class="article-container list-column-<?php echo $counter; ?>">
 											<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 												<div class="main-image-container">
 										 			<?php 
+										 					$firstPost = '';
+										 					if($counter == 1) {
+										 						$counter = 2;
+										 					} else {
+										 						$counter = 1;
+										 					}
 										 					if(in_array($counter, $mediumImageNumbers)) {
 										 						echo get_the_post_thumbnail( $post_id, 'medium', $attr );
 										 					} else {

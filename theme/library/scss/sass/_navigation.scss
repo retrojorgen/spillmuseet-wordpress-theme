@@ -1,506 +1,164 @@
-.donkey-kong-container {
-  display: none;
-  @media #{$otherThanPhone} {
-    display: inline-block;
-    opacity: 0;
-    &.visible {
-      opacity: 1;
-      @include transition(opacity 400ms 1s);
+.main-navigation {
+  background-color: opacify($red, 0.2);
+
+  @media #{$multiColumn} {
+    #menu-toppmeny {
+      display: inline-block;
+      vertical-align: middle;
+      .menu-item {
+        display: inline-block;
+        margin-right: -4px;
+        a {
+          display: block;
+          position: relative;
+          padding: 14px;
+          text-transform: uppercase;
+          font-size: 20px;
+          &:after {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: 4px;
+            content: "";
+            background: {
+              image: url(../img/arrow.svg);
+              size: cover;
+            }
+          }
+          &:hover {
+            background-color: darken($red, 10%);
+          }
+        }
+        .sub-menu {
+          display: none;
+        }
+      }
     }
   }
-  width: 250px;
-  height: 226px;
-  position: absolute;
-  top:0;
-  left: 0;
-  background: url(../img/donkey-kong-sprite.png) no-repeat;
-  @include animation(donkeyKong 4s infinite steps(4));
-}
 
-.donkey-kong-wrapper-1 {
-  position: absolute;
-  top: 360px;
-  left: 50%;
-  margin-left: 330px;
-  display: inline-block;
-  @include rotate(45deg);
-  @include animation(donkeyAnim1 10s infinite linear 2s);
-}
 
-.donkey-kong-wrapper-2 {
-  position: absolute;
-  top: 400px;
-  left: 50%;
-  margin-left: 330px;
-  display: inline-block;
-  @include rotate(66deg);
-  @include animation(donkeyAnim1 10s infinite linear 23s);
-}
-
-.donkey-kong-wrapper-3 {
-  position: absolute;
-  top: 360px;
-  left: 50%;
-  margin-left: -465px;
-  display: inline-block;
-  @include rotate(-45deg);
-  @include animation(donkeyAnim2 10s infinite linear 5s);
-}
-
-.duck-hunt-wrapper {
-  display: none;
-  @media #{$otherThanPhone} {
+  .logo-link {
     display: inline-block;
-  }
-  @include animation(flyingBird 15s infinite linear);
-  position: absolute;
-  .duck-hunt-container {
-    position: absolute;
-    width: 110px;
-    height: 90px;
-    left: 25%;
-    margin-left: 0;
-    background: url(../img/duck-hunt-bird-sprite.png) no-repeat;
-    @include animation(duckHunt 500ms infinite steps(2));
-  }
-}
-@include keying(donkeyAnim1) {
-  0% {
-    margin-left: 230px;
-  }
-  10% {
-    margin-left: 500px;
-  }
-  20% {
-    margin-left: 230px;
-  }
-  100% {
-    margin-left: 230px;
-  }
-}
-
-@include keying(donkeyAnim2) {
-  0% {
-    margin-left: -465px;
-  }
-  10% {
-    margin-left: -598px;
-  }
-  20% {
-    margin-left: -465px;
-  }
-  100% {
-    margin-left: -465px;
-  }
-}
-
-@include keying(donkeyKong) {
-  from {
-    background-position: 0px;
-  }
-  to {
-    background-position: -1000px;
-  }
-}
-
-@include keying(flyingBird) {
-  0% {
-    top: 300px;
-    left: 0;
-  }
-  10% {
-    top: 20px;
-    left: 20%;
-  }
-  20% {
-    top: -40px;
-    left: 40%;
-  }
-  30% {
-    top: 20px;
-    left: 60%;
-  }
-  40% {
-    top: 0px;
-    left: 80%;
-  }
-  50% {
-    top: 0px;
-    left: 100%;
+    width: 206px;
+    height: 29px;
+    margin: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    background: {
+      image: url(../img/spillmuseet-horizontal.svg);
+      size: cover;
+      repeat: no-repeat;
+    }
   }
 
-  100% {
-    top: 0;
-    left: 100%;
-  }
-
-}
-
-@include keying(duckHunt) {
-  from {
-    background-position: 0px;
-  }
-  to {
-    background-position: -220px;
-  }
-}
-
-    .main-navigation {
-      z-index: 5000;
-      background-color: $red;
-      width: 100%;
-      opacity: 0;
-      visibility: 0;
+  form[role="search"] {
+    
+    display: none;
+    .screen-reader-text {
+      text-indent: -999999px;
+      overflow: hidden;
+      max-width: 1px;
+      width: 1px;
+      position: relative;
       display: none;
-      margin-top: -10px;
-      @include box-sizing(border-box);
-      @include transition(visibility 200ms, opacity 200ms, margin 200ms);
-      position: fixed;
 
+    }
+    input[type="text"] {
+      font-size: 18px;
+      font-family: $regularFont, Verdana;
+      background-color: black;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 5px;
+      margin: 0;
+      color: white;
+      width: 200px;
+    }
+    input[type="submit"] {
+      margin: 0 0 0 0;
+      padding: 0;
+      font-size: 18px;
+      font-family: $regularFont, Verdana;
+      padding: 5px 10px 5px 10px;
+      background-color: black;
+      border: 1px solid rgba(255,255,255,0.4);
+      margin-left: -5px;
+      color: white;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 0;
+    li {
+      margin: 0;
+      display: block;
+      color: white;
+      padding: 10px;
+      position: relative;
       @media #{$multiColumn} {
-        background-color: rgba(223, 0, 0, 0.843137);
-        position: fixed;
-        top: 0;
-        margin-left: 0;
-        left: 0;
-        width: 100%;
-      }
-
-
-      .spillmuseet-logo {
-        display: inline-block;
-        width: 170px;
-        height: 29px;
-        margin-top: 1px;
-        vertical-align: middle;
-        cursor: pointer;
-        background: {
-          image: url(../img/spillmuseet-horizontal.svg);
-          size: 160px;
-          repeat: no-repeat;
-        }
-      }
-
-      form[role="search"] {
-        
-        display: none;
-        @media #{$ipadLandscape} {
-        }
-        @media #{$desktop} {
-          display: inline-block;
-          position: relative;
-          vertical-align: top;
-          padding: 10px 0 0 5px;
-        }
-
-        .screen-reader-text {
-          text-indent: -999999px;
-          overflow: hidden;
-          max-width: 1px;
-          width: 1px;
-          position: relative;
-          display: none;
-
-        }
-        input[type="text"] {
-          font-size: 18px;
-          font-family: $regularFont, Verdana;
-          background-color: black;
-          border: 1px solid rgba(255,255,255,0.4);
-          padding: 5px;
-          margin: 0;
-          color: white;
-          width: 200px;
-        }
-        input[type="submit"] {
-          margin: 0 0 0 0;
-          padding: 0;
-          font-size: 18px;
-          font-family: $regularFont, Verdana;
-          padding: 5px 10px 5px 10px;
-          background-color: black;
-          border: 1px solid rgba(255,255,255,0.4);
-          margin-left: -5px;
-          color: white;
-        }
-      }
-
-      &.active {
-        display: block;
-        visibility: 1;
-        opacity: 1;
-        margin: 0;
-        position: fixed;
-        @include transition(visibility 200ms, opacity 200ms, margin 200ms);
-        height: 100%;
-        border-top: 10px solid transparent;
-        top: 10px;
-        @include box-sizing(border-box);
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      ul {
-        list-style: none;
         padding: 0;
-        margin: 0 0 0 0;
+      }
+      .sub-menu {
         li {
-          margin: 0;
-          display: block;
-          color: white;
-          padding: 10px;
-          position: relative;
-          .sub-menu {
-            li {
-              padding: 4px;
+          padding: 4px;
+        }
+      }
+
+      &.menu-item-has-children {
+        .sub-menu {
+          #menu-item-10335,
+          #menu-item-10336,
+          #menu-item-10337,
+          #menu-item-10607,
+          #menu-item-10402,
+          #menu-item-10994 {
+          }
+          #menu-item-10335 a,
+          #menu-item-10336 a,
+          #menu-item-10337 a,
+          #menu-item-10607 a,
+          #menu-item-10402 a,
+          #menu-item-10994 a {
+            display: inline-block;
+            position: relative;
+            width: 200px;
+            height: 80px;
+            margin: 10px;
+            text-indent: -9999999px;
+            background: {
+              repeat: no-repeat;
+              position: 8px 8px;
+              size: 90%;
             }
           }
 
-          &.menu-item-has-children {
-            li {
-              padding: 10px;
-              a {
-                border: 0;
-              }
-            }
-            a {
-              padding-right: 15px;
-              position: relative;
-              font-size: 22px;
-              display: inline-block;
-              border-bottom: 1px solid white;
-              @media #{$desktop} {
-                border-bottom: 0;
-                &:after {
-                  content: "";
-                  position: absolute;
-                  width: 8px;
-                  height: 8px;
-                  right: 5px;
-                  top: 28px;
-                  bottom: 16px;
-                  background: {
-                    size: 8px 8px;
-                    image: url(../img/arrow.svg);
-                    width: 90%;
-                  }
-                  repeat: no-repeat;
-                  @media #{$desktop} {
-                    right: 5px;
-                  }
-                }
-              }
-              @media #{$desktop} {
-                padding-right: 15px;
-              }
-            }
-            @media #{$desktop} {
-              &#menu-item-10333 {
-                .sub-menu {
-                  background-color: white;
-                }
-              }
-              .sub-menu {
-                #menu-item-10335 a,
-                #menu-item-10336 a,
-                #menu-item-10337 a,
-                #menu-item-10607 a,
-                #menu-item-10402 a,
-                #menu-item-10994 a {
-                  display: inline-block;
-                  position: relative;
-                  width: 200px;
-                  height: 80px;
-                  margin: 10px;
-                  text-indent: -9999999px;
-                  background: {
-                    repeat: no-repeat;
-                    position: 8px 8px;
-                    size: 90%;
-                  }
-                  @media #{$desktop} { // fix
-                    &:hover {
-                      @include box-shadow(1px 1px 20px rgba(0,0,0,0.2));
-                    }
-                  }
-                }
-
-                #menu-item-10402 a {
-                  background-image: url(../img/nerdalert-nerdcast.png);
-                }
-                #menu-item-10607 a {
-                  background-image: url(../img/nerdalert-nerdview.png);
-                }
-                #menu-item-10336 a {
-                  background-image: url(../img/nerdalert-tankesmie.png);
-                }
-                #menu-item-10335 a {
-                  background-image: url(../img/nerdalert-nerdcastx.png);
-                }
-                #menu-item-10994 a {
-                  width: 318px;
-                  background-image: url(../img/nerdalert-retroreise.png);
-                }
-              }
-              a {
-                &:after {
-                }
-              }
-            }
+          #menu-item-10402 a {
+            background-image: url(../img/nerdalert-nerdcast.png);
+          }
+          #menu-item-10607 a {
+            background-image: url(../img/nerdalert-nerdview.png);
+          }
+          #menu-item-10336 a {
+            background-image: url(../img/nerdalert-tankesmie.png);
+          }
+          #menu-item-10335 a {
+            background-image: url(../img/nerdalert-nerdcastx.png);
+          }
+          #menu-item-10994 a {
+            width: 318px;
+            background-image: url(../img/nerdalert-retroreise.png);
           }
           a {
-            color: white;
-            font-size: 24px;
-          }
-        }
-
-      }
-
-      @media #{$desktop} { // fix
-        display: block;
-        text-align: center;
-        opacity: 1;
-        margin: 0 auto 0;
-        width: 100%;
-        height: 57px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        padding: 0 14px 0 14px;
-
-        @media #{$centeredMenu} {
-        }
-
-        &.tiny {
-          @media #{$desktop} { // fix
-            position: fixed;
-            top: 0;
-          }
-        }
-
-        ul {
-          display: inline-block;
-          padding: 0;
-          margin: 0;
-          list-style: none;
-          @media #{$desktop} {
-          }
-
-          li {
-            display: inline-block;
-            padding: 0;
-
-            .sub-menu {
-              display: none;
-            }
-
-            &.current-menu-item {
-              a {
-              }
-            }
-
-            &:hover {
-              background-color: white;
-              >a {
-                color: $red;
-              }
-              .sub-menu {
-                width: 400px;
-                background-color: black;
-                position: absolute;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                display: block;
-                z-index: 500;
-                left: 0;
-                top: 56px;
-                overflow-y: auto;
-                li {
-                  display: block;
-                  text-align: left;
-                  padding: 4px;
-                  a {
-                    border-bottom: 0;
-                    &:after {
-                      display: none;
-                    }
-                  }
-                }
-              }
-            }
-
-            &:hover {
-               
-            }
-            
-            a {
-              color: rgba(255,255,255,1);
-              font-family: $regularFont, Verdana;
-              text-decoration: none;
-              font-size: 22px;
-              font-weight: 400;
-              text-transform: uppercase;
-              padding: 15px 5px 16px 5px;
-              display: block;
-
-              @media #{$desktop} {
-                padding: 15px 10px 16px 10px;
-              }
-              &:hover {
-              }
-            }
-
-            ul {
-              li {
-                a {
-                  font-size: 20px;
-                }
-              }
+            &:after {
             }
           }
         }
       }
+      a {
+        color: white;
+        font-size: 24px;
+      }
     }
-
-
-.mobile-topbar {
-  background-color: $red;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100000;
-  width: 100%;
-  height: 40px;
-
-  @media #{$desktop} {
-    display: none;
-  }
-
-  .mobile-menu-toggle {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    background: {
-      image: url(../img/menu-button.svg);
-      size: 20px;
-      repeat: no-repeat;
-      color: rgba(0,0,0,0.5);
-      position: 10px;
-    }
-  }
-
-  .logo {
-    display: inline-block;
-    position: absolute;
-    width: 150px;
-    left: 50%;
-    margin-left: -75px;
-    height: 20px;
-    top: 8px;
-    background-image: url(../img/spillmuseet-horizontal.svg);
-    background-size: 147px;
-    background-repeat: no-repeat;
   }
 }

@@ -65,29 +65,13 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="donkey-kong-wrapper-1"><div class="donkey-kong-container"></div></div>
-<div class="donkey-kong-wrapper-2"><div class="donkey-kong-container"></div></div>
-<div class="donkey-kong-wrapper-3"><div class="donkey-kong-container"></div></div>
 
-	<div class="rad-radio" id="rad-radio">
-	  <img class="podcast-image" src="">
-	  <div class="episode-details">
-	    <h3 class="title"></h3>
-	    <p class="date"></p>
-	  </div>
-	</div>
 
-	<a href="http://www.kaptenkrok.se" target="_blank" class="kaptenkrok-ad" id="kaptenkrok-ad">
-	</a>
-
-<div class="mobile-topbar">
-		<button class="mobile-menu-toggle"></button>
-		<a href="<?php echo home_url(); ?>"><div class="logo"></div></a>
-</div>
 	<nav class="main-navigation" role="navigation">
-		<a href="/" class="spillmuseet-logo"></a>
+		<button class="mobile-menu-toggle"></button>
+		<a class="logo-link" href="<?php echo home_url(); ?>"></a>
 		<?php bones_main_nav(); ?>
-		<?php get_search_form(); ?>
+		<?php //get_search_form(); ?>
 	</nav>
 <div class="articles-container">
 	
