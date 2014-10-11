@@ -85,13 +85,12 @@ body {
   height: 100%;
   width: 100%;
   font-family: $regularFont, verdana;
-  background-color: #ececec;
+//  background-color: #ececec;
   color: #333333;
-  -webkit-font-smoothing: antialiased;
   font-weight: normal;
   font-style: normal;
   background: {
-    image: url(../img/page-background.png);
+//    image: url(../img/page-background.png);
     position: center top;
     repeat: repeat;
     attachment: fixed;
@@ -138,83 +137,100 @@ a {
     }
   }
   .podcasts {
-    display: none;
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow: hidden;
     @media #{$megaDesktop} {
-      display: block;
+      margin-bottom: 0;
       width: 306px;
-      height: 100%;
       position: absolute;
+      overflow: visible;
+      height: 100%;
       right: 0;
       top: 20px;
-      .episode-container {
-        position: relative;
-        margin-bottom: 4px;
-        overflow: hidden;
+    }
+    .podcasts-wrapper {
+      position: relative;
+      width: 100%;
+      display: block;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      @media #{$megaDesktop} {
+        overflow: visible;
+      }
+      .podcasts-container {
+        padding: 10px 0 10px 5px;
+        width: 5000px;
+        @media #{$megaDesktop} {
+          width: 100%;
+          padding: 10px;
+        }
+      }
+    }
+    .episode-container {
+      position: relative;
+      cursor: pointer;
+      width: 306px;
+      height: 120px;
+      display: inline-block;
+      overflow: hidden;
+      @media #{$megaDesktop} {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+        
+      }
+      //border: 4px solid white;
+      .image-container {
+        width: 40%;
         height: 120px;
-        cursor: pointer;
-        //border: 4px solid white;
-        .image-container {
-          width: 40%;
-          height: 120px;
-          overflow: hidden;
-          background-color: white;
+        overflow: hidden;
+        background-color: white;
 
-          .image {
-            max-height: 110%;
-          }
-
-          &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.1);
-            z-index: 100;
-            @include transition(all 200ms ease-in-out);
-          }
+        .image {
+          max-height: 110%;
         }
-        .information-container {
+      }
+      .information-container {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        background-color: rgb(240,240,240);
+        .episode-title {
+          margin: 0;
+          color: black;
+          font-size: 14px;
+          padding: 10px 10px 5px 10px;
+        }
+        .episode-date {
+          margin: 0;
+          color: rgb(140,140,140);
+          font-size: 12px;
+          padding: 5px 10px 10px 10px;
+        }
+        &:before {
           position: absolute;
-          bottom: 0;
-          right: 0;
-          width: 60%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.8);
-          .episode-title {
-            margin: 0;
-            color: white;
-            font-size: 14px;
-            padding: 10px 10px 5px 10px;
-          }
-          .episode-date {
-            margin: 0;
-            color: rgb(240,240,240);
-            font-size: 12px;
-            padding: 5px 10px 10px 10px;
-          }
-          &:before {
-            position: absolute;
-            content: '';
-            top: 14px;
-            left: -126px;
-            width: 100px;
-            height: 100px;
-            background: {
-              size: cover;
-              image: url('../img/play-button.svg');
-            }
+          content: '';
+          top: 14px;
+          left: -126px;
+          width: 100px;
+          height: 100px;
+          background: {
+            size: cover;
+            image: url('../img/play-button.svg');
           }
         }
-        &:after {
-          content: ".";
-          display: block;
-          clear: both;
-          visibility: hidden;
-          line-height: 0;
-          height: 0;
-        }
+      }
+      &:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
       }
     }
   }
@@ -294,11 +310,11 @@ a {
 
 
       .article-snippet {
-        overflow: hidden;
         position: relative;
         @media #{$desktop} {
         }
         @media #{$multiColumn} {
+          padding: 10px 5px 10px 5px;
         }
         @include transition(all 400ms linear);
         .wp-post-image {
@@ -306,50 +322,27 @@ a {
         }
         .main-image-container {
           margin: 0 0 -4px 0;
+          overflow: hidden;
+          position: relative;
+          
           @media #{$multiColumn} {
             margin: 0 0 0 0;
             height: 100%;
-            &:after {
-              content: "";
-              position: absolute;
-              left: 0;
-              top: 0;
-              width: 100%;
-              height: 100%;
-              @include box-shadow(inset 0 0 60px rgba(0,0,0,0.3));
-            }
           }
           .wp-post-image {
             width: 100%;
+            border: 1px solid rgb(200,200,200);
             @media #{$multiColumn} {
-              width: auto;
-              min-width: 100%;
+              max-width: 100%;
             }
             @media #{$desktop} {
-              width: auto;
-              margin-left: -15%;
             }
-          }
-        }
-        .article-snippet-header-container {
-          position: relative;
-          border-bottom: 1px solid white;
-          background-color: rgba(255,255,255,0.9);
-          padding: 10px;
-          margin: 0;
-          font-weight: 800;
-          @media #{$multiColumn} {
-            position: absolute;
-            bottom: 10px;
-            left: 2%;
-            border: none;
-            max-width: 94%;
           }
           .article-category-container {
             display: block;
             position: absolute;
             left: 0;
-            top: -40px;
+            bottom: 0;
             .article-category {
               font-size: 16px;
               color: white;
@@ -357,13 +350,30 @@ a {
               padding: 10px;
             }
           }
+        }
+        .article-snippet-header-container {
+          position: relative;
+          border-bottom: 1px solid white;
+          padding: 20px 0 20px 0;
+          margin: 0;
+          font-weight: 800;
+          @media #{$multiColumn} {
+          }
           .article-snippet-header {
             font-size: 22px;
             color: white;
             margin: 0;
+            font-weight: 900;
 
             .article-snippet-header-link {
-              color: rgb(100,100,100);
+              color: rgb(20,20,20);
+              letter-spacing: -1px;
+            }
+          }
+          .article-snippet-excerpt {
+            font-weight: 400;
+            .article-snippet-excerpt-link {
+              color: rgb(80,80,80);
             }
           }
         }
@@ -372,17 +382,11 @@ a {
         #article-1 {
           width: 100%;
           border-bottom: 3px solid transparent;
-          overflow:hidden;
           .main-image-container {
             max-height: 500px;
-            .wp-post-image {
-              margin-left: 0;
-              width: 100%;
-            }
+            overflow: hidden;
           }
           .article-snippet-header-container {
-            position: absolute;
-            border-bottom: 3px solid transparent;
             .article-snippet-header {
               font-size: 50px;
             }
@@ -393,12 +397,11 @@ a {
         }
         #article-2,
         #article-3 {
-          height: 300px;
           width: 50%;
           border-bottom: 3px solid transparent;
           float: left;
-          .wp-post-image {
-            max-width: 150%;
+          .main-image-container {
+            max-height: 300px;
           }
           .article-snippet-header {
             font-size: 33px;
@@ -414,7 +417,10 @@ a {
         #article-4 {
           width: 66.6%;
           float: left;
-          max-height: 490px;
+          
+          .main-image-container {
+            max-height: 490px;
+          }
           border-right: 3px solid transparent;
           border-bottom: 3px solid transparent;
           .article-snippet-header {
@@ -425,11 +431,11 @@ a {
         #article-6 {
           width: 33.3333%;
           float: right;
-          height: 245px;
-          border-bottom: 3px solid transparent;
-          .wp-post-image {
-            margin-left: -26%;
+
+          .main-image-container {
+            max-height: 240px;
           }
+          border-bottom: 3px solid transparent;
           .article-snippet-header {
             font-size: 18px;
           }
@@ -437,11 +443,10 @@ a {
         #article-7 {
           float:left;
           width: 66.6%;
-          max-height: 245px;
           border-bottom: 3px solid transparent;
           border-right: 3px solid transparent;
-          .wp-post-image {
-            margin-top: -15%;
+          .main-image-container {
+            max-height: 240px;
           }
           .article-snippet-header {
             font-size: 23px;
@@ -450,10 +455,12 @@ a {
         #article-8 {
           float:right;
           width: 33.3333%;
-          height: 245px;
           border-bottom: 3px solid transparent;
           .article-snippet-header {
             font-size: 18px;
+          }
+          .main-image-container {
+            max-height: 240px;
           }
         }
         #article-9,
@@ -469,10 +476,9 @@ a {
         #article-11 {
           float:left;
           width: 33.3333%;
-          .wp-post-image {
-            margin-left: -26%;
+          .main-image-container {
+            max-height: 237px;
           }
-          max-height: 237px;
           .article-snippet-header {
             font-size: 18px;
           }
@@ -480,7 +486,9 @@ a {
         #article-12 {
           width: 66.6%;
           float: left;
-          max-height: 490px;
+          .main-image-container {
+            max-height: 490px;
+          }
           border-bottom: 3px solid transparent;
           border-right: 3px solid transparent;
           .article-snippet-header {
@@ -491,24 +499,17 @@ a {
         #article-14 {
           width: 33.3333%;
           float: right;
-          max-height: 245px;
+          .main-image-container {
+            max-height: 240px;
+          }
           border-bottom: 3px solid transparent;
         }
-        #article-15 {
+        #article-15,#article-16 {
           float:left;
           width: 33.3333%;
-          max-height: 245px;
+          max-height: 240px;
           border-right: 3px solid transparent;
           border-bottom: 3px solid transparent;
-        }
-        #article-16 {
-          float:right;
-          width: 66.6%;
-          max-height: 245px;
-          border-bottom: 3px solid transparent;
-          .wp-post-image {
-            margin-top: -15%;
-          }
         }
         #article-17 {
           float:right;
@@ -516,9 +517,6 @@ a {
           border-bottom: 3px solid transparent;
           .article-snippet-header {
             font-size: 40px;
-          }
-          .wp-post-image {
-            margin-left: 0;
           }
         }
         #article-18,
@@ -536,7 +534,9 @@ a {
         #article-20 {
           float:left;
           width: 33.3333%;
-          max-height: 245px;
+          .main-image-container {
+            max-height: 240px;
+          }
           .article-snippet-header {
             font-size: 23px;
           }
@@ -570,35 +570,40 @@ a {
     font-size: 40px;
     padding: 20px 20px 0px 20px;
     margin: 0;
-    font-weight: normal;
+    font-weight: 900;
     @media #{$otherThanPhone} {
       font-size: 60px;
-      font-weight: bold;
+      font-weight: 900;
+      margin-bottom: 40px;
     }
   }
   h2 {
     color: rgba(0,0,0,0.4);
     font-family: $regularFont, Verdana;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 400;
     padding: 0 20px 0 20px;
+    letter-spacing: -2px;
     @media #{$otherThanPhone} {
       font-size: 40px;
-      font-weight: 400;
+      
     }
+  }
+  h2+p {
+    display: none;
   }
 
   h3,h4 {
     font-size: 18px;
     text-align: left;
     font-family: $regularFont, Verdana;
-    color: $red;
+    color: rgb(80,80,80);
     padding: 0 20px 0 20px;
+    font-weight: 700;
     @media #{$otherThanPhone} {
-      padding: 0 100px 0 100px;
+      padding: 0 120px 0 120px;
       font-size: 28px;
     }
-    
   }
   .wp-post-image {
     &.aligncenter {
@@ -690,15 +695,19 @@ a {
       padding-top: 40px;
     }
   }
-
+  h5 {
+    line-height: 1em;
+  }
+  p {
+    line-height: 1.5em;
+  }
   p,
   h5 {
     padding: 0 20px 20px 20px;
     font-size: 16px;
     color: rgba(0,0,0,0.8);
     font-weight: normal;
-    font-family: $thinFont, Verdana;
-    line-height: 1.5em;
+    
     &.byline {
       position: relative;
       img {
@@ -725,6 +734,7 @@ a {
           left: 270px;
           top: 0;
           max-width: 400px;
+          line-height: 1em;
         }
       }
 
@@ -991,5 +1001,59 @@ a {
     image: url(../img/loader.gif);
     size: cover;
     repeat: no-repeat;
+  }
+}
+
+.articles-row {
+  &:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+  }
+}
+.next-previous-posts {
+  max-width: 980px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  &:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  .next-post-container,
+  .previous-post-container {
+    width: 49%;
+    float: left;
+    img {
+      width: 40%;
+    }
+    .header-container {
+      width: 60%;
+      float: right;
+      padding: 0 10px 0 10px;
+      vertical-align: top;
+      .next-post-label {
+        background-color: rgb(80,80,80);
+        color: white;
+        display: inline-block;
+        padding: 4px;
+      }
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        padding: 4px;
+      }
+      .post-time {
+        color: rgb(80,80,80);
+        font-size: 10px;
+        padding: 4px;
+      }
+    }
   }
 }

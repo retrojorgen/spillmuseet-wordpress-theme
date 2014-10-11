@@ -3,7 +3,7 @@
 }
 
 .main-navigation {
-  background-color: darken($red, 5%);
+  background-color: $red;
   position: relative;
   z-index: 10001;
 
@@ -17,9 +17,11 @@
         a {
           display: block;
           position: relative;
-          padding: 20px;
+          padding: 21px;
           text-transform: uppercase;
-          font-size: 20px;
+          font-size: 19px;
+          letter-spacing: -1px;
+          font-weight: 400;
           &.selected {
             background-color: darken($red, 10%);
           }
@@ -176,9 +178,9 @@
 
 .drop-down-nav {
   width: 100%;
-  top: -150px;
+  top: -320px;
   position: absolute;
-  background-color: $red;
+  background-color: #3F0303;
   z-index: 10000;
   @include box-shadow(0 0 20px rgba(0,0,0,0.2));
   .subcategories {
@@ -197,7 +199,8 @@
           display: block;
           padding: 10px;
           color: white;
-          font-size: 16px;
+          font-size: 14px;
+          text-transform: uppercase;
           background-color: $red;
         }
       }
@@ -205,6 +208,7 @@
   }
   .articles {
     width: 100%;
+    min-height: 260px;
     max-height: 260px;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -229,7 +233,9 @@
         color: white;
         margin: 0 0 100px 0;
         padding: 10px;
-        font-size: 16px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 400;
       }
     }
   }

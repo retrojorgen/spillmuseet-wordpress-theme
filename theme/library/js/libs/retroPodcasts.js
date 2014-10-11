@@ -7,7 +7,7 @@
 			var nerdItems;
 			var items = [];
 			var drawItems = function() {
-				var container = $('.podcasts');
+				var container = $('#podcasts-container');
 				_.each(items, function(item,key) {
 					if(key < 15) {
 						var publishedDate = 'Publisert: ' + item.pubDate.getDate() + ' / ' + item.pubDate.getMonth() + ' / ' + item.pubDate.getFullYear();
@@ -56,15 +56,15 @@
 				});
 				items = _.sortBy(items, function(o) { return o.pubDate; });
 				items = items.reverse();
-				console.log(items);
 				callback();
 			};
 
-			$.get(nerdCastUrl, function(dataN) {
+			$.get(baseUrl + nerdCastUrl, function(dataN) {
+				console.log('yo');
 				xmlDoc = $.parseXML(dataN);
 				$xml = $(xmlDoc);
 				nerdItems = $xml.find('item');
-				$.get(retroCastUrl, function(dataR) {
+				$.get(baseUrl + retroCastUrl, function(dataR) {
 					xmlDoc = $.parseXML(dataR);
 					$xml = $(xmlDoc);
 					retroItems = $xml.find('item');

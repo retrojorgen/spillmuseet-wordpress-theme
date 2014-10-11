@@ -4,7 +4,6 @@
 <!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
-
 	<head>
 		<meta charset="utf-8">
 
@@ -66,14 +65,18 @@
 	}(document, 'script', 'facebook-jssdk'));</script>
 
 
-
+	<div class="drop-down-nav">
+		<div id="articles" class="articles"></div>
+		<div id="subcategories" class="subcategories"></div>
+	</div>
 	<nav class="main-navigation" role="navigation">
 		<button class="mobile-menu-toggle"></button>
 		<a class="logo-link" href="<?php echo home_url(); ?>"></a>
 		<?php bones_main_nav(); ?>
 		<?php //get_search_form(); ?>
 	</nav>
-<div class="articles-container">
+<div class="articles-wrapper">
+	<div class="articles-container">
 	
 
 		

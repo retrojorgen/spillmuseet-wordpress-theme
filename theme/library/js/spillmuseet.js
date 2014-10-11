@@ -82,6 +82,12 @@
       console.log('setter bilde');
       var mainImageOffsetTop = $('h2 + img').offset().top;
       $('.fb-like').css('top', mainImageOffsetTop - 200 + 'px');
+    } else {
+      if($('h2 + p + img').length) {
+        console.log('setter bilde');
+        var mainImageOffsetTop = $('h2 + p + img').offset().top;
+        $('.fb-like').css('top', mainImageOffsetTop + 'px');
+      }
     }
 
     if($('#videos-wrapper').length) {

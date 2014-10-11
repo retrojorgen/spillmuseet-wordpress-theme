@@ -24,33 +24,32 @@ $megaDesktop: "only screen and (min-width : 1290px)";
 
 @font-face {
    font-family: 'Ubuntu';
-      src: url('../fonts/UbuntuCondensed.ttf');
-   font-weight: normal;
+      src: url('../fonts/Lato-Bold.ttf');
+   font-weight: 700;
    font-style: normal;
 }
 
 @font-face {
-   font-family: 'Roboto';
-      src: url('../fonts/Roboto-Regular.ttf');
+   font-family: 'Ubuntu';
+      src: url('../fonts/Raleway-ExtraBold.ttf');
+   font-weight: 900;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Ubuntu';
+      src: url('../fonts/Lato-Regular.ttf');
    font-weight: 400;
    font-style: normal;
 }
 
 @font-face {
-   font-family: 'Roboto';
-      src: url('../fonts/Roboto-Italic.ttf');
+   font-family: 'Ubuntu';
+      src: url('../fonts/Lato-Italic.ttf');
    font-weight: 400;
-   font-style: italic;
-}
-
-@font-face {
-   font-family: 'Roboto';
-      src: url('../fonts/Roboto-Thin.ttf');
-   font-weight: 100;
    font-style: italic;
 }
 
 
 $regularFont : 'Ubuntu';
-$thinFont : 'Roboto';
 $red : #E31515;

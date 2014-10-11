@@ -139,8 +139,12 @@ function bones_scripts_and_styles() {
 		}
 
 		//adding scripts file in the footer
-		wp_register_script( 'underscore', get_stylesheet_directory_uri() . '/library/js/underscore-min.js', array( 'jquery' ), '', true );	
-		wp_register_script( 'retroPodcasts-js', get_stylesheet_directory_uri() . '/library/js/libs/retroPodcasts.js', array( 'jquery', 'underscore' ), '', true );	
+		wp_register_script( 'underscore', get_stylesheet_directory_uri() . '/library/js/underscore-min.js', array( 'jquery' ), '', true );
+		wp_register_script( 'cssplugin', get_stylesheet_directory_uri() . '/library/js/CSSPlugin.min.js', array( 'jquery'), '', true );
+		wp_register_script( 'easepack', get_stylesheet_directory_uri() . '/library/js/EasePack.min.js', array( 'jquery'), '', true );
+		wp_register_script( 'tweenlite', get_stylesheet_directory_uri() . '/library/js/TweenLite.min.js', array( 'jquery'), '', true );
+		wp_register_script( 'retroNavigation-js', get_stylesheet_directory_uri() . '/library/js/libs/retroNavigation.js', array( 'jquery', 'underscore'), '', true );
+		wp_register_script( 'retroPodcasts-js', get_stylesheet_directory_uri() . '/library/js/libs/retroPodcasts.js', array( 'jquery', 'underscore' ), '', true );
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 		wp_register_script( 'spillmuseet-js', get_stylesheet_directory_uri() . '/library/js/spillmuseet.js', array( 'jquery' ), '', true );
 
@@ -156,7 +160,11 @@ function bones_scripts_and_styles() {
 		and your site will load faster.
 		*/
 		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'easepack' );
+		wp_enqueue_script( 'cssplugin' );
+		wp_enqueue_script( 'tweenlite' );
 		wp_enqueue_script( 'underscore' );
+		wp_enqueue_script( 'retroNavigation-js' );
 		wp_enqueue_script( 'retroPodcasts-js' );
 		wp_enqueue_script( 'bones-js' );
 		wp_enqueue_script( 'spillmuseet-js' );

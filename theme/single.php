@@ -1,4 +1,51 @@
 <?php get_header(); ?>
+	<?php
+		$previous_post = get_previous_post();
+		$next_post = get_next_post();
+	?>
+	<div class="next-previous-posts">
+	<?php
+		if(isset($next_post) && $next_post != '') {
+			?>
+			<div class="next-post-container">
+				<a href="<?php echo get_permalink($next_post->ID) ?>">
+				<?php echo get_the_post_thumbnail( $next_post->ID, 'thumbnail', $attr ); ?>
+				<div class="header-container">
+					<div class="next-post-label">Neste artikkel</div>
+					<h1><?php echo $next_post->post_title ?></h1>
+					<div class="post-time"><?php echo get_post_time( 'Y-m-j', $next_post->ID ) ?></div>
+				</div>
+				</a>
+			</div>
+			<?php
+		}
+	?>
+	<?php
+		if(isset($previous_post)) {
+			?>
+			<div class="previous-post-container">
+			<a href="<?php echo get_permalink($previous_post->ID) ?>">
+				<?php echo get_the_post_thumbnail( $previous_post->ID, 'thumbnail', $attr ); ?>
+				<div class="header-container">
+					<div class="next-post-label">Forrige artikkel</div>
+					<h1><?php echo $previous_post->post_title ?></h1>
+					<div class="post-time"><?php echo get_post_time( 'Y-m-j', $previous_post->ID ) ?></div>
+				</div>
+				</a>
+			</div>
+			<?php
+		}
+	?>
+	</div>
+					<section class="podcasts">
+						<div class="view-header-container">
+							<h1 class="view-header">Nyeste podcaster</h1>
+							<div class="loading">Laster podcaster</div>
+							<div id="podcasts-wrapper" class="podcasts-wrapper">
+								<div id="podcasts-container" class="podcasts-container"></div>
+							</div>
+						</div>
+					</section>
 					<section class="articles">
 					<div class="article fb-like" data-href="<?php the_permalink() ?>" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
