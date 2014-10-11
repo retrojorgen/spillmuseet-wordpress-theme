@@ -1,5 +1,11 @@
+.mobile-menu-toggle {
+  display: none;
+}
+
 .main-navigation {
-  background-color: opacify($red, 0.2);
+  background-color: darken($red, 5%);
+  position: relative;
+  z-index: 10001;
 
   @media #{$multiColumn} {
     #menu-toppmeny {
@@ -11,14 +17,19 @@
         a {
           display: block;
           position: relative;
-          padding: 14px;
+          padding: 20px;
           text-transform: uppercase;
           font-size: 20px;
+          &.selected {
+            background-color: darken($red, 10%);
+          }
           &:after {
             display: inline-block;
             width: 10px;
             height: 10px;
             margin-left: 4px;
+            margin-top: 3px;
+            vertical-align: baseline;
             content: "";
             background: {
               image: url(../img/arrow.svg);
@@ -158,6 +169,67 @@
       a {
         color: white;
         font-size: 24px;
+      }
+    }
+  }
+}
+
+.drop-down-nav {
+  width: 100%;
+  top: -150px;
+  position: absolute;
+  background-color: $red;
+  z-index: 10000;
+  @include box-shadow(0 0 20px rgba(0,0,0,0.2));
+  .subcategories {
+    width: 100%;
+    background-color: rgb(240,240,240);
+    min-height: 58px;
+    .sub-menu {
+      list-style: none;
+      margin: 0;
+      padding: 5px;
+      .menu-item {
+        display: inline-block;
+        margin: 5px 5px 5px 5px;
+        @include box-shadow(1px 1px 0 rgba(0,0,0,0.2));
+        a {
+          display: block;
+          padding: 10px;
+          color: white;
+          font-size: 16px;
+          background-color: $red;
+        }
+      }
+    }
+  }
+  .articles {
+    width: 100%;
+    max-height: 260px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding: 5px;
+    .article-wrapper {
+      display: inline-block;
+      width: 240px;
+      margin: 10px 10px 10px 5px;
+      vertical-align: top;
+      .article-container {
+        width: 240px;
+        height: 160px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        border: 4px solid white;
+        .article-image {
+          height: 100%;
+        }
+      }
+      .article-header {
+        color: white;
+        margin: 0 0 100px 0;
+        padding: 10px;
+        font-size: 16px;
       }
     }
   }
